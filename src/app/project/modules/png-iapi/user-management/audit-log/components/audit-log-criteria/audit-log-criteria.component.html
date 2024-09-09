@@ -1,6 +1,6 @@
 <div [formGroup]="this.form">
     <div class="row">
-        <div class="col-md-2 col-lg-2" sit-validate-input="dateTimeStart">
+        <div class="col-sm-6 col-md-3 col-lg-2" sit-validate-input="dateTimeStart">
             <sit-label sit-label [require]="true"><span>{{"sec.event_date_from"|translate}} ({{timezone}})</span></sit-label>
             <mat-form-field class="w-100" appearance="outline">
                 <input matInput formControlName="dateStart" 
@@ -24,7 +24,7 @@
             ></sit-helper>
         </div>
 
-        <div class="col-md-1 col-lg-1" sit-validate-input="timeStart">
+        <div class="col-sm-2 col-md-2 col-lg-1" sit-validate-input="timeStart">
             <sit-label>
                 <span>&nbsp;</span>
             </sit-label>
@@ -37,7 +37,7 @@
             ></sit-helper>
         </div>
 
-        <div class="col-md-1 col-lg-1" sit-validate-input="days">
+        <div class="col-sm-4 col-md-1 col-lg-1" sit-validate-input="days">
             <sit-label>
                 <span> {{"sec.days" | translate }}</span>
             </sit-label>
@@ -56,7 +56,7 @@
             ></sit-helper>
         </div>
 
-        <div class="col-md-2 col-lg-2" sit-validate-input="dateTimeEnd">
+        <div class="col-sm-6 col-md-3 col-lg-2" sit-validate-input="dateTimeEnd">
             <sit-label [require]="true">
                 <span>{{ "sec.event_date_to" | translate }} ({{timezone}})</span>
             </sit-label>
@@ -73,7 +73,7 @@
             ></sit-helper>
         </div>
 
-        <div class="col-md-1 col-lg-1" sit-validate-input="timeEnd">
+        <div class="col-sm-2 col-md-2 col-lg-1" sit-validate-input="timeEnd">
             <sit-label>
                 <span>&nbsp;</span>
             </sit-label>
@@ -86,14 +86,14 @@
             ></sit-helper>
         </div>
 
-        <div class="col-md-1 col-lg-1">
+        <div class="col-sm-4 col-md-1 col-lg-1">
             <sit-label>
                 <span>&nbsp;</span>
             </sit-label>
             <mat-icon class="information-tooltip-icon" #tooltip="matTooltip"
                 matTooltip=" {{'sec.range_date_less_than' | translate}} ">help</mat-icon>
         </div>
-        <div class="col-md-2 col-lg-2" sit-validate-input="system">
+        <div class="col-sm-6 col-md-6 col-lg-2" sit-validate-input="system">
             <sit-label><span>{{'sec.system'|translate}}</span></sit-label>
             <mat-form-field class="w-100" [appearance]="'outline'">
                 <mat-select placeholder="{{'all' | translate}}"  formControlName="system" (selectionChange)="selectChang($event)">
@@ -104,7 +104,7 @@
             <sit-helper></sit-helper>
         </div>
 
-        <div class ="col-md-2 col-lg-2" sit-validate-input="function">
+        <div class ="col-sm-6 col-md-6 col-lg-2" sit-validate-input="function">
             <sit-label><span>{{'sec.function'|translate}}</span></sit-label>
             <mat-form-field class="w-100" [appearance]="'outline'" >
             <mat-select placeholder="{{'all' | translate}}" formControlName="function">
@@ -118,7 +118,7 @@
     </div>
     <div class="row">
     
-    <div class="col-md-2 col-lg-2" sit-validate-input="username">
+    <div class="col-sm-6 col-md-3 col-lg-2" sit-validate-input="username">
         <sit-label><span>{{'sec.username'|translate}}</span></sit-label>
         <mat-form-field class="w-100" [appearance]="'outline'">
             <input matInput input-username formControlName="username" maxlength="100">
@@ -128,7 +128,7 @@
         ></sit-helper>
     </div>
 
-    <div class="col-md-2 col-lg-2" sit-validate-input="employee code">
+    <div class="col-sm-6 col-md-3 col-lg-2" sit-validate-input="employee code">
         <sit-label><span>{{'sec.employee_code'|translate}}</span></sit-label>
         <mat-form-field class="w-100" [appearance]="'outline'">
             <input matInput formControlName="employeeCode" maxlength="100">
@@ -138,7 +138,7 @@
         ></sit-helper>
     </div>
 
-    <div class="col-md-2 col-lg-2" sit-validate-input="name">
+    <div class="col-sm-6 col-md-3 col-lg-2" sit-validate-input="name">
         <sit-label><span>{{'sec.name'|translate}} {{'sec.english'|translate}}</span></sit-label>
         <mat-form-field class="w-100" [appearance]="'outline'">
             <input matInput input-english formControlName="name" maxlength="100">
@@ -148,7 +148,7 @@
         ></sit-helper>
     </div>
 
-    <div class="col-md-2 col-lg-2" sit-validate-input="surname">
+    <div class="col-sm-6 col-md-3 col-lg-2" sit-validate-input="surname">
         <sit-label><span>{{'sec.surname'|translate}} {{'sec.english'|translate}}</span></sit-label>
         <mat-form-field class="w-100" [appearance]="'outline'">
             <input matInput input-english formControlName="surname" maxlength="100" >
@@ -158,7 +158,7 @@
         ></sit-helper>
     </div>
 
-    <div class="col-md-1  col-lg-1" sit-validate-input="linePerPage">
+    <div class="col-sm-12 col-md-12  col-lg-1" sit-validate-input="linePerPage">
         <sit-label><span>{{'rec_per_page'|translate}}</span></sit-label>
         <mat-form-field class="w-100" [appearance]="'outline'">
             <mat-select  formControlName="linePerPage">
