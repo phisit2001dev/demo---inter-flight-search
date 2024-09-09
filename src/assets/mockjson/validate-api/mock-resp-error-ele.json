@@ -1,0 +1,16 @@
+{
+  "messageCode":"10004",
+  "messageDesc":"Invalid Data, Please check again.",
+  "displayStatus":"E",
+  "componentType":"S",
+  "error":{
+     "errorCode":"SIT-10507-220407021258816",
+     "errorDesc":"Invalid Data, Please check again."
+  },
+  "invalid":[
+     {
+        "element":"countryName",
+        "msg":"This field is required."
+     }
+  ]
+}

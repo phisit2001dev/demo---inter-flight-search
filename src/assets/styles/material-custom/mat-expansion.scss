@@ -1,0 +1,40 @@
+.mat-accordion{
+  .mat-expansion-panel {
+    // border: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+  .mat-expansion-panel-header {
+    // background: #f6f6f6;
+    background: #ffffff;;
+    .mat-expansion-panel-header-title{
+      font-size: 1.05em !important;
+      font-weight: bold;
+      color: #000000 ;
+
+    }
+    &.mat-expanded {
+      // background: #f6f6f6;
+      // border: 1px solid black;
+      background-color: #e7f1ff;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+
+      .mat-expansion-panel-header-title{
+        color: #0c63e4 !important;
+      }
+
+      height: 48px;
+      .mat-expansion-indicator{
+        margin-top: 3px;
+      }
+    }
+
+    &.cdk-focused.mat-expanded{
+      border: 1px solid #3f51b5;
+
+    }
+  }
+    .mat-expansion-panel-body{
+      // background: #f6f6f6;
+    }
+  }
+}
+

@@ -1,0 +1,204 @@
+<div  [formGroup]="this.form">
+  <div class="row">
+    <!-- Airport name (english) -->
+    <div class="col-md-6 col-lg-3" sit-validate-input="airportName">
+      <div class="d-flex align-content-center">
+        <sit-label require="true">
+          <span>Airport name (english)</span>
+        </sit-label>
+      </div>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="airportName"
+        />
+      </mat-form-field>
+      <sit-helper
+        [control]="this.form.get('airportName')"
+      ></sit-helper>
+    </div>
+    <!-- Airport code (IATA) -->
+    <div class="col-md-6 col-lg-3" sit-validate-input="iata">
+      <sit-label require="true">
+        <span>Airport code (IATA)</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="iata"
+        />
+      </mat-form-field>
+      <sit-helper
+        hint="3 letters"
+        [control]="this.form.get('iata')"
+      ></sit-helper>
+    </div>
+    <!-- Airport code (ICAO) -->
+    <div class="col-md-6 col-lg-3" sit-validate-input="icao">
+      <sit-label require="true">
+        <span>Airport code (ICAO)</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="icao"
+        />
+      </mat-form-field>
+      <sit-helper
+        hint="4 letters"
+        [control]="this.form.get('icao')"
+      ></sit-helper>
+    </div>
+    <!-- Country name (english) -->
+    <div class="col-md-6 col-lg-3" sit-validate-input="countryName" selector="div#id">
+      <sit-label require="true">
+        <span>Country name (english)</span>
+      </sit-label>
+      <sit-autocomplete
+        type = 'A'
+          [controlValue]="this.form.get('countryNameVal')"
+          [controlKey]="this.form.get('countryNameKey')"
+          [listResult]="this.countryList"
+          [valueChange]="countryAutocomplete$"
+          (selectValue)="selectValue($event)"
+          >
+      </sit-autocomplete>
+      <sit-helper></sit-helper>
+    </div>
+  </div>
+  <div class="row" sit-validate-input="UTC">
+    <!-- UTC -->
+    <div class="col-md-6 col-lg-3">
+      <sit-label require="true">
+        <span>UTC</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="UTC"
+        />
+      </mat-form-field>
+      <sit-helper></sit-helper>
+    </div>
+    <!-- Airport status -->
+    <div class="col-md-6 col-lg-3" sit-validate-input="airportStatus">
+      <sit-label>
+        <span>Airport status</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <mat-select
+        placeholder="All"
+        formControlName="airportStatus"
+        >
+          <mat-option [value]="">All</mat-option>
+          <mat-option value="">1</mat-option>
+          <mat-option value="">2</mat-option>
+          <mat-option value="">3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <sit-helper></sit-helper>
+    </div>
+    <!-- Activation status -->
+    <div class="col-md-6 col-lg-3">
+      <sit-label >
+        <span>Activation status</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <mat-select
+          placeholder="All"
+          formControlName="ActivationStatus"
+        >
+          <mat-option [value]="">All</mat-option>
+          <mat-option value="">1</mat-option>
+          <mat-option value="">2</mat-option>
+          <mat-option value="">3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!-- Records per page -->
+    <div class="col-md-6 col-lg-3">
+      <sit-label >
+        <span>Records per page</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <mat-select
+        placeholder="Any"
+        formControlName="linePerPage"
+        >
+          <mat-option *ngFor="let item of listlinePerPage" [value]="item">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-3">
+      <sit-label require="true">
+        <span>xxxxxxxxx</span>
+      </sit-label>
+      <mat-form-field
+        class="input-text-area w-100"
+        appearance="outline"
+        floatLabel="always"
+      >
+        <textarea
+          matInput
+          [rows]="3"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <!-- <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Self aware panel
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="row">
+          <div class="col-3" sit-validate-input="radioForm" selector=".section-border">
+            <sit-label require="true">
+              <span>.section-border</span>
+            </sit-label>
+              <div class="section-border">
+                <mat-radio-group formControlName="radioForm">
+                  <mat-radio-button value="vanilla">Vanilla</mat-radio-button>
+                  <mat-radio-button value="strawberry">Strawberry</mat-radio-button>
+                  <mat-radio-button value="chocolate">Chocolate</mat-radio-button>
+                </mat-radio-group>
+              </div>
+              <sit-helper
+              ></sit-helper>
+          </div>
+
+          <div class="col-3" sit-validate-input="group-checkbox" selector=".section-border">
+            <sit-label require="true">
+              <span>.section-border</span>
+            </sit-label>
+              <div class="section-border">
+                <mat-checkbox class="example-margin"  formControlName="checkbox1">Vanilla</mat-checkbox>
+                <mat-checkbox class="example-margin" formControlName="checkbox2">Strawberry</mat-checkbox>
+                <mat-checkbox class="example-margin" formControlName="checkbox3">Chocolate</mat-checkbox>
+              </div>
+              <sit-helper></sit-helper>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion> -->
+  </div>
+</div>

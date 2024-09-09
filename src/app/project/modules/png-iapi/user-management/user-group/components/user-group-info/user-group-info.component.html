@@ -1,0 +1,95 @@
+<div [formGroup]="this.form">
+    <div class="row">
+        <sit-title>
+            <span>{{"sec.information_detail" | translate}}</span>
+        </sit-title>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="groupCode">
+            <sit-label require="true">
+                <span>{{"sec.group_code" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="groupCode"
+                    [readonly]="this.view"
+                    maxlength="80"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('groupCode')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="groupName">
+            <sit-label require="true">
+                <span>{{"sec.group_name" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="groupName"
+                    [readonly]="this.view"
+                    maxlength="400"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('groupName')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="remark">
+            <sit-label>
+                <span>{{"remark" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            style="min-height: 110px;"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <textarea 
+                    matInput 
+                    formControlName="remark"
+                    rows="3"
+                    style="resize: none;"
+                    [readonly]="this.view"
+                    maxlength="1024"
+                ></textarea>
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('remark')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6" sit-validate-input="active">
+            <sit-label>
+                <span>&nbsp;</span>
+            </sit-label>
+            <mat-checkbox 
+                formControlName="active">
+            </mat-checkbox>
+            {{"active" | translate}}
+            <sit-helper
+                [control]="this.form.get('active')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+    </div>
+</div>

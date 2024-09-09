@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'sourceSerif-reg';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../font/woff/SourceSansPro-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'sourceSerif-ligth';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../font/woff/SourceSansPro-Light.ttf) format('truetype');
+}

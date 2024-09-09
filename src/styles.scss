@@ -1,0 +1,260 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+
+@import "./assets/styles/color/theme-color.scss";
+@import "./src/assets/styles/material-custom/mat-snack-bar.scss";
+@import "./src/assets/styles/material-custom/mat-side-nav.scss";
+
+@import "./assets/styles/material-custom/mat-card.scss";
+@import "./assets/styles/material-custom/mat-form-field.scss";
+@import "./assets/styles/material-custom/sit-validator-style.scss";
+@import "./assets/styles/material-custom/mat-tab.scss";
+@import "./assets/styles/material-custom/sit-table.scss";
+@import "./assets/styles/material-custom/mat-button.scss";
+@import "./assets/styles/material-custom/mat-dialog.scss";
+@import "./assets/styles/material-custom/mat-expansion.scss";
+
+@import "./assets/styles/project/iapi.scss";
+
+// @import "./assets/styles/shared/globalstyle.scss";
+
+
+// ica
+// @import "./assets/styles/shared/globalstyle.scss";
+
+
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+$sit-typography: mat.define-typography-config(
+  $font-family: $font-family,
+);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$color-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $color-primary,
+      accent: mat-palette($sit-accent),
+      warn: $color-warn,
+    ),
+    typography: $sit-typography,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($color-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $font-family;
+}
+
+.sit-container {
+  padding: 15px 15px;
+  min-height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
+  box-sizing: border-box;
+  overflow: auto;
+  background-color: $bodyColor;
+}
+
+// background
+.mat-drawer-container {
+  background-color: #edeff4;
+  // color: mat-color($color-primary);
+}
+
+.text-link{
+  color: mat-color($color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.menu-txt-color{
+  color: black;
+  text-decoration: none;
+}
+
+//---------------------------------------------------- snackbar -----------------------------------------------
+@mixin styleSnackbar($color) {
+  .mdc-snackbar__surface {
+    background-color: $color !important;
+    text-align: center!important;
+  }
+  .mat-mdc-snack-bar-containe {
+    font-size: 1.3em!important;
+    justify-content: center!important;
+  }
+}
+.success-snack {
+  @include styleSnackbar(#d4edda);
+  .mdc-button__label{
+    color:  #155724 !important;
+    border-color: #c3e6cb !important;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  --mdc-snackbar-supporting-text-size: 20px;
+  --mdc-snackbar-supporting-text-color: #155724;
+}
+.danger-snack {
+  @include styleSnackbar(#f8d7da);
+  .mdc-button__label{
+    color:  #721c24 !important;
+    border-color: #f5c6cb !important;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  --mdc-snackbar-supporting-text-size: 20px;
+  --mdc-snackbar-supporting-text-color: #721c24;
+}
+.warn-snack {
+  @include styleSnackbar(#fff3cd);
+  .mdc-button__label{
+    color: #856404 !important;
+    border-color: #fff3cd !important;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  --mdc-snackbar-supporting-text-size: 20px;
+  --mdc-snackbar-supporting-text-color: #856404;
+}
+
+//---------------------------------------------------- mat-drawer menu -----------------------------------------------
+mat-drawer .mat-drawer-inner-container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+.mat-toolbar.mat-primary {
+  background: $toolbar-color;
+  color: white;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 50px;
+  z-index: 3;
+  position: relative;
+}
+
+// ------------------------------------- class
+.row {
+  --bs-gutter-x: 1.0rem !important;
+}
+
+.section-border {
+  border: 1px dashed;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 2rem;
+  padding-right: 10px;
+}
+
+fieldset{
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  legend {
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 7px;
+    font-size: 16px;
+    font-family: $font-family;
+    // font-weight: 600;
+    color: $font-color;
+    em {
+      color: red;
+    }
+  };
+  &.invalid, &.sit-in-valid{
+    border: 2px solid $theme-error;
+  }
+}
+
+// -------------------- tooltip ----------------------
+.mat-mdc-tooltip-panel {
+  pointer-events: none !important;
+}
+
+// CP > User Management > Manage Carrier Users, Add New Carrier Users
+.carrier-user-password-tooltip > div {
+  white-space: pre-line !important;
+  max-width: unset !important;
+}
+
+// -------------------- ใช้สำหรับกำหนด width คอลัมน์ rowno,  checkbox, icon ต่างๆ และ active status ----------------------
+.col-no {
+  min-width: 70px;
+  max-width: 70px;
+  width: 70px;
+}
+
+.col-checkbox {
+  min-width: 50px;
+  max-width: 50px;
+  width: 50px;
+}
+
+.col-icon {
+  min-width: 66px;
+  max-width: 66px;
+  width: 66px;
+}
+
+.col-active-status {
+  min-width: 85px;
+  max-width: 100px;
+  width: 85px;
+}
+// -------------------- สำหรับการ highlight status แทนการใช้ icon
+.status-highlight {
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px
+}
+
+//sort justify
+.text-start {
+  .mat-sort-header-container {
+    justify-content:left;
+  }
+}
+.text-center {
+  .mat-sort-header-container {
+    justify-content:center;
+  }
+
+}
+.text-end{
+  .mat-sort-header-container {
+    justify-content:right;
+  }
+}
+
+// -------------------- สำหรับการกำหนด style ที่หัว table
+.table_title_search, .table-header {
+  font-weight: bold;
+}
+
+// -------------------- สำหรับการกำหนด style ของ criteria value เช่น Document No.: AU2590003
+.criteria-value {
+  font-weight: bold;
+}
+
+// สำหรับกำหนด Icon ปุ่ม Export (หลัง Label search results) เมื่อไม่มีสิทธิ์ Export
+button[mat-button]:disabled {
+  .mat-icon {
+    color: rgb(128, 128, 128) !important;
+  }
+}

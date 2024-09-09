@@ -1,0 +1,124 @@
+<div [formGroup]="this.form">
+  <!-- ############################### Row 1 ############################### -->
+  <div class="row">
+    <!-- ------------------- Country name ------------------- -->
+    <div class="col-md-12 col-lg-4" sit-validate-input="countryName">
+        <sit-label>
+          <span>{{ "std.c_country_name" | translate }}</span>
+        </sit-label>
+
+        <mat-form-field class="w-100" [appearance]="'outline'">
+          <input matInput formControlName="countryName" maxlength="100" />
+        </mat-form-field>
+
+        <sit-helper></sit-helper>
+    </div>
+
+    <!-- ------------------- Country code (alpha-2) ------------------- -->
+    <div class="col-md-12 col-lg-4" sit-validate-input="countryCodeAlp2">
+      <sit-label>
+        <span>{{ "std.c_country_code_alpha_2" | translate }}</span>
+      </sit-label>
+
+      <mat-form-field class="w-100" [appearance]="'outline'">
+        <input matInput formControlName="countryCodeAlp2" maxlength="2" />
+      </mat-form-field>
+
+      <sit-helper [hint]="'std.c_two_letters' | translate"></sit-helper>
+    </div>
+
+    <!-- ------------------- Country code (alpha-3) ------------------- -->
+    <div class="col-md-12 col-lg-4" sit-validate-input="countryCodeAlp3">
+      <sit-label>
+        <span>{{ "std.c_country_code_alpha_3" | translate }}</span>
+      </sit-label>
+
+      <mat-form-field class="w-100" [appearance]="'outline'">
+        <input matInput formControlName="countryCodeAlp3" maxlength="3" />
+      </mat-form-field>
+
+      <sit-helper [hint]="'std.c_three_letters' | translate"></sit-helper>
+    </div>
+  </div>
+
+  <!-- ############################### Row 2 ############################### -->
+  <div class="row">
+    <!-- ------------------- Nationality code (alpha-3) ------------------- -->
+    <div class="col-md-12 col-lg-4" sit-validate-input="nationalityCode">
+      <sit-label>
+        <span>{{ "std.c_nationality_code" | translate }}</span>
+      </sit-label>
+
+      <mat-form-field class="w-100" [appearance]="'outline'">
+        <input matInput formControlName="nationalityCode" maxlength="3" />
+      </mat-form-field>
+
+      <sit-helper [hint]="'std.c_three_letters' | translate"></sit-helper>
+    </div>
+
+    <!-- ------------------- Nationality name ------------------- -->
+    <div class="col-md-12 col-lg-4" sit-validate-input="nationalityName">
+      <sit-label>
+        <span>{{ "std.c_nationality_name" | translate }}</span>
+      </sit-label>
+
+      <mat-form-field class="w-100" [appearance]="'outline'">
+        <input matInput formControlName="nationalityName" maxlength="100" />
+      </mat-form-field>
+
+      <sit-helper></sit-helper>
+    </div>
+
+    <!-- ------------------- Continent name ------------------- -->
+    <div class="col-md-12 col-lg-4" sit-validate-input="continentName">
+      <sit-label>
+        <span>{{ "std.c_continent_name" | translate }}</span>
+      </sit-label>
+
+      <sit-autocomplete
+        type = 'A'
+          [controlValue]="this.form.get('continentName')"
+          [controlKey]="this.form.get('continentCode')"
+          [listResult]="this.continentList"
+          [valueChange]="continentAutocomplete$"
+          (selectValue)="selectValue($event)" >
+      </sit-autocomplete>
+
+      <sit-helper></sit-helper>
+  </div>
+  </div>
+
+  <!-- ############################### Row 3 ############################### -->
+  <div class="row">
+    <!-- ------------------- Activation status ------------------- -->
+    <div class="col-md-6 col-lg-4" sit-validate-input="activeStatus">
+      <sit-label>
+        <span>{{ "std.a_activation_status" | translate }}</span>
+      </sit-label>
+
+      <mat-form-field class="w-100" [appearance]="'outline'">
+        <mat-select placeholder="{{ 'all' | translate }}" formControlName="activeStatus">
+          <mat-option [value]="">{{ "all" | translate }}</mat-option>
+          <mat-option *ngFor="let item of this.activationSelectItem" [value]="item.key">{{ item.value }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <sit-helper></sit-helper>
+    </div>
+    <!-- ------------------- Record per page ------------------- -->
+    <div class="col-md-6 col-lg-4" sit-validate-input="linePerPage">
+      <sit-label >
+        <span>{{ "rec_per_page" | translate }}</span>
+      </sit-label>
+
+      <mat-form-field class="w-100" [appearance]="'outline'">
+        <mat-select placeholder="Any" formControlName="linePerPage">
+          <mat-option *ngFor="let page of this.llp" [value]="page">{{ page }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <sit-helper></sit-helper>
+    </div>
+  </div>
+
+</div>

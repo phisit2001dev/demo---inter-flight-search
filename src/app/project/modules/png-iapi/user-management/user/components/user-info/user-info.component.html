@@ -1,0 +1,385 @@
+<div [formGroup]="this.form">
+    <div class="row">
+        <sit-title>
+            <span>{{"sec.information_detail" | translate}}</span>
+        </sit-title>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="doctypeRefUser">
+            <sit-label>
+                <span>{{"sec.reference_document_type" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <mat-select
+                    placeholder=""
+                    formControlName="doctypeRefUser"
+                >
+                    <mat-option></mat-option>
+                    <mat-option *ngFor="let item of this.initData.listDoctypeRefUser" [value]="item.key">
+                        {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('doctypeRefUser')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="doctypeRefUserNo">
+            <sit-label>
+                <span>{{"sec.reference_document_no" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="doctypeRefUserNo"
+                    [readonly]="this.view"
+                    maxlength="100"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('doctypeRefUserNo')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="employeeCode">
+            <sit-label require="true">
+                <span>{{"sec.employee_code" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="employeeCode"
+                    [readonly]="this.view"
+                    maxlength="80"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('employeeCode')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="prefixId">
+            <sit-label require="true">
+                <span>{{"sec.prefix" | translate}}</span>
+            </sit-label>
+            <sit-autocomplete
+                type="A"
+                [controlValue]="this.form.get('prefixName')"
+                [controlKey]="this.form.get('prefixId')"
+                [listResult]="this.prefixList"
+                [valueChange]="this.prefixAutocomplete$"
+                [readonly]="this.view"
+            >
+            </sit-autocomplete>
+            <sit-helper
+                [control]="this.form.get('prefixId')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="forename">
+            <sit-label require="true">
+                <span>{{"sec.name" | translate}}&nbsp;{{"sec.english" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="forename"
+                    [readonly]="this.view"
+                    input-english
+                    maxlength="500"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('forename')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="surname">
+            <sit-label require="true">
+                <span>{{"sec.surname" | translate}}&nbsp;{{"sec.english" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="surname"
+                    [readonly]="this.view"
+                    input-english
+                    maxlength="500"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('surname')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="positionName">
+            <sit-label>
+                <span>{{"sec.prosition" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="positionName"
+                    [readonly]="this.view"
+                    maxlength="255"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('positionName')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="email">
+            <sit-label require="true">
+                <span>{{"sec.email" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="email"
+                    [readonly]="this.view"
+                    maxlength="100"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('email')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="organizationId">
+            <sit-label require="true">
+                <span>{{"sec.organization" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <mat-select
+                    placeholder=""
+                    formControlName="organizationId"
+                >
+                    <mat-option></mat-option>
+                    <mat-option *ngFor="let item of this.initData.listOrganization" [value]="item.key">
+                        {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('organizationId')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="cellPhone1">
+            <sit-label require="true">
+                <span>{{"sec.call_phone_number" | translate}}&nbsp;1</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="cellPhone1"
+                    [readonly]="this.view"
+                    maxlength="80"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('cellPhone1')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="cellPhone2">
+            <sit-label>
+                <span>{{"sec.call_phone_number" | translate}}&nbsp;2</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="cellPhone2"
+                    [readonly]="this.view"
+                    maxlength="20"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('cellPhone2')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="cellPhone3">
+            <sit-label>
+                <span>{{"sec.call_phone_number" | translate}}&nbsp;3</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="cellPhone3"
+                    [readonly]="this.view"
+                    maxlength="20"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('cellPhone3')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6" sit-validate-input="startDate">
+            <sit-label>
+                <span>{{ "sec.start_date_access" | translate }}</span>
+            </sit-label>
+            <mat-form-field 
+                class="w-100" 
+                appearance="outline"
+                [ngClass]="{ 'readonly-con': this.view }">
+                <input
+                    matInput
+                    formControlName="startDate"
+                    [matDatepicker]="startDate"
+                    [datePicker]="startDate"
+                    [readonly]="this.view"
+                    date-from-to-spinner
+                    [dateFromControl]="this.form.get('startDate')"
+                    [dateToControl]="this.form.get('endDate')"
+                    [setFromTo]="true"
+                />
+                <mat-datepicker-toggle matSuffix [for]="startDate">
+                </mat-datepicker-toggle>
+                <mat-datepicker #startDate disabled="{{this.view}}"></mat-datepicker>
+            </mat-form-field>
+            <sit-helper
+                hint="{{ 'dateFormatHint' | translate}}"
+                [control]="this.form.get('startDate')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6" sit-validate-input="endDate">
+            <sit-label>
+                <span>{{ "sec.end_date_access" | translate }}</span>
+            </sit-label>
+            <mat-form-field
+                class="w-100"
+                [appearance]="'outline'"
+                [ngClass]="{ 'readonly-con': this.view }"
+                >
+                <input
+                    matInput
+                    formControlName="endDate"
+                    [matDatepicker]="endDate"
+                    [datePicker]="endDate"
+                    [readonly]="this.view"
+                />
+                <mat-datepicker-toggle matSuffix [for]="endDate">
+                </mat-datepicker-toggle>
+                <mat-datepicker #endDate disabled="{{this.view}}"></mat-datepicker>
+            </mat-form-field>
+            <sit-helper 
+                hint="{{ 'dateFormatHint' | translate}}"
+                [control]="this.form.get('endDate')">
+            </sit-helper>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6" sit-validate-input="active">
+            <sit-label>
+                <span>&nbsp;</span>
+            </sit-label>
+            <mat-checkbox 
+                formControlName="active">
+            </mat-checkbox>
+            {{"active" | translate}}
+            <sit-helper
+                [control]="this.form.get('active')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6" sit-validate-input="lockStatus">
+            <sit-label>
+                <span>&nbsp;</span>
+            </sit-label>
+            <mat-checkbox 
+                formControlName="lockStatus">
+            </mat-checkbox>
+            {{"sec.ready" | translate}}
+            <sit-helper
+                [control]="this.form.get('lockStatus')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" sit-validate-input="remark">
+            <sit-label>
+                <span>{{"remark" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            style="min-height: 110px;"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.view }">
+                <textarea 
+                    matInput 
+                    formControlName="remark"
+                    rows="3"
+                    style="resize: none;"
+                    [readonly]="this.view"
+                    maxlength="1024"
+                ></textarea>
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('remark')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4" sit-validate-input="username">
+            <sit-label require="true">
+                <span>{{"sec.username" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'"
+            [ngClass]="{ 'readonly-con': this.disabledUsername }">
+                <input
+                    matInput
+                    formControlName="username"
+                    [readonly]="this.disabledUsername"
+                    style="text-transform: uppercase;"
+                    input-username
+                    maxlength="50"
+                />
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('username')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4"></div>
+        <div class="col-xl-4 col-lg-4 col-md-4">
+            <ul class="passwordRemark">
+                <ng-container *ngFor="let remark of this.initData.passwordRemarks">
+                    <li>{{remark}}</li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</div>

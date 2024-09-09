@@ -1,0 +1,9 @@
+<div style="font-size: 14px;margin-top: 2px;">
+  <mat-hint *ngIf="hint"><span class="spanMsg">{{hint}}</span></mat-hint>
+  <ng-container *ngIf="this.control; else elseTemplate">
+    <mat-error *ngIf="_errorinputMsg && (this.control.touched || _isChip)"><span class="spanMsg api">↪ {{_errorinputMsg}}</span></mat-error>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <mat-error *ngIf="_errorinputMsg"><span class="spanMsg api">↪ {{_errorinputMsg}}</span></mat-error>
+  </ng-template>
+</div>

@@ -1,0 +1,10 @@
+{
+  "messageCode": "30011",
+  "messageDesc": "Data cannot be found.",
+  "displayStatus": "S",
+  "componentType": "S",
+  "data": {
+    "totalResult": 0,
+    "listResult": []
+  }
+}

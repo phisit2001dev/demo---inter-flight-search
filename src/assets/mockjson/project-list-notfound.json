@@ -1,0 +1,24 @@
+{
+  "messageCode":"10004",
+  "messageDesc":"Invalid Data, Please check again.",
+  "displayStatus":"E",
+  "componentType":"S",
+  "error":{
+     "errorCode":"SIT-10507-220407021258816",
+     "errorDesc":"Invalid Data, Please check again."
+  },
+  "invalid":[
+     {
+        "element":"test",
+        "msg":"No data or Insufficient data"
+     },
+     {
+        "element":"child-radio",
+        "msg":"No data or Insufficient data"
+     },
+     {
+        "element":"input1",
+        "msg":"No data or Insufficient data input1"
+     }
+  ]
+}

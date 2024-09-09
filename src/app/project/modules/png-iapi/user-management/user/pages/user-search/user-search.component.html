@@ -1,0 +1,40 @@
+<mat-card>
+    <app-user-criteria 
+        [form]="this.form" 
+        [initData]="initData"
+        (enterSearch)="search()"
+    ></app-user-criteria>
+    <app-sit-button
+        [page]="'S'"
+        (btnSearch)="search()"
+        (btnClear)="clear()"
+        [permission]="this.initData.permission"
+    >
+        <button class="btn" type="button" color="primary" mat-raised-button (click)="gotoAdd()" [disabled]="!this.initData.permission?.add">
+            <mat-icon class="button-icon-action">add_circle</mat-icon>
+            <span>{{ 'add' | translate }}</span>
+      </button>
+
+      <button class="btn" type="button" color="primary" mat-raised-button (click)="closeUser()" *ngIf="this.userName">
+        <mat-icon class="button-icon-action">close</mat-icon>
+        <span>{{ 'close' | translate }}</span> 
+  </button>
+    </app-sit-button>
+</mat-card>
+<app-user-info-table
+    [dataSource$]="dataSource$"
+    [permission]="this.initData.permission" 
+    [selection]="selection"
+    [headerSorts]="this.form.get('headerSorts').value"
+    [pageIndex]="this.form.get('pageIndex').value"
+    [linePerPage]="this.criteria?.linePerPage"
+    (sortChange)="sortChange($event)"
+    (pageEvent)="pageEvent($event)"
+    (gotoEdit)="gotoEdit($event)"
+    (gotoView)="gotoView($event)"
+    (export)="export()"
+    (updateActive)="updateActive()"
+    (updateInactive)="updateInactive()"
+    (updateReady)="updateReady()"
+    (updateLocked)="updateLocked()"
+></app-user-info-table>

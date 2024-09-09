@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+}
+
+mat-hint {
+  display: flex;
+}
+
+.spanMsg{
+  display: block;
+  line-height: 15px;
+  // enable when useing overflow
+  // white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: start;
+}
+.mat-error{
+  // background: #ff000014;
+  background: #ff000005;
+}
+
+mat-hint{
+  // position: relative;
+  // top: -17px;
+  color: #838282;
+}
+
+.test-box-api-resp{
+  padding: 4px;
+  font-size: 13px;
+  margin-left: 10px;
+  background: black;
+  color: bisque;
+  padding: 0px 6px;
+}
+
+.mat-mdc-form-field-error {
+  display: flex;
+  margin-top: 2px;
+}

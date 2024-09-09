@@ -1,0 +1,14 @@
+<div class="con-dialog" >
+  <div class="row content">
+    <div [innerHTML]="data"></div>
+  </div>
+  <div class="mt-3 d-flex justify-content-between">
+    <button mat-button style="margin-left: 20px;">
+      <mat-icon style="font-size: 19px;color: #3f51b5;">link</mat-icon>
+      <b style="font-size: 16px;" class="link" (click)="openLink()">
+        All updates...
+      </b>
+    </button>
+    <button mat-raised-button color="primary" class="mt-1" (click)="closeDialog()" style="width: 135px;">Close</button>
+  </div>
+</div>

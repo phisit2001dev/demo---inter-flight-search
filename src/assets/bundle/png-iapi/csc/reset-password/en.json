@@ -1,0 +1,13 @@
+{
+    "rst.forgot_password" : "Forgot password",
+    "rst.reset_password" : "Reset password",
+    "rst.emil" : "Email",
+    "rst.email" : "email",
+    "rst.enter_email" : "Please enter your email.",
+    "rst.change_password" : "Change password",
+    "rst.remark" : "Remark",
+    "rst.new_password" : "New Password",
+    "rst.time_zone_sitting": "Time zone setting",
+    "rst.time_zone": "Time zone",
+    "rst.username": "Username"
+}

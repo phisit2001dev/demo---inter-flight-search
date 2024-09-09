@@ -1,0 +1,117 @@
+@use '@angular/material' as mat;
+
+@import "../../../../node_modules/@angular/material/_theming.scss";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$color-primary: mat.define-palette(mat.$indigo-palette);
+
+// $color-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// $color-accent: $sit-accent;
+
+// The warn palette is optional (defaults to red).
+$color-warn: mat.define-palette(mat.$red-palette);
+
+$main-color: #333;
+$second-color: #ebc100;
+
+$text-color-primary: #373b45;
+$theme-error: #f44336;
+//
+// $sideColor: #373b45;
+// v2
+$sideColor: #d5d2d2;
+// $sideColor: mat-color($color-primary, 300);
+
+/** body **/
+$bodyColor: #e7e7e7;
+
+/** toolbar background **/
+$toolbar-color: #333;
+
+/** list color **/
+// $main-color: #003c71;
+// $second-color: #008bcd;
+
+/** font **/
+$font-family: 'sourceSerif-reg';
+$font-color: #000000;
+
+
+// @use mat($500)
+$sit-primary: (
+  5 : #3d1a6e,
+  50 : #efebf5,
+  100 : #d6cde5,
+  200 : #bbabd4,
+  300 : #a089c2,
+  400 : #8b70b5,
+  500 : #333,
+  600 : #67717d,
+  700 : #644697,
+  800 : #5a3c8d,
+  900 : #472c7d,
+  A100 : #d6c3ff,
+  A200 : #b390ff,
+  A400 : #915dff,
+  A700 : #7f43ff,
+  contrast: (
+      50 : #dad4e2,
+      100 : #000000,
+  )
+);
+//
+$sit-table: (
+  // 1 : #c5c5c5,
+  // 2 : #775f9a,
+  // 3 : #64488b,
+  // 4 : #50317d,
+  // 5 : #e6e6e6,
+  // 6 : #371763,
+  // 7 : #371763,
+  // 8 : #2b124d,
+  // 9 : #1f0d37,
+  // 10 : #180a2c,
+  // use for data-table
+  // 100 :  #d0d0d0,
+  100 :  #f6f6f6,
+  contrast: (
+      1 : #000000,
+      2 : #f6f6f6,
+      3 : #f9f9f9,
+  )
+);
+
+$sit-accent: (
+  50 : #e6f9e6,
+    100 : #c2f0c2,
+    200 : #99e699,
+    300 : #70dc70,
+    400 : #51d551,
+    500 : #32cd32,
+    600 : #2dc82d,
+    700 : #26c126,
+    800 : #1fba1f,
+    900 : #13ae13,
+    A100 : #e0ffe0,
+    A200 : #adffad,
+    A400 : #7aff7a,
+    A700 : #60ff60,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #ffffff,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);

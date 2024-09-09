@@ -1,0 +1,59 @@
+{
+  "messageCode": "X00000",
+  "messageDesc": "Success",
+  "displayStatus": "S",
+  "componentType": "S",
+  "data": {
+    "permission": {
+      "edit": true,
+      "search": true,
+      "add": true,
+      "view": true,
+      "change": true,
+      "export": true,
+      "delete": true
+    },
+    "criteria": {
+      "linePerPage": 10,
+      "pageIndex": 0,
+      "checkMaxExceed": true,
+      "headerSorts": [
+        {
+            "columnName": "0",
+            "order": "ASC"
+        }
+      ]
+    },
+    "listAirportStatus": [
+      {
+        "key": "N",
+        "value": "Not specify"
+      },
+      {
+        "key": "I",
+        "value": "International"
+      }
+    ],
+    "listAirportType": [
+      {
+        "key": "A",
+        "value": "Airport"
+      },
+      {
+        "key": "S",
+        "value": "Seaport"
+      }
+    ],
+    "listActiveStatus": [
+      {
+        "key": "Y",
+        "value": "Active"
+      },
+      {
+        "key": "N",
+        "value": "Inactive"
+      }
+    ],
+    "llp": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "messageCode": "X00000",
+  "messageDesc": "Success",
+  "displayStatus": "S",
+  "componentType": "S",
+  "data": {
+    "totalResult": 29,
+    "listResult": [
+      {
+        "fltStatus": "Cancelled",
+        "fltNo": "TG701",
+        "depArr": "BKK - SYD",
+        "depDateTimeUTC": "09/02/2023 01:30",
+        "arrTimeUTC": "07:30",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 08:30",
+        "arrTimeLT": "17:30",
+        "createDate": "09/02/2023 11:54",
+        "asmStatus": "CNL"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG703",
+        "depArr": "BKK - SYD",
+        "depDateTimeUTC": "09/02/2023 01:30",
+        "arrTimeUTC": "07:30",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 08:30",
+        "arrTimeLT": "17:30",
+        "createDate": "09/02/2023 11:54",
+        "asmStatus": "TIM"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG705",
+        "depArr": "BKK - SYD",
+        "depDateTimeUTC": "09/02/2023 01:30",
+        "arrTimeUTC": "07:30",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 08:30",
+        "arrTimeLT": "17:30",
+        "createDate": "09/02/2023 11:54",
+        "asmStatus": "NEW"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG1",
+        "depArr": "CNX - BKK",
+        "depDateTimeUTC": "09/02/2023 05:40",
+        "arrTimeUTC": "16:00",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 11:10",
+        "arrTimeLT": "23:00",
+        "createDate": "09/02/2023 11:53",
+        "asmStatus": "NEW"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG11",
+        "depArr": "CNX - BKK",
+        "depDateTimeUTC": "09/02/2023 05:40",
+        "arrTimeUTC": "16:00",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 11:10",
+        "arrTimeLT": "23:00",
+        "createDate": "09/02/2023 11:53",
+        "asmStatus": "NEW"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG402",
+        "depArr": "SIN - BKK",
+        "depDateTimeUTC": "09/02/2023 04:25",
+        "arrTimeUTC": "06:45",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 12:25",
+        "arrTimeLT": "13:45",
+        "createDate": "09/02/2023 11:53",
+        "asmStatus": "NEW"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG417",
+        "depArr": "SIN - BKK",
+        "depDateTimeUTC": "09/02/2023 04:25",
+        "arrTimeUTC": "06:45",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 12:25",
+        "arrTimeLT": "13:45",
+        "createDate": "09/02/2023 11:53",
+        "asmStatus": "NEW"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG416",
+        "depArr": "SIN - BKK",
+        "depDateTimeUTC": "09/02/2023 04:25",
+        "arrTimeUTC": "06:45",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 12:25",
+        "arrTimeLT": "13:45",
+        "createDate": "09/02/2023 11:53",
+        "asmStatus": "NEW"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG407",
+        "depArr": "SIN - BKK",
+        "depDateTimeUTC": "09/02/2023 04:25",
+        "arrTimeUTC": "06:45",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 12:25",
+        "arrTimeLT": "13:45",
+        "createDate": "09/02/2023 11:53",
+        "asmStatus": "NEW"
+      },
+      {
+        "fltStatus": "Changed",
+        "fltNo": "TG406",
+        "depArr": "SIN - BKK",
+        "depDateTimeUTC": "09/02/2023 04:25",
+        "arrTimeUTC": "06:45",
+        "atdTimeUTC": "",
+        "depDateTimeLT": "09/02/2023 12:25",
+        "arrTimeLT": "13:45",
+        "createDate": "09/02/2023 11:53",
+        "asmStatus": "NEW"
+      }
+    ]
+  }
+}

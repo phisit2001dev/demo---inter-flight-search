@@ -1,0 +1,14 @@
+<mat-card>
+  <app-airport-criteria-add-view [form]="this.form"></app-airport-criteria-add-view>
+  <div class="row">
+    <app-sit-button
+    [permission]="{add: true,edit: true,view: true}"
+    [page]="this.page"
+    (btnSave)="save()"
+    (btnCancel)="cancel()"
+    (btnClose)="close()"
+    (btnEdit)="edit()"
+
+  ></app-sit-button>
+  </div>
+</mat-card>

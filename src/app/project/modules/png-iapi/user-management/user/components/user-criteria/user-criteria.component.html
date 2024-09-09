@@ -1,0 +1,198 @@
+<div [formGroup]="this.form">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-6" sit-validate-input="employeeCode">
+            <sit-label>
+                <span>{{"sec.employee_code" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+            <input
+                matInput
+                formControlName="employeeCode"
+                maxlength="100"
+            />
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('employeeCode')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-6" sit-validate-input="username">
+            <sit-label>
+                <span>{{"sec.username" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+            <input
+                matInput
+                formControlName="username"
+                maxlength="100"
+            />
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('username')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6" sit-validate-input="organizationId">
+            <sit-label>
+                <span>{{"sec.organization" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+                <mat-select
+                placeholder="{{'all' | translate}}"
+                formControlName="organizationId"
+                >
+                    <mat-option>{{'all' | translate}}</mat-option>
+                    <mat-option *ngFor="let item of this.initData.listOrganizationName" [value]="item.key">
+                    {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('organizationId')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" sit-validate-input="forename">
+            <sit-label>
+                <span>{{"sec.name" | translate}}&nbsp;{{"sec.english" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+            <input
+                matInput
+                formControlName="forename"
+                input-english
+                maxlength="100"
+            />
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('forename')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" sit-validate-input="surname">
+            <sit-label>
+                <span>{{"sec.surname" | translate}}&nbsp;{{"sec.english" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+            <input
+                matInput
+                formControlName="surname"
+                input-english
+                maxlength="100"
+            />
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('surname')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" sit-validate-input="doctypeRefUserNo">
+            <sit-label>
+                <span>{{"sec.reference_document_no" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+            <input
+                matInput
+                formControlName="doctypeRefUserNo"
+                maxlength="100"
+            />
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('doctypeRefUserNo')"
+            ></sit-helper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6" sit-validate-input="groupId">
+            <sit-label>
+                <span>{{"sec.user_group" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+                <mat-select
+                placeholder="{{'all' | translate}}"
+                formControlName="groupId"
+                >
+                    <mat-option>{{'all' | translate}}</mat-option>
+                    <mat-option *ngFor="let item of this.initData.listUsergroup" [value]="item.key">
+                    {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('groupId')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6" sit-validate-input="lockStatus">
+            <sit-label>
+                <span>{{"sec.password_status" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+                <mat-select
+                placeholder="{{'all' | translate}}"
+                formControlName="lockStatus"
+                >
+                    <mat-option>{{'all' | translate}}</mat-option>
+                    <mat-option *ngFor="let item of this.initData.listLockStatus" [value]="item.key">
+                    {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('lockStatus')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6" sit-validate-input="active">
+            <sit-label>
+                <span>{{"sec.activation_status" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+                <mat-select
+                placeholder="{{'all' | translate}}"
+                formControlName="active"
+                >
+                    <mat-option>{{'all' | translate}}</mat-option>
+                    <mat-option *ngFor="let item of this.initData.listActiveStatus" [value]="item.key">
+                    {{ item.value }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('active')"
+            ></sit-helper>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3" sit-validate-input="linePerPage">
+            <sit-label >
+                <span>{{"rec_per_page" | translate}}</span>
+            </sit-label>
+            <mat-form-field
+                class="w-100"
+                [appearance]="'outline'">
+                <mat-select
+                formControlName="linePerPage"
+                >
+                    <mat-option *ngFor="let item of this.initData.listLinePerPage" [value]="item">
+                    {{ item }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper
+                [control]="this.form.get('linePerPage')"
+            ></sit-helper>
+        </div>
+    </div>
+ </div>

@@ -1,0 +1,390 @@
+<div [formGroup]="form">
+  <!-- <app-demo-page-init-airport></app-demo-page-init-airport> -->
+
+  <mat-card class="mb-3">
+    <div class="d-block my-3">
+      <button mat-raised-button (click)="testApi()" color="primary">Oauth2-testApi</button>
+      <button mat-raised-button (click)="testNewTab()" color="primary" class="ms-3">Oauth2-testNewTab</button>
+      <button mat-raised-button (click)="changetimezone()" color="primary" class="ms-3">Oauth2-testNewTab</button>
+    </div>
+    <fieldset>
+      <legend>ทดสอบการเก็บ object จาก</legend>
+      <button mat-raised-button color="primary" class="mx-3 my-3" (click)="realAPisearch('i')">init search</button>
+      <button mat-raised-button color="primary" class="mx-3 my-3" (click)="realAPisearch('s')">search</button>
+      <button mat-raised-button color="primary" class="mx-3 my-3" (click)="realAPisearch('c')">server validate</button>
+    </fieldset>
+  </mat-card>
+
+
+  <mat-card class="my-5 app-con display d-none">
+    <!-- <app-parent-co1 [form]="this.formParent"></app-parent-co1> -->
+    <div class="d-flex justify-content-between">
+      <div>
+        <button mat-stroked-button class="mx-3 my-3 btn-orange" (click)="clearValidateInput()">clear validate</button>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" class="mx-3 my-3" (click)="submitValidate(0)">server validate</button>
+        <button mat-stroked-button color="primary" class="mx-3 my-3" (click)="submitValidate(1)">custom validate</button>
+        <button mat-stroked-button color="primary" class="mx-3 my-3" (click)="submitValidate(2)">form validate</button>
+      </div>
+    </div>
+  </mat-card>
+  <div class="d-none1">
+    <mat-card>
+      <div class="row">
+        <div class="example-button-row">
+          <button mat-raised-button>Basic</button>
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="accent">Accent</button>
+          <button mat-raised-button color="warn">Warn</button>
+          <button mat-raised-button disabled>Disabled</button>
+          <button mat-raised-button >enable</button>
+          <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+
+        <div class="example-label">Stroked</div>
+        <div class="example-button-row">
+          <button mat-stroked-button>Basic</button>
+          <button mat-stroked-button color="primary">Primary</button>
+          <button mat-stroked-button color="accent">Accent</button>
+          <button mat-stroked-button color="warn">Warn</button>
+          <button mat-stroked-button disabled>Disabled</button>
+          <button mat-stroked-button >enable</button>
+          <button mat-stroked-button class="btn-orange">Edit</button>
+
+
+          <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="d-flex">
+          <span class="mx-2"><div class="text-link">div-text-line</div></span>
+          <span class="mx-2"><span class="text-link">span-text-line</span></span>
+          <span class="mx-2"><a href="#" class="text-link">a-text-line</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>spinner</h2>
+          <button mat-raised-button color="primary" (click)="showSpiner()">show</button>+
+        </div>
+        <div class="col-lg-4">
+          <h2>dialog alert/comfirm</h2>
+          <button mat-stroked-button class="mx-2" (click)="showDialog('confirm')">Comfirm</button>
+          <button mat-stroked-button class="mx-2" (click)="showDialog('alert')">Alert</button>
+        </div>
+        <div class="col-lg-4">
+          <h2>snackbar</h2>
+          <button mat-raised-button style="background-color: #ff5050" class="mx-2" (click)="showSnackbar('E')">error</button>
+          <button mat-raised-button style="background-color: #f4902d" class="mx-2" (click)="showSnackbar('W')">warning</button>
+          <button mat-raised-button style="background-color: #00cc99;" class="mx-2" (click)="showSnackbar('S')">success</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>angular material theme</h2>
+          <div style="display: flex; flex-direction: row;">
+            <button mat-raised-button color="primary" class="my-1 mx-3" >primary</button>
+            <button mat-raised-button color="accent" class="my-1 mx-3" >accent</button>
+            <button mat-raised-button color="warn" class="my-1 mx-3">Warn</button>
+            <button mat-raised-button class="my-1 mx-3">basic</button>
+            <button mat-raised-button disabled class="my-1 mx-3">Disabled</button>
+            <button mat-raised-button class="my-1 mx-3 btn-orange">Edit</button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <!-- demo class -->
+    <mat-card class="mt-3">
+      <div class="row">
+        <div class="col-lg-3">
+          <sit-label require="true">
+            <span>standard input</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            fxFlex
+            [appearance]="'outline'">
+            <input
+              formControlName="ele1"
+              matInput
+            />
+          </mat-form-field>
+          <!-- <mat-form-field
+          class="w-100"
+          appearance="outline"
+          >
+          <input
+            formControlName="ele1"
+            matInput
+            [matDatepicker]="depDateTo"
+            [datePicker]="depDateTo"
+            />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="depDateTo">
+          </mat-datepicker-toggle>
+          <mat-datepicker #depDateTo color="primary"></mat-datepicker>
+          </mat-form-field>
+          <sit-helper
+            hint="example hint"
+            [control]="this.form.get('ele1')"
+          >
+          </sit-helper> -->
+        </div>
+        <div class="col-lg-3" sit-validate-input="ele2">
+          <sit-label require="true">
+            <span>standard input with helper</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            fxFlex
+            [appearance]="'outline'">
+            <input
+              formControlName="ele2"
+              matInput
+            />
+          </mat-form-field>
+          <sit-helper
+            hint="example hint"
+            [control]="this.form.get('ele2')"
+          >
+          </sit-helper>
+        </div>
+        <div class="col-lg-3" sit-validate-input="ele3">
+          <sit-label require="true">
+            <span>standard input with custom validate</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            fxFlex
+            [appearance]="'outline'">
+            <input
+              matInput
+            />
+          </mat-form-field>
+          <sit-helper>
+          </sit-helper>
+        </div>
+        <div class="col-lg-3">
+          <sit-label >
+            <span>disable ->{{this.form.get('testdisable').value | json}}</span>
+          </sit-label>
+          <mat-form-field
+            [ngClass]="{ 'readonly-con': true }"
+            class="w-100"
+            fxFlex
+            [appearance]="'outline'">
+            <input
+              matInput
+              readonly
+              formControlName="testdisable"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3" sit-validate-input="ele4key">
+          <sit-label >
+            <span>autocomplete</span>
+          </sit-label>
+          <div class="w-100">
+            <sit-autocomplete
+              type = 'A'
+              [controlValue]="this.form.get('ele4value')"
+              [controlKey]="this.form.get('ele4key')"
+              [listResult]="this.listAuto[0]"
+              [valueChange]="autocomplete1"
+            ></sit-autocomplete>
+          </div>
+          <sit-helper
+            hint="example hint"
+            [control]="this.form.get('ele4value')"
+          >
+          </sit-helper>
+        </div>
+        <div class="col-lg-3">
+          <sit-label >
+            <span>suggestion</span>
+          </sit-label>
+          <div class="w-100">
+            <sit-autocomplete
+              type = 'S'
+              [controlValue]="this.form.get('ele5value')"
+              [controlKey]="this.form.get('ele5key')"
+              [listResult]="this.listAuto[1]"
+              [valueChange]="suggestion"
+            ></sit-autocomplete>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <!-- <sit-label >
+            <span>chip suggestion</span>
+          </sit-label>
+          <sit-autocomplete
+            type='CS'
+            [controlChips]="this.form.get('eleSearchChipCA')"
+            [initChipsList]="this.form.get('eleDataChipCA')"
+            [listResult]="this.listAuto[2]"
+            (removeChip)="removeSelectValue($event,'eleDataChipCA')"
+            (selectValue)="pushSelectValue($event,'eleDataChipCA')"
+            [valueChange]="chipAutocomplete"
+          >
+          </sit-autocomplete> -->
+        </div>
+      </div>
+      <div class="row">
+        <sit-title>
+          <span>test sit-title header msg</span>
+        </sit-title>
+      </div>
+      <div class="row">
+        <mat-tab-group>
+          <mat-tab label="First">Content 1</mat-tab>
+          <mat-tab label="Second">Content 2</mat-tab>
+          <mat-tab label="Third">Content 3</mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="row">
+        <sit-title>
+          <span>test radio/checkbox</span>
+        </sit-title>
+        <mat-checkbox (change)="check($event)">disable radio</mat-checkbox>
+        <div class="col-lg-4">
+          <sit-label require="true">
+            <span>basic mat-radio</span>
+          </sit-label>
+          <div class="d-flex">
+            <div>
+              <mat-radio-group formControlName="radioForm" [ngClass]="{'sit-in-valid': this.form.get('radioForm').invalid}">
+                <mat-radio-button value="" >Chocolate</mat-radio-button>
+                <mat-radio-button value="vanilla">Vanilla</mat-radio-button>
+                <mat-radio-button value="strawberry">Strawberry</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <sit-label require="true">
+            <span>basic mat-radio</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            fxFlex
+            [appearance]="'outline'">
+            <input
+              matInput
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3">
+          <sit-label require="true">
+            <span>basic mat-radio</span>
+          </sit-label>
+          <div class="d-flex">
+            {{this.form.get('checkbox1').value | json}}
+            {{this.form.get('checkbox2').value | json}}
+            <section class="example-section" [ngClass]="{'sit-in-valid': !this.form.get('checkbox1').value && !this.form.get('checkbox2').value}" >
+              <mat-checkbox class="example-margin" formControlName="checkbox1" >Check1</mat-checkbox>
+              <mat-checkbox class="example-margin"formControlName="checkbox2" >Check2</mat-checkbox>
+            </section>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="row">
+            <div class="col">
+              <sit-label require="true">
+                <span>basic mat-radio3 {{this.form.get('checkbox3').value | json}}</span>
+              </sit-label>
+              <mat-checkbox class="example-margin"  formControlName="checkbox3">Check1</mat-checkbox>
+            </div>
+            <div class="col">
+              <div class="col">
+                <sit-label require="true">
+                  <span>basic mat-radio4 {{this.form.get('checkbox4').value | json}}</span>
+                </sit-label>
+                <mat-checkbox class="example-margin"  formControlName="checkbox4">Check1</mat-checkbox>
+              </div>
+            </div>
+          </div>
+          <!-- <sit-label require="true">
+            <span>basic mat-radio</span>
+          </sit-label>
+          <div class="d-flex">
+            <section class="example-section">
+              {{this.form.get('checkbox3').value | json}}
+              {{this.form.get('checkbox4').value | json}}
+              <mat-checkbox class="example-margin"  formControlName="checkbox3">Check1</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="checkbox4">Check2</mat-checkbox>
+            </section>
+          </div> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <sit-label require="true">
+            <span>sit-chip-autocomplete [chip1control]={{this.form.get('chip1control').value}}</span>
+          </sit-label>
+          <sit-chip-autocomplete
+            #chip1
+            type="A"
+            placeholder="test-placeholder"
+            [controlChips]="this.form.get('chip1control')"
+            [initChipsList]="this.form.get('chip1data')"
+            [listResult]="this.listAuto[2]"
+            (removeChip)="removeSelectValue($event,'chip1data')"
+            (selectValue)="pushSelectValue($event,'chip1data')"
+            [valueChange]="chipautocomplete1"
+            [maxLength]="255"
+            [readonly]="this.disable[0]"
+            >
+          </sit-chip-autocomplete>
+        </div>
+        <div class="col-2">
+          <button mat-raised-button (click)="disable[0] = !disable[0]">Action</button>
+          <div>
+            <input  type="number" formControlName="htext" />
+          </div>
+          <!-- <button mat-raised-button (click)="this.form.get('chip1data').disable()">Action</button> -->
+        </div>
+        <div class="col-3">
+          <sit-label require="true">
+            <span>xxxxxxxxx</span>
+          </sit-label>
+          <mat-form-field
+            class="input-text-area w-100"
+            appearance="outline"
+            floatLabel="always"
+            [ngClass]="{'readonly-con': this.disable[0]}"
+          >
+            <textarea
+              matInput
+              [rows]="this.form.get('htext').value"
+              [readonly]="this.disable[0]"
+              formControlName="ele1"
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <sit-label require="true">
+            <span>xxxxxxxxx</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            fxFlex
+            [appearance]="'outline'">
+            <input
+              matInput
+            />
+          </mat-form-field>
+          <!-- <div style="
+            border: 1px solid black;
+            position: relative;
+            width: 100vw;
+            left: -1000px;
+          "></div> -->
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

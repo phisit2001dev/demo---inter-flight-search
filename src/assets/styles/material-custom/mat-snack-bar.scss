@@ -1,0 +1,25 @@
+@mixin styleSnackbar($color) {
+    background-color: $color;
+    text-align: center;
+    .mat-simple-snackbar {
+        font-size: 1.3em;
+        color: white;
+        justify-content: center;
+    }
+}
+
+.success-snack {
+    @include styleSnackbar(#00cc99);
+}
+
+.danger-snack {
+    // background-color: #ff5050;#ff5050
+    @include styleSnackbar(#ff5050);
+    .mat-simple-snackbar-action {
+        color: black;
+    }
+}
+
+.warn-snack {
+    @include styleSnackbar(#f4902d);
+}

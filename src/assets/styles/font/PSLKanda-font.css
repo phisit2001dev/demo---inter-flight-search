@@ -1,0 +1,21 @@
+/* PSLKandaModernNewW2Pro */
+@font-face {
+  font-family: 'PSLKandaW2';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../font/woff/PSLKandaModernNewW2Pro.woff) format('woff2');
+}
+/* PSLKandaModernNewW3Pro */
+@font-face {
+  font-family: 'PSLKandaW3';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../font/woff/PSLKandaModernNewW3Pro.woff) format('woff2');
+}
+/* PSLKandaModernNewW4Pro */
+@font-face {
+  font-family: 'PSLKandaW4';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/woff/PSLKandaModernNewW4Pro.woff) format('woff2');
+}

@@ -1,0 +1,131 @@
+{
+  "messageCode":"X00000",
+  "messageDesc":"Success",
+  "displayStatus":"S",
+  "componentType":"S",
+  "data": {
+    "totalResult": 100,
+    "listResult": [
+      {
+        "hiddenToken": "1",
+        "status": "Active",
+        "iata": "QUN",
+        "icao": "RKNB",
+        "airlineName": "A-306",
+        "location": "Chunchon",
+        "Timezone": "Asia/Seoul",
+        "UTC": "9",
+        "CountryName": "Korea, Republic Of",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "2",
+        "status": "Inactive",
+        "iata": "ODW",
+        "icao": "KOKH",
+        "airlineName": "A.J. Eisenberg Airport (FAA: OKH)",
+        "location": "Oak Harbor, Washington, United States",
+        "Timezone": "America/Los_Angeles",
+        "UTC": "-7",
+        "CountryName": "United States",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "1",
+        "status": "Active",
+        "iata": "QUN",
+        "icao": "RKNB",
+        "airlineName": "A-306",
+        "location": "Chunchon",
+        "Timezone": "Asia/Seoul",
+        "UTC": "9",
+        "CountryName": "Korea, Republic Of",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "1",
+        "status": "Inactive",
+        "iata": "ODW",
+        "icao": "KOKH",
+        "airlineName": "A.J. Eisenberg Airport (FAA: OKH)",
+        "location": "Oak Harbor, Washington, United States",
+        "Timezone": "America/Los_Angeles",
+        "UTC": "-7",
+        "CountryName": "United States",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "1",
+        "status": "Active",
+        "iata": "QUN",
+        "icao": "RKNB",
+        "airlineName": "A-306",
+        "location": "Chunchon",
+        "Timezone": "Asia/Seoul",
+        "UTC": "9",
+        "CountryName": "Korea, Republic Of",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "2",
+        "status": "Inactive",
+        "iata": "ODW",
+        "icao": "KOKH",
+        "airlineName": "A.J. Eisenberg Airport (FAA: OKH)",
+        "location": "Oak Harbor, Washington, United States",
+        "Timezone": "America/Los_Angeles",
+        "UTC": "-7",
+        "CountryName": "United States",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "1",
+        "status": "Active",
+        "iata": "QUN",
+        "icao": "RKNB",
+        "airlineName": "A-306",
+        "location": "Chunchon",
+        "Timezone": "Asia/Seoul",
+        "UTC": "9",
+        "CountryName": "Korea, Republic Of",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "1",
+        "status": "Inactive",
+        "iata": "ODW",
+        "icao": "KOKH",
+        "airlineName": "A.J. Eisenberg Airport (FAA: OKH)",
+        "location": "Oak Harbor, Washington, United States",
+        "Timezone": "America/Los_Angeles",
+        "UTC": "-7",
+        "CountryName": "United States",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "1",
+        "status": "Active",
+        "iata": "QUN",
+        "icao": "RKNB",
+        "airlineName": "A-306",
+        "location": "Chunchon",
+        "Timezone": "Asia/Seoul",
+        "UTC": "9",
+        "CountryName": "Korea, Republic Of",
+        "AirportStatus": "Not specify"
+      },
+      {
+        "hiddenToken": "2",
+        "status": "Inactive",
+        "iata": "ODW",
+        "icao": "KOKH",
+        "airlineName": "A.J. Eisenberg Airport (FAA: OKH)",
+        "location": "Oak Harbor, Washington, United States",
+        "Timezone": "America/Los_Angeles",
+        "UTC": "-7",
+        "CountryName": "United States",
+        "AirportStatus": "Not specify"
+      }
+    ]
+  }
+}

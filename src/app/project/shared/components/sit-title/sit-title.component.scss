@@ -1,0 +1,31 @@
+@import "assets/styles/color/theme-color.scss";
+
+:host {
+  width: 100%;
+}
+.sit-title {
+  text-align: left;
+  font-size: 18px;
+  // font-size: 1.10rmp;
+  // margin-top: 0.50em;
+  margin-bottom: 0.5em;
+  // margin-right: 0;
+  font-weight: bold;
+  color: $text-color-primary !important;
+  // -----------------------------------------------------------------------------
+}
+.div-title {
+  border-bottom: 1px solid #979797 !important;
+  // border-bottom: 1px solid #d1d0d0 !important;
+  // margin-bottom: 15px;
+}
+.main {
+  width: 100%;
+  // padding-top: 20px;
+}
+
+::ng-deep .title-content {
+  em{
+    color: red;
+  }
+}

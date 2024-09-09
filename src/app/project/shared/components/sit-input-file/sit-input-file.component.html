@@ -1,0 +1,69 @@
+<div
+  *ngIf="view"
+  class="col-12 fileNameColor"
+  (click)="viewFile(valueProgress() ? valueProgress() : '')"
+  [ngStyle]="{
+    'text-decoration': this.fileData.fileName ? 'underline' : '',
+    cursor: this.fileData.fileName ? 'pointer' : ''
+  }"
+>
+  <span>{{ valueProgress() ? valueProgress() : "" }}</span>
+</div>
+
+<div *ngIf="!view" class="d-flex justify-content-end">
+  <div class="position-relative w-100">
+    <div>
+      <!-- <mat-progress-bar
+        mode="indeterminate"
+        value="{{ this.progress }}"
+        class="progressbar"
+        color="primary"
+      > -->
+      <mat-progress-bar
+        mode="determinate"
+        value="{{ this.progress }}"
+        *ngIf="this.showProgress"
+        class="progressbar"
+        color="primary"
+      >
+      </mat-progress-bar>
+    </div>
+    <mat-form-field appearance="outline" class="w-100 matFormField">
+      <!-- <mat-progress-bar mode="determinate" value="100" class="progressbar"></mat-progress-bar> -->
+      <input
+        class="fileNameColor"
+        matInput
+        [formControl]="ControlFileName"
+        [readonly]="true"
+        [value]="valueProgress() ? valueProgress() : ''"
+        (click)="viewFile(valueProgress() ? valueProgress() : '')"
+        [ngStyle]="{
+          'text-decoration': this.fileData.fileName ? 'underline' : '',
+          cursor: this.fileData.fileName ? 'pointer' : ''
+        }"
+      />
+      <!-- (click)="$event.preventDefault()" -->
+      <input
+        type="file"
+        [readonly]="true"
+        #file
+        class="hidden-input"
+        [accept]="acceptFileType"
+        (change)="onFileChange($event)"
+      />
+    </mat-form-field>
+  </div>
+
+  <button
+    *ngIf="!hideBtn"
+    mat-flat-button
+    color="primary"
+    (click)="file.click()"
+    class="browseBtn"
+    [disabled]="disableBtn"
+  >
+    {{ "browse" | translate }}
+  </button>
+
+  <button *ngIf="hideBtn" mat-flat-button></button>
+</div>

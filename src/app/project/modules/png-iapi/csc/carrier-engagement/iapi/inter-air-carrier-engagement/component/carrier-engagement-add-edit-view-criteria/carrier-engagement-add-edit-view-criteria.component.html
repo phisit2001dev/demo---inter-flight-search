@@ -1,0 +1,149 @@
+<div [formGroup]="this.form">
+    <!-- row1 : Certificatification type -->
+    <div class="row mt-3">
+        <div class="col-12 col-md-6 col-lg-3" sit-validate-input="certificationType">
+            <sit-label require="true">
+                <span>{{ "ces.certificationType" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" [appearance]="'outline'" [ngClass]="{'readonly-con': page!='A'}">
+                <mat-select formControlName="certificationType">
+                  <mat-option [value]=""></mat-option>
+                  <mat-option *ngFor="let item of this.payload.initdata.listCertificationType" [value]="item.key">{{item.value}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            <sit-helper [control]="this.form.get('certificationType')"></sit-helper>
+        </div>
+    </div>
+    <!-- row2 : Carrier code (IATA) , DCS host , Version, Certification start date  -->
+    <div class="row mt-3">
+        <div class="col-12 col-md-6 col-lg-3" sit-validate-input="carrierCodeValue">
+            <sit-label require="true">
+                <span> {{ "ces.carrierCodeIATA" | translate }}</span>
+            </sit-label>
+            <sit-autocomplete
+                type = 'A'
+                [controlValue]="this.form.get('carrierCodeValue')"
+                [controlKey]="this.form.get('carrierCodeCode')"
+                [listResult]="this.carrierCodeList"
+                [valueChange]="carrierCodeAutocomplete$"
+                [readonly]="page!='A'"
+            >
+            </sit-autocomplete>
+            <sit-helper
+                [control]="this.form.get('carrierCodeValue')"
+            ></sit-helper>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3" sit-validate-input="dcsHost">
+            <sit-label require="true">
+                <span>{{ "ces.dcsHost" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" [appearance]="'outline'" [ngClass]="{'readonly-con': disabledPage}">
+                <mat-select formControlName="dcsHost">
+                  <mat-option [value]=""></mat-option>
+                  <mat-option *ngFor="let item of this.payload.initdata.listDSCHost" [value]="item.key">{{item.value}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            <sit-helper [control]="this.form.get('dcsHost')"></sit-helper>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3" sit-validate-input="version">
+            <sit-label>
+                <span>{{ "ces.version" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" [appearance]="'outline'" [ngClass]="{'readonly-con': disabledPage}">
+                <mat-select formControlName="version">
+                  <mat-option [value]=""></mat-option>
+                  <mat-option *ngFor="let item of this.payload.initdata.listVersion" [value]="item.key">{{item.value}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            <sit-helper [control]="this.form.get('version')"></sit-helper>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3" sit-validate-input="certificationStartDate">
+            <sit-label require="true">
+                <span>{{ "ces.certificationStartDate" | translate }}</span>
+            </sit-label>
+            <mat-form-field class="w-100" appearance="outline" [ngClass]="{'readonly-con': disabledPage}">
+                <input 
+                    matInput 
+                    [datePicker]="certificationStartDate"
+                    [matDatepicker]="certificationStartDate"
+                    formControlName="certificationStartDate"
+                    [readonly]='disabledPage'
+                />
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="certificationStartDate"
+                >
+                </mat-datepicker-toggle>
+                <mat-datepicker #certificationStartDate></mat-datepicker>
+            </mat-form-field>
+            <sit-helper
+                [hint]="'dateFormatHint' | translate"
+                [control]="this.form.get('certificationStartDate')"
+            ></sit-helper>
+        </div>
+    </div>
+    <!-- row3 : Service form , Status , Cutover date -->
+    <div class="row mt-3">
+        <div class="col-12 col-md-6 col-lg-3">
+            <!-- Browse , Download -->
+            <div class="col alone-btn button-icon-action">
+                <sit-label>
+                    <span>{{ "ces.seriveForm" | translate }}</span>
+                </sit-label>
+                <sit-input-files
+                    [hideBtn]="this.page=='V'"
+                    [fileName]=""
+                    [filePath]=""
+                    [ControlFileName]="this.form.get('serviceFormFileName')"
+                    [ControlFilePath]="this.form.get('serviceFormFilePath')"
+                    (fileChange)="this.getFileChange($event)"
+                    [route]="this.routeUpload"
+                    [routeView]="this.routeView"
+                    [acceptFileType]="'.xls,.xlsx,.csv,.txt'"
+                ></sit-input-files>
+                <sit-helper
+                    [hint]="'ces.file_support' | translate"
+                    [control]="this.form.get('seriveFormFileName')"
+                ></sit-helper>
+            </div>  
+        </div>
+        <div class="col-0 col-md-6 col-lg-3"></div>
+        <div class="col-12 col-md-6 col-lg-3" sit-validate-input="status">
+            <!-- Status -->
+            <sit-label>
+                <span>{{'status' | translate}}</span>
+            </sit-label>
+            <div class="section-border">
+                <mat-radio-group formControlName="status" (change)="statusChange()" >
+                    <mat-radio-button [disabled]="this.disabledPage" value="In-process">In-process</mat-radio-button>
+                    <mat-radio-button [disabled]="this.disabledPage" value="Completed">Completed</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <sit-helper [control]="this.form.get('status')"></sit-helper>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3" sit-validate-input="cutoverDate">
+            <sit-label require="true">
+                <span>{{ "ces.cutoverDate" | translate }}</span>
+            </sit-label>
+            <mat-form-field class="w-100" appearance="outline" [ngClass]="{'readonly-con': disableCutoverDate}">
+                <input 
+                    matInput 
+                    [datePicker]="cutoverDate"
+                    [matDatepicker]="cutoverDate"
+                    formControlName="cutoverDate"
+                    [readonly]="disableCutoverDate"
+                />
+                <mat-datepicker-toggle
+                    matSuffix
+                    [for]="cutoverDate"
+                >
+                </mat-datepicker-toggle>
+                <mat-datepicker #cutoverDate></mat-datepicker>
+            </mat-form-field>
+            <sit-helper
+                [hint]="'dateFormatHint' | translate"
+                [control]="this.form.get('cutoverDate')"
+            ></sit-helper>
+        </div>
+    </div>
+</div>

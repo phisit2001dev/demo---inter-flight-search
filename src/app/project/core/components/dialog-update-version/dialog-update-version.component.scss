@@ -1,0 +1,66 @@
+::ng-deep.dialogUpdateVersion .con-dialog {
+  position: relative;
+  z-index: 3;
+  max-width: 950px;
+  .font-size-13 {
+    font-size: 13px;
+  }
+  .font-size-15 {
+    font-size: 15px;
+  }
+  .font-size-16 {
+    font-size: 16px;
+  }
+  .font-size-18 {
+    font-size: 18px;
+  }
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  hr {
+    border-top: 1px solid #3f51b5;
+    border-bottom: 0px;
+    margin-top: 14px;
+    margin-bottom: 7px;
+  }
+  .content {
+    max-height: 500px;
+    overflow: auto;
+    padding: 10px 20px 20px 20px;
+  }
+  .text-header {
+    color: #3f51b5;
+  }
+  li {
+    font-size: 14px;
+    margin-left: 30px;
+  }
+  .color-blue {
+    color: #3f51b5;
+    span {
+      color: #3f51b5;
+    }
+  }
+} //ng-deep
+
+#img-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.25;
+}
+#logo-bg {
+  width: 100px;
+  height: 34px;
+}
+.div-logo {
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 8px;
+}
+.link {
+  color: #3f51b5;
+  text-decoration: underline;
+}

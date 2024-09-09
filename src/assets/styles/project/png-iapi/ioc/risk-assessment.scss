@@ -1,0 +1,107 @@
+.risk-status {
+  background-color: #fca5a5 !important;
+}
+
+.traveller-type-passenger-icon-color{
+  color: #139fff; ;
+}
+.traveller-type-crew-icon-color{
+  color:#00cc99; ;
+}
+
+.boarding-status-expected {
+  color: green;
+}
+
+.boarding-status-cancelled {
+  color: #f4902d;
+}
+.boarding-status-not-ok-to-board {
+  color: red;
+}
+
+.schedule-type-schedule {
+ color: rgb(77, 228, 248);
+}
+
+.schedule-type-unschedule {
+  color: rgb(255, 107, 107);
+}
+
+.override-status-New{
+  background-color:#f4902d;
+  color:#fff;
+}
+.override-status-Pending{
+  background-color:#139fff;
+  color:#fff;
+}
+.override-status-Can_not_override{
+  background-color:#a9a9a9;
+  color:#fff;
+  display: inline-block;
+  margin-top: 5px;
+  white-space: pre;
+}
+.override-status-Overridden{
+  background-color:#00cc99;
+  color:#fff;
+}
+.override-status-Declined{
+  background-color:#FF5050;
+  color:#fff;
+}
+.override-status-In_progress{
+  background-color:#9349A2;
+  color:#fff;
+}
+.override-status-Directived{
+  background-color:#d6f9f2;
+  color:#24a082;
+}
+.override-status-No_action_required{
+  background-color:#ccf4ff;
+  color:#00b1df;
+}
+.override-status-No_additional_directive{
+  background-color:#ffe3e3;
+  color:#ef5350;
+}
+
+.risk-type-noentryexit{
+  border: 1px solid #ff7594;
+  color:#ff7594;
+  background-color: #FFFFFF;
+}
+
+.risk-type-blacklist{
+  border: 1px solid #7f7683;
+  color:#7f7683;
+  background-color: #FFFFFF;
+}
+
+.risk-type-watchlist{
+  border: 1px solid #b368d2;
+  color:#b368d2;
+  background-color: #FFFFFF;
+}
+
+.case-status-new {
+  background-color:#fdb901;
+  color: #fff;
+}
+
+.case-status-in-progress {
+  background-color:#7bd235;
+  color: #fff;
+}
+
+.case-status-on-hold {
+  background-color:#fd7e14;
+  color: #fff;
+}
+
+.case-status-close {
+  background-color:#17c1f4;
+  color: #fff;
+}

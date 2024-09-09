@@ -1,0 +1,56 @@
+<button mat-icon-button style="color: white;" matTooltip="menu" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu" >
+  <!-- <mat-icon>menu</mat-icon> -->
+  <span class="me-2"><img src="assets/styles/font/icon/bird-of-paradise.png" style="
+    width: 30px;
+    height: 32px;
+    position: relative;
+    top: -3px;
+    right: 5px;
+  "></span>
+</button>
+<mat-menu #menu="matMenu" class="menu-width">
+  <div class="row w-100 my-3" (click)="$event.stopPropagation()" id="mainMenuNav">
+      <ng-container *ngFor="let dataSource of dataSource">
+        <div [class]="columnMenu | generateBsCol : 'lg'">
+          <ng-container *ngFor="let item of dataSource.data">
+            <mat-tree [dataSource]="item" [treeControl]="nestedTreeControl" class="menu-full-tree">
+              <!-- This is the tree node template for leaf nodes -->
+              <!-- There is inline padding applied to this node using styles.
+                This padding value depends on the mat-icon-button width. -->
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+                  <button
+                      class="btn-nest-child"
+                      mat-menu-item (click)="routerLinkCloseMenu(menuTrigger);"
+                      routerLinkActive="link-active"
+                      [routerLink]="[node.path ? node.path : '']"
+                      [routerLinkActiveOptions]="{exact: false}"
+                      >
+                      <mat-icon>
+                          {{ node | iconMenu }}
+                      </mat-icon>
+                      <span class="link-label">{{node.label}}</span>
+                  </button>
+              </mat-tree-node>
+              <!-- This is the tree node template for expandable nodes -->
+              <mat-nested-tree-node *matTreeNodeDef="let node; when: hasNestedChild" [class]="node.path | styleMenu : node.level ">
+                <div class="mat-tree-node head-tree-cont">
+                  <mat-icon>
+                    {{ node | iconMenu }}
+                  </mat-icon>
+                  &nbsp;
+                  <b>{{node.label}}</b>
+                </div>
+                <div class="menuHeadBorder"></div>
+                  <!-- There is inline padding applied to this div using styles.
+                      This padding value depends on the mat-icon-button width.  -->
+                  <div role="group" class="childGroup">
+                      <ng-container matTreeNodeOutlet></ng-container>
+                  </div>
+              </mat-nested-tree-node>
+            </mat-tree>
+            <!-- {{item._data._value.label | json}} -->
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+</mat-menu>

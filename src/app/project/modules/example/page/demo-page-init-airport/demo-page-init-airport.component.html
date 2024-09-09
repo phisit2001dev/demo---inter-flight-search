@@ -1,0 +1,125 @@
+<mat-card>
+    <app-airport-criteria
+    (enterSearch)="search()"
+    [form]="this.form"
+    [listlinePerPage]="listlinePerPage"
+    [listActiveStatus]="listActiveStatus"
+  ></app-airport-criteria>
+  <app-sit-button
+    [page]="'S'"
+    (btnSearch)="search()"
+    (btnClear)="clear()"
+    [permission]="permission"
+  >
+    <button type="button" color="primary" mat-raised-button (click)="gotoAdd()" [disabled]="!permission?.add">
+      <mat-icon class="button-icon-action">add_circle</mat-icon>
+      <span>{{ 'add' | translate }}</span>
+    </button>
+  </app-sit-button>
+  <div class="d-flex justify-content-end mt-3">
+    <button type="button" color="primary" mat-raised-button (click)="searchMaxExceed()" [disabled]="!permission?.add" style="width: fit-content;">
+      <span>{{ 'Search MaxExceed' | translate }}</span>
+    </button>
+    <button type="button" mat-raised-button (click)="clear()" [disabled]="!permission?.add" class="ms-3">
+      <span>{{ 'clear' | translate }}</span>
+    </button>
+  </div>
+</mat-card>
+<app-airport-table
+  [dataSource$]="dataSource$"
+  [permission]="permission"
+  [selection]="selection"
+  [headerSorts]="this.form.get('headerSorts').value"
+  [pageIndex]="this.form.get('pageIndex').value"
+  [linePerPage]="this.criteria?.linePerPage"
+  (sortChange)="sortChange($event)"
+  (pageEvent)="pageEvent($event)"
+  (clickEdit)="clickEditView('edit',$event)"
+  (clickView)="clickEditView('view',$event)"
+></app-airport-table>
+<!-- [pageIndex]="this.form.get('pageIndex').value" -->
+
+<!--  code test view -->
+<span style="background: #ffd900;padding: 0px 7px;">
+  criteria
+</span><br>
+{{criteria | json}}<br>
+<span style="background: #ffd900;padding: 0px 7px;">
+  checkbox
+</span><br>
+{{this.selection.selected.length ? this.selection.selected : 'EMPTY' | json}}<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- code test -->
+<div class="d-none">
+  <div style="margin-top: 50px">
+    defaultFormValue<br>
+    {{defaultFormValue | json}} <br>
+
+
+    form<br>
+    {{this.form.value | json}} <br>
+
+    criteria <br>
+    {{criteria | json}}<br>
+
+    headerSorts <br>
+    {{this.form.get('headerSorts').value | json}}<br>
+    <!-- {{this.permission | json}} -->
+  </div>
+  <mat-card style="width: 350px;">
+    <div>
+      <div>fill required</div>
+      <div class="d-inline-flex">
+        <mat-slide-toggle class="my-3" (change)="tog($event,'A')">fill FORM
+        </mat-slide-toggle>
+        <mat-slide-toggle class="my-3 ms-3" (change)="tog($event,'status')">FIX DISABLE: <span class="fixpage">{{!pageParam ? 'ENABLE': 'DISABLE'}}</span></mat-slide-toggle>
+      </div>
+    </div>
+    <div>
+      <div>Permission</div>
+      <div class="my-3">
+        <!-- permission -->
+        <mat-slide-toggle [checked]="this.permission.add" (change)="tog($event,'add')">add</mat-slide-toggle>
+      </div>
+      <div class="my-3">
+        <mat-slide-toggle [checked]="this.permission.edit" (change)="tog($event,'edit')">edit</mat-slide-toggle>
+      </div>
+      <div class="my-3">
+        <mat-slide-toggle [checked]="this.permission.active" (change)="tog($event,'active')">active</mat-slide-toggle>
+      </div>
+      <div class="my-3">
+        <mat-slide-toggle [checked]="this.permission.export" (change)="tog($event,'export')">export</mat-slide-toggle>
+      </div>
+      <div class="my-3">
+        <mat-slide-toggle [checked]="this.permission.search" (change)="tog($event,'search')">search</mat-slide-toggle>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+
+

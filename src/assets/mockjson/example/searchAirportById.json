@@ -1,0 +1,25 @@
+{
+  "messageCode":"X00000",
+  "messageDesc":"Success",
+  "displayStatus":"S",
+  "componentType":"S",
+  "data": {
+    "airport": {
+      "airportCodeIata": "BKK",
+      "airportCodeIcao": "VTBS",
+      "airportName": "Suvarnabhumi Airport",
+      "location": "Bangkok",
+      "countryNameKey": "TH",
+      "countryNameValue": "Thailand",
+      "airportStatus": "I",
+      "timezoneKey": "ab7",
+      "timezoneValue": "Asia/Bangkok(7)",
+      "timezone": "Asia/Bangkok",
+      "utc": "7",
+      "latitude": "13.693062",
+      "longitude": "100.752044",
+      "status": false,
+      "portType": "A"
+    }
+  }
+}

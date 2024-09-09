@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="cleanandbuild" name="e-border">
+    <property environment="env"/>
+    
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="19"/>
+    <property name="source" value="19"/>
+    <property name="webcontent_dev" value="dist/dev"/>
+
+    <property name="webcontent_dev_csc" value="dist/dev/csc"/>
+    <property name="webcontent_dev_temp_csc" value="dist/dev_temp/csc"/>
+
+    <target name="addBuildNumber_DevTemp">
+  		<echo message="${env.APP_VERSION}"/> 
+  		<echo message="${env.BUILD_NUMBER}"/> 
+
+        <!-- CSC -->  
+        <replace file="${webcontent_dev_temp_csc}/assets/json/version.json" token="@appVersion@" value="${env.APP_VERSION}" />
+		<replace file="${webcontent_dev_temp_csc}/assets/json/version.json" token="@buildNumber@" value="${env.BUILD_NUMBER}" />
+
+	</target>
+
+    <target name="addBuildNumber_Dev">
+  		<echo message="${env.APP_VERSION}"/> 
+  		<echo message="${env.BUILD_NUMBER}"/> 
+
+        <!-- CSC -->  
+        <replace file="${webcontent_dev_csc}/assets/json/version.json" token="@appVersion@" value="${env.APP_VERSION}" />
+		<replace file="${webcontent_dev_csc}/assets/json/version.json" token="@buildNumber@" value="${env.BUILD_NUMBER}" />
+
+	</target>
+
+    <target name="build_csc_dev_temp_war" description="Pack war to dev-temp" >
+        <war destfile="configs/dev_temp/csc-dev-temp.war" basedir="${webcontent_dev_temp_csc}" needxmlfile="false" />
+    </target>
+
+    <target name="build_csc_dev_war" description="Pack war to dev-temp" >
+        <war destfile="configs/dev/csc-dev.war" basedir="${webcontent_dev_csc}" needxmlfile="false" />
+    </target>
+</project>
+ 

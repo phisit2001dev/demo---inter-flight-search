@@ -1,0 +1,77 @@
+<mat-card>
+  <div [formGroup]="this.form">
+    <!-- ############################### Row 1 ############################### -->
+    <div class="row">
+      <div class="col-md-0 col-lg-2"></div>
+      <!-- ------------------- Prefix type ------------------- -->
+      <div class="col-md-12 col-lg-4" sit-validate-input="prefixType">
+          <sit-label require="true">
+            <span>{{ "std.p_prefix_type" | translate }}</span>
+          </sit-label>
+
+          <mat-form-field class="w-100" [appearance]="'outline'">
+            <mat-select formControlName="prefixType">
+              <mat-option [value]=""></mat-option>
+              <mat-option *ngFor="let item of this.prefixTypeSelectItem" [value]="item.key">{{ item.value }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <sit-helper [control]="this.form.get('prefixType')"></sit-helper>
+      </div>
+
+      <!-- ------------------- Prefix name ------------------- -->
+      <div class="col-md-12 col-lg-4" sit-validate-input="prefixName">
+          <sit-label require="true">
+            <span>{{ "std.p_prefix_name" | translate }}</span>
+          </sit-label>
+
+          <mat-form-field class="w-100" [appearance]="'outline'">
+            <input matInput formControlName="prefixName" maxlength="100" />
+          </mat-form-field>
+
+          <sit-helper [control]="this.form.get('prefixName')"></sit-helper>
+      </div>
+
+      <div class="col-md-0 col-lg-2"></div>
+    </div>
+
+    <!-- ############################### Row 2 ############################### -->
+    <div class="row">
+      <div class="col-md-0 col-lg-2"></div>
+
+        <!-- ------------------- Abbreviation ------------------- -->
+        <div class="col-md-12 col-lg-4" sit-validate-input="abbreviation">
+          <sit-label>
+            <span>{{ "std.p_abbreviation" | translate }}</span>
+          </sit-label>
+
+          <mat-form-field class="w-100" [appearance]="'outline'">
+            <input matInput formControlName="abbreviation" maxlength="50" />
+          </mat-form-field>
+
+          <sit-helper></sit-helper>
+      </div>
+
+      <!-- ------------------- Active ------------------- -->
+      <div class="col-md-12 col-lg-4" sit-validate-input="activeStatus">
+        <sit-label>
+          <span>&nbsp;</span>
+        </sit-label>
+        <mat-checkbox [checked]="this.form.get('activeStatus').value" formControlName="activeStatus">{{"active" | translate}}</mat-checkbox>
+        <sit-helper></sit-helper>
+      </div>
+      <div class="col-md-0 col-lg-2"></div>
+    </div>
+
+  </div>
+
+  <!-- Button -->
+  <div class="row">
+    <app-sit-button
+      [permission]="this.permission"
+      [page]="'A'"
+      (btnSave)="save()"
+      (btnCancel)="cancel()">
+    </app-sit-button>
+  </div>
+</mat-card>

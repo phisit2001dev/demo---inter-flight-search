@@ -1,0 +1,173 @@
+<div [formGroup]="this.form">
+    <div class="row">
+        <div class="col-mb-12 col-lg-2" sit-validate-input="dateTimeStart">
+            <sit-label sit-label [require]="true"><span>{{"sec.event_date_from"|translate}} ({{timezone}})</span></sit-label>
+            <mat-form-field class="w-100" appearance="outline">
+                <input matInput formControlName="dateStart" 
+                    [datePicker]="dateStartpicker"
+                    [matDatepicker]="dateStartpicker"
+                    date-from-to-spinner
+                    [dateFromControl]="this.form.get('dateStart')"
+                    [dateToControl]="this.form.get('dateEnd')"
+                    [spinner]="this.form.get('dayRange')"
+                    [maxDays]="31"
+                    [setFromTo]="true"
+                    [setFromToWithMaxDays]="true"
+                    >
+                <mat-datepicker-toggle matSuffix [for]="dateStartpicker">
+                </mat-datepicker-toggle>
+                <mat-datepicker #dateStartpicker></mat-datepicker>
+            </mat-form-field>
+            <sit-helper
+            [hint]="'dateFormatHint'|translate"
+            [control]="this.form.get('dateStart')"
+            ></sit-helper>
+        </div>
+
+        <div class="col-mb-12 col-lg-1" sit-validate-input="timeStart">
+            <sit-label>
+                <span>&nbsp;</span>
+            </sit-label>
+            <mat-form-field class="w-100" appearance="outline">
+                <input matInput time24-hours formControlName="timeStart" />
+            </mat-form-field>
+            <sit-helper
+            [hint]="'timeFormatHint'|translate"
+            [control]="this.form.get('timeStart')"
+            ></sit-helper>
+        </div>
+
+        <div class="col-mb-12 col-lg-1" sit-validate-input="days">
+            <sit-label>
+                <span> {{"sec.days" | translate }}</span>
+            </sit-label>
+            <mat-form-field class="w-100" appearance="outline">
+                <input matInput 
+                number-only-spiner 
+                type="number" 
+                min="0" 
+                max="99" 
+                maxLength="2"
+                formControlName="dayRange" 
+                />
+            </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('dayRange')"
+            ></sit-helper>
+        </div>
+
+        <div class="col-mb-12 col-lg-2" sit-validate-input="dateTimeEnd">
+            <sit-label [require]="true">
+                <span>{{ "sec.event_date_to" | translate }} ({{timezone}})</span>
+            </sit-label>
+            <mat-form-field class="w-100" appearance="outline">
+                <input matInput [datePicker]="dateEndpicker" [matDatepicker]="dateEndpicker"
+                    formControlName="dateEnd" />
+                <mat-datepicker-toggle matSuffix [for]="dateEndpicker">
+                </mat-datepicker-toggle>
+                <mat-datepicker #dateEndpicker></mat-datepicker>
+            </mat-form-field>
+            <sit-helper
+            [hint]="'dateFormatHint'|translate"
+            [control]="this.form.get('dateEnd')"
+            ></sit-helper>
+        </div>
+
+        <div class="col-mb-12 col-lg-1" sit-validate-input="timeEnd">
+            <sit-label>
+                <span>&nbsp;</span>
+            </sit-label>
+            <mat-form-field class="w-100" appearance="outline">
+                <input matInput time24-hours formControlName="timeEnd" />
+            </mat-form-field>
+            <sit-helper
+            [hint]="'timeFormatHint'|translate"
+            [control]="this.form.get('timeEnd')"
+            ></sit-helper>
+        </div>
+
+        <div class="col-mb-12 col-lg-1">
+            <sit-label>
+                <span>&nbsp;</span>
+            </sit-label>
+            <mat-icon class="information-tooltip-icon" #tooltip="matTooltip"
+                matTooltip=" {{'sec.range_date_less_than' | translate}} ">help</mat-icon>
+        </div>
+        <div class="col-mb-12 col-lg-2" sit-validate-input="system">
+            <sit-label><span>{{'sec.system'|translate}}</span></sit-label>
+            <mat-form-field class="w-100" [appearance]="'outline'">
+                <mat-select placeholder="{{'all' | translate}}"  formControlName="system" (selectionChange)="selectChang($event)">
+                    <mat-option>{{'all' | translate}}</mat-option>
+                    <mat-option *ngFor="let item of systemSelect" [value]="item.key">{{item.value}}</mat-option>
+                  </mat-select> 
+            </mat-form-field>
+            <sit-helper></sit-helper>
+        </div>
+
+        <div class ="col-mb-12 col-lg-2" sit-validate-input="function">
+            <sit-label><span>{{'sec.function'|translate}}</span></sit-label>
+            <mat-form-field class="w-100" [appearance]="'outline'" >
+            <mat-select placeholder="{{'all' | translate}}" formControlName="function">
+                    <mat-option>{{'all' | translate}}</mat-option>
+                    <mat-option *ngFor="let item of funSelecter" [value]="item.key">{{item.value}}</mat-option>
+            </mat-select> 
+            </mat-form-field>
+            <sit-helper></sit-helper>
+        </div>
+
+    </div>
+    <div class="row">
+    
+    <div class="col-md-12 col-lg-2" sit-validate-input="username">
+        <sit-label><span>{{'sec.username'|translate}}</span></sit-label>
+        <mat-form-field class="w-100" [appearance]="'outline'">
+            <input matInput input-username formControlName="username" maxlength="100">
+        </mat-form-field>
+        <sit-helper
+        [control]="this.form.get('username')"
+        ></sit-helper>
+    </div>
+
+    <div class="col-md-12 col-lg-2" sit-validate-input="employee code">
+        <sit-label><span>{{'sec.employee_code'|translate}}</span></sit-label>
+        <mat-form-field class="w-100" [appearance]="'outline'">
+            <input matInput formControlName="employeeCode" maxlength="100">
+        </mat-form-field>
+        <sit-helper
+        [control]="this.form.get('employeeCode')"
+        ></sit-helper>
+    </div>
+
+    <div class="col-md-12 col-lg-2" sit-validate-input="name">
+        <sit-label><span>{{'sec.name'|translate}} {{'sec.english'|translate}}</span></sit-label>
+        <mat-form-field class="w-100" [appearance]="'outline'">
+            <input matInput input-english formControlName="name" maxlength="100">
+        </mat-form-field>
+        <sit-helper
+        [control]="this.form.get('name')"
+        ></sit-helper>
+    </div>
+
+    <div class="col-md-12 col-lg-2" sit-validate-input="surname">
+        <sit-label><span>{{'sec.surname'|translate}} {{'sec.english'|translate}}</span></sit-label>
+        <mat-form-field class="w-100" [appearance]="'outline'">
+            <input matInput input-english formControlName="surname" maxlength="100" >
+        </mat-form-field >
+        <sit-helper
+        [control]="this.form.get('surname')"
+        ></sit-helper>
+    </div>
+
+    <div class="col-md-12 col-lg-1" sit-validate-input="linePerPage">
+        <sit-label><span>{{'rec_per_page'|translate}}</span></sit-label>
+        <mat-form-field class="w-100" [appearance]="'outline'">
+            <mat-select  formControlName="linePerPage">
+                <mat-option *ngFor="let item of linePerpage" [value]="item">{{item}}</mat-option>
+              </mat-select> 
+        </mat-form-field >
+        <sit-helper></sit-helper>
+    </div>
+
+    </div>
+
+</div>

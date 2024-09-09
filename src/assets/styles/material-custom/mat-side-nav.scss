@@ -1,0 +1,37 @@
+.mat-drawer-content-not-expand{
+    // transition: 400ms !important;
+    margin-left: 50px !important;
+    transition: all 0.24s ease-in-out 0s !important;
+}
+
+
+.isEpanded{
+    width: 315px;
+    // transition: all 0.1s ;
+    transition: width 0.3s;
+}
+.not-expand{
+    width: 50px;
+    // transition: all 0.01s ease-in-out 0s;
+    transition: width 0.3s;
+}
+.btn-not-expand{
+    // width: 44px;
+    height: 30px;
+    margin-top: 61px;
+    // margin-left: 13px;
+
+    mat-icon{
+        color: white !important;
+    }
+}
+.btn-expand{
+    width: 44px;
+    height: 30px;
+    margin-top: 61px;
+    margin-left: 270px;
+    z-index: 101;
+    mat-icon{
+        color: #8d6db9 !important;
+    }
+}

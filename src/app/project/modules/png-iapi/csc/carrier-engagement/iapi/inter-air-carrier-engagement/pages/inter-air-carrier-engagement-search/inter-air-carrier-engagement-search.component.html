@@ -1,0 +1,21 @@
+<app-carrier-engagement-criteria
+    [form]="form"
+    [payload]="payload"
+    [permission]="permission"
+    (btnSearch)="search()"
+    (btnClear)="clear()"
+    (btnAdd)="gotoAdd()"
+></app-carrier-engagement-criteria>
+
+<app-carrier-engagement-table
+    [dataSource$]="this.dataSource$"
+    [permission]="permission"
+    [headerSorts]="this.form.get('headerSorts').value"
+    [pageIndex]="this.form.get('pageIndex').value"
+    [linePerPage]="this.criteria?.linePerPage"
+    (sortChange)="sortChange($event)"
+    (pageEvent)="pageEvent($event)"
+    (btnEdit)="gotoEdit($event)"
+    (btnView)="gotoView($event)"
+    [form]="form"
+></app-carrier-engagement-table>

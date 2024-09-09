@@ -1,0 +1,17 @@
+<div class="alert-Dialog">
+  <h6 mat-dialog-title>{{ data.description }}</h6>
+  <mat-divider></mat-divider>
+  <div style="width: 100%;">
+    <div class="row mt-3">
+      <div class="col">
+        <button
+          mat-raised-button
+          color="primary"
+          class="dialog-action w-100"
+          [mat-dialog-close]="false"
+          >{{ data.closeLabel }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

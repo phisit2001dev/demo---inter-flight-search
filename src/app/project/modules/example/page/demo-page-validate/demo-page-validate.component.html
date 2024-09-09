@@ -1,0 +1,404 @@
+<mat-card class="card-validate" id="ex-card-validate" (enterSearch)="enterSearch($event)">
+  <!-- <button mat-fab color="primary" class="example-box" cdkDragBoundary=".card-validate" cdkDrag>
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <div class="move-box d-flex flex-column" cdkDragBoundary=".card-validate" id="move-box" cdkDrag posHideDirective>
+    <button mat-mini-fab class="btn-move">
+      <mat-icon>open_with</mat-icon>
+    </button>
+    <button type="button" color="primary" mat-raised-button (click)="validateClick()">
+      <span>{{ 'Validate' | translate }}</span>
+    </button>
+    <button type="button" style="background-color: #ff4a4a;color: white;" mat-raised-button (click)="apiValidate()" class="mt-3">
+      <span>{{ 'Validate API' | translate }}</span>
+    </button>
+    <button type="button" mat-raised-button (click)="clearClick()" class="mt-3">
+      <span>{{ 'clear' | translate }}</span>
+    </button>
+  </div>
+  <h2 class="demo"># 1. STD Element Validation</h2>
+  <app-demo-validate [form]="form"></app-demo-validate>
+  <!-- --------------------------------------------Ex At least one fieldset --------------------------------------------- -->
+  <h2 class="demo"># 2. Fieldset Validation</h2>
+  <div class="row" [formGroup]="this.formFieldset">
+    <fieldset class="mt-3 col-xl-6" sit-validate-input="fieldsetDate" selector="fieldset">
+      <legend>At least one <em>*</em></legend>
+      <div class="row">
+        <div class="col-lg-4" sit-validate-input="fdDateForm">
+          <sit-label>
+            <span>dateform</span>
+          </sit-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input
+              matInput
+              [matDatepicker]="dateFrom"
+              [datePicker]="dateFrom"
+              formControlName="fdDateForm"
+            >
+            <mat-datepicker-toggle matSuffix [for]="dateFrom">
+            </mat-datepicker-toggle>
+            <mat-datepicker #dateFrom></mat-datepicker>
+          </mat-form-field>
+          <sit-helper hint="{{ 'dateFormatHint' | translate }}" [control]="this.formFieldset.get('fdDateForm')"></sit-helper>
+        </div>
+        <div class="col-lg-2" sit-validate-input="fdTimeForm">
+          <sit-label>
+            <span>&nbsp;</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            style="min-width: 70px;"
+            [appearance]="'outline'"
+          >
+            <input matInput #time time24-hours formControlName="fdTimeForm" />
+          </mat-form-field>
+          <sit-helper
+            hint="{{ 'timeFormatHint' | translate }}"
+            [control]="this.formFieldset.get('fdTimeForm')"
+            >
+          </sit-helper>
+        </div>
+        <div class="col-lg-4" sit-validate-input="fdDateTo">
+          <sit-label>
+            <span>dateto</span>
+          </sit-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input
+              matInput
+              [matDatepicker]="dateTo"
+              [datePicker]="dateTo"
+              formControlName="fdDateTo"
+            >
+            <mat-datepicker-toggle matSuffix [for]="dateTo">
+            </mat-datepicker-toggle>
+            <mat-datepicker #dateTo></mat-datepicker>
+          </mat-form-field>
+          <sit-helper
+            hint="{{ 'dateFormatHint' | translate }}"
+            [control]="this.formFieldset.get('fdDateTo')">
+          </sit-helper>
+        </div>
+        <div class="col-lg-2" sit-validate-input="fdTimeTo">
+          <sit-label>
+            <span>&nbsp;</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            style="min-width: 70px;"
+            [appearance]="'outline'"
+          >
+            <input matInput #time time24-hours formControlName="fdTimeTo"/>
+          </mat-form-field>
+          <sit-helper
+            hint="{{ 'timeFormatHint' | translate }}"
+            [control]="this.formFieldset.get('fdTimeTo')">
+          </sit-helper>
+        </div>
+      </div>
+
+    </fieldset>
+    <sit-helper></sit-helper>
+  </div>
+  <!-- --------------------------------------------Ex At least one title --------------------------------------------- -->
+  <h2 class="demo"># 3. Title Validation</h2>
+  <div class="mt-3 col-xl-6" [formGroup]="formtitle">
+    <sit-title sit-validate-input="titleValidate">
+      <span>At least one <em>* {{titleInvalidMsg}}</em></span>
+    </sit-title>
+    <div class="row" sit-validate-input="titleDateForm">
+      <div class="col-lg-4" sit-validate-input="titleDateForm">
+        <sit-label>
+          <span>dateform</span>
+        </sit-label>
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            matInput
+            [matDatepicker]="titleDateForm"
+            [datePicker]="titleDateForm"
+            formControlName="titleDateForm"
+          >
+          <mat-datepicker-toggle matSuffix [for]="titleDateForm">
+          </mat-datepicker-toggle>
+          <mat-datepicker #titleDateForm></mat-datepicker>
+        </mat-form-field>
+        <sit-helper hint="{{ 'dateFormatHint' | translate }}" [control]="this.formtitle.get('titleDateForm')"></sit-helper>
+      </div>
+      <div class="col-lg-2" sit-validate-input="titleTimeForm">
+        <sit-label>
+          <span>&nbsp;</span>
+        </sit-label>
+        <mat-form-field
+          class="w-100"
+          style="min-width: 70px;"
+          [appearance]="'outline'"
+        >
+          <input matInput #time time24-hours formControlName="titleTimeForm" />
+        </mat-form-field>
+        <sit-helper
+          hint="{{ 'timeFormatHint' | translate }}"
+          [control]="this.formtitle.get('titleTimeForm')"
+          >
+        </sit-helper>
+      </div>
+      <div class="col-lg-4" sit-validate-input="titleDateTo">
+        <sit-label>
+          <span>dateto</span>
+        </sit-label>
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            matInput
+            [matDatepicker]="titleDateTo"
+            [datePicker]="titleDateTo"
+            formControlName="titleDateTo"
+          >
+          <mat-datepicker-toggle matSuffix [for]="titleDateTo">
+          </mat-datepicker-toggle>
+          <mat-datepicker #titleDateTo></mat-datepicker>
+        </mat-form-field>
+        <sit-helper
+          hint="{{ 'dateFormatHint' | translate }}"
+          [control]="this.formtitle.get('titleDateTo')">
+        </sit-helper>
+      </div>
+      <div class="col-lg-2" sit-validate-input="titleTimeTo">
+        <sit-label>
+          <span>&nbsp;</span>
+        </sit-label>
+        <mat-form-field
+          class="w-100"
+          style="min-width: 70px;"
+          [appearance]="'outline'"
+        >
+          <input matInput #time time24-hours formControlName="titleTimeTo"/>
+        </mat-form-field>
+        <sit-helper
+          hint="{{ 'timeFormatHint' | translate }}"
+          [control]="this.formtitle.get('titleTimeTo')">
+        </sit-helper>
+      </div>
+    </div>
+  </div>
+
+  <!-- --------------------------------------------Ex TAB --------------------------------------------- -->
+  <h2 class="demo"># 4. Tab Validation</h2>
+  <div class="row mt-3" [formGroup]="formTab">
+    <mat-tab-group>
+      <mat-tab label="First"> Content 1 </mat-tab>
+      <mat-tab label="Second">
+        <div class="row">
+          <div class="col-lg-2" sit-validate-input="tabInput1">
+            <sit-label>
+              <span>tabInput1</span>
+            </sit-label>
+            <mat-form-field class="w-100" [appearance]="'outline'" >
+              <input matInput formControlName="tabInput1"/>
+            </mat-form-field>
+            <sit-helper
+              [control]="this.formTab.get('tabInput1')">
+            </sit-helper>
+          </div>
+          <div class="col-lg-2" sit-validate-input="tabInput2">
+            <sit-label>
+              <span>tabInput2</span>
+            </sit-label>
+            <mat-form-field class="w-100" [appearance]="'outline'" >
+              <input matInput formControlName="tabInput2"/>
+            </mat-form-field>
+            <sit-helper
+              [control]="this.formTab.get('tabInput2')">
+            </sit-helper>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Third"> Content 3 </mat-tab>
+    </mat-tab-group>
+  </div>
+  <!-- -------------------------------------------- end Ex TAB --------------------------------------------- -->
+  <!-- -------------------------------------------- validate password --------------------------------------------- -->
+  <h2 class="demo"># 5. Format Password Validation</h2>
+  <div class="row flex-column-reverse flex-lg-row">
+    <div class="col-lg-5" style="min-width: 379px;">
+      <sit-label>
+        <span>password</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'"
+        style="min-width: 379px;"
+      >
+        <input matInput [formControl]="formControlPassword" [type]="hide ? 'password' : 'text'" autocomplete="do-not-autofill"/>
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <sit-password-validation [control]="formControlPassword" [list]="mockPasswordValidation">
+      </sit-password-validation>
+    </div>
+    <div class="col">
+      <fieldset>
+        <legend>config format password</legend>
+        <mat-radio-group [formControl]="controlRadioEvent">
+          <mat-radio-button [value]="false">Blur</mat-radio-button>
+          <mat-radio-button [value]="true">Change</mat-radio-button>
+        </mat-radio-group>
+        <ng-container *ngFor="let item of initPasswordValidation;let index=index;">
+          <div>
+            <mat-checkbox value="{{index}}" [formControl]="this.formCheckboxConfig.controls[index]" (change)="configChange($event)" >{{item.hint}}</mat-checkbox>
+          </div>
+        </ng-container>
+      </fieldset>
+    </div>
+  </div>
+  <!-- -------------------------------------------- end validate password --------------------------------------------- -->
+  <!-- -------------------------------------------- sit upload --------------------------------------------- -->
+  <h2 class="demo"># 6. Sit File Upload Validation</h2>
+  <div class="row">
+    <div class="col-lg-6" sit-validate-input="upload-1">
+      <sit-label>
+        <span>file upload</span>
+      </sit-label>
+      <sit-input-files
+        [hideBtn]="false"
+        [fileName]=""
+        [filePath]=""
+        [ControlFileName]="this.formUpload.get('fileName')"
+        [ControlFilePath]="this.formUpload.get('filePath')"
+        (fileChange)="this.getFileChange($event)"
+        [route]="this.routeUpload"
+        [routeView]="this.routeView"
+        [acceptFileType]="'.xls,.xlsx,.csv,.txt,.jpg,.ms-excel'"
+      ></sit-input-files>
+      <sit-helper
+        hint="{{ 'file upload' | translate }}"
+        [control]="this.formUpload.get('fileName')">
+      </sit-helper>
+      <fieldset>
+        <legend>form value</legend>
+        <div class="text-name">
+          fileName : {{this.formUpload.get('fileName').value | json }}
+        </div>
+        <div class="text-name">
+          filePath : {{this.formUpload.get('filePath').value | json }}
+        </div>
+        <div>
+          <button mat-raised-button color="primary" (click)="resetFileupload()">clear</button>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+    <!-- -------------------------------------------- end sit upload --------------------------------------------- -->
+  <div class="col d-flex justify-content-end mt-3" >
+    <button type="button" color="primary" style="width: fit-content;" mat-raised-button (click)="validateClick()">
+        <span>{{ 'Validate' | translate }}</span>
+      </button>
+      <button type="button" mat-raised-button (click)="clearClick()" class="ms-3">
+        <span>{{ 'clear' | translate }}</span>
+      </button>
+  </div>
+</mat-card>
+
+<mat-card class="mt-3">
+  <div class="row mt-3">
+    <sit-title>
+      <span>calibrate theme disable</span>
+    </sit-title>
+    <app-theme-disable></app-theme-disable>
+  </div>
+
+
+  <div class="row mt-3">
+    <sit-title>
+      <span>ตัวอย่าง sit-button</span>
+    </sit-title>
+    <h4 class="text-center">page: S</h4>
+    <app-sit-button
+      [page]="'S'"
+      [permission]="{search: true}">
+    </app-sit-button>
+    <h4 class="text-center">page: A</h4>
+    <app-sit-button
+      [page]="'A'"
+      [permission]="{add: true}">
+    </app-sit-button>
+    <h4 class="text-center">page: E</h4>
+    <app-sit-button
+      [page]="'E'"
+      [permission]="{edit: true}">
+    </app-sit-button>
+    <h4 class="text-center">page: V</h4>
+    <app-sit-button
+      [page]="'V'"
+      [permission]="{view: true}">
+    </app-sit-button>
+    <h4 class="text-center">page: EX</h4>
+    <app-sit-button
+      [page]="'EX'"
+      [permission]="{export: true}">
+    </app-sit-button>
+    <h4 class="text-center">page: U</h4>
+    <app-sit-button
+      [page]="'U'"
+      [permission]="{upload: true}">
+    </app-sit-button>
+
+    <h4 class="text-center"> - ตัวอย่าง sit-button + ปุ่มเสริม</h4>
+    <app-sit-button
+    [page]="'S'"
+    [permission]="{search: true}"
+    >
+      <!-- ex 1 by div -->
+      <div>
+        <button type="button" color="primary" mat-raised-button>
+          <span>{{ 'xxx' | translate }}</span>
+        </button>
+        <button type="button" color="primary" class="ms-3" mat-raised-button>
+          <span>{{ 'xxx' | translate }}</span>
+        </button>
+      </div>
+      <!-- ex 2 by button -->
+      <!-- <button type="button" color="primary" mat-raised-button>
+        <span>{{ 'xxx' | translate }}</span>
+      </button>
+      <button type="button" color="primary" class="ms-3" mat-raised-button>
+        <span>{{ 'xxx' | translate }}</span>
+      </button> -->
+    </app-sit-button>
+  </div>
+  <div class="row mt-3">
+    <sit-title>
+      <span>ตัวอย่างการสร้าง button (ไม่ใช้ sit-button)</span>
+    </sit-title>
+    <div class="col d-flex justify-content-end">
+      <button type="button" color="primary" mat-raised-button>
+        <span>{{ 'xxx' | translate }}</span>
+      </button>
+      <button type="button" mat-raised-button class="ms-3">
+        <span>{{ 'xxx' | translate }}</span>
+      </button>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col d-flex justify-content-between">
+      <div>
+        <button type="button" color="primary" mat-raised-button>
+          <span>{{ 'xxx' | translate }}</span>
+        </button>
+        <button type="button" mat-raised-button class="ms-3">
+          <span>{{ 'xxx' | translate }}</span>
+        </button>
+      </div>
+      <div>
+        <button type="button" color="primary" mat-raised-button>
+          <span>{{ 'xxx' | translate }}</span>
+        </button>
+        <button type="button" color="primary" mat-raised-button class="mx-3">
+          <span>{{ 'xxx' | translate }}</span>
+        </button>
+        <button type="button" mat-raised-button>
+          <span>{{ 'xxx' | translate }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-card>
+

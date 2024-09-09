@@ -1,0 +1,70 @@
+<ng-container *ngIf="type === 'A'; else elseTemplate">
+  <mat-form-field
+    chipField
+    appearance="outline"
+    style="width: 100%;"
+    [ngClass]="{'readonly-con': readonly,
+    'sit-in-valid': ngClass['sit-in-valid'] || (initChipsList?.invalid && controlChips.touched)}"
+    >
+    <div matIconSuffix matRipple *ngIf="!readonly">
+      <button (click)="searchAll()" style="background-color: #7575753d;">
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+    </div>
+    <mat-chip-grid #chipGrid>
+      <mat-chip-row *ngFor="let chip of initChipsList?.value; let index = index"
+        (removed)="remove(chip, index)">
+        {{ this.displayChips ? chip[displayChips] : chip.value }}
+        <button matChipRemove [attr.aria-label]="'remove ' + fruit" *ngIf="!readonly">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+      <input
+        matInput
+        type="text"
+        #directiveInput
+        [placeholder]="placeholder |sitAutoPlaceholder: readonly"
+        [readonly]="readonly"
+        [formControl]="controlChips"
+        [matChipInputFor]="chipGrid"
+        [matAutocomplete]="auto"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [autocomplete]="'off'"
+        (blur)="chipAutoOnblur()"
+        (click)="chipAutoOnclick()"
+        />
+    </mat-chip-grid>
+    <mat-icon matPrefix *ngIf="!initChipsList?.value.length" >search</mat-icon>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let item of listResult" [value]="item" multiple>
+        <span
+          AutocompleteHighlight
+          [termInput]="this.valueChange | async"
+          [textOption]="display(item)"
+        ></span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</ng-container>
+<ng-template #elseTemplate>
+  <!-- <mat-form-field appearance="outline" chipField style="width: 100%;">
+    <mat-chip-grid #chipGrid>
+      <mat-chip-row *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+        {{fruit}}
+        <button matChipRemove [attr.aria-label]="'remove ' + fruit">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+      <input placeholder="New Chip" [formControl]="fruitCtrl"
+      [matChipInputFor]="chipGrid" [matAutocomplete]="auto"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)"/>
+    </mat-chip-grid>
+    <mat-icon matPrefix *ngIf="!fruits.length" >search</mat-icon>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+        {{fruit}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field> -->
+</ng-template>

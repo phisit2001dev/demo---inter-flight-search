@@ -1,0 +1,941 @@
+{
+  "messageCode": "X00000",
+  "messageDesc": "Success",
+  "displayStatus": "S",
+  "componentType": "S",
+  "data": {
+      "totalResult": 165,
+      "listResult": [
+          {
+              "hiddenToken": "57",
+              "active": "Active",
+              "groupCode": "999",
+              "groupName": "999"
+          },
+          {
+              "hiddenToken": "157",
+              "active": "Active",
+              "groupCode": "<",
+              "groupName": "<"
+          },
+          {
+              "hiddenToken": "207",
+              "active": "Active",
+              "groupCode": "???",
+              "groupName": "987654"
+          },
+          {
+              "hiddenToken": "-1",
+              "active": "Active",
+              "groupCode": "A11",
+              "groupName": "A1"
+          },
+          {
+              "hiddenToken": "-2",
+              "active": "Active",
+              "groupCode": "A2",
+              "groupName": "A2"
+          },
+          {
+              "hiddenToken": "170",
+              "active": "Active",
+              "groupCode": "AJ_NO_RIGHT_ONLY_PORT",
+              "groupName": "AJ No right"
+          },
+          {
+              "hiddenToken": "169",
+              "active": "Active",
+              "groupCode": "AJ_TEST_RIGHT",
+              "groupName": "AJ_TEST_RIGHT"
+          },
+          {
+              "hiddenToken": "110",
+              "active": "Active",
+              "groupCode": "AOM",
+              "groupName": "AOM"
+          },
+          {
+              "hiddenToken": "177",
+              "active": "Active",
+              "groupCode": "AOOF1",
+              "groupName": "AOOF_Test"
+          },
+          {
+              "hiddenToken": "2",
+              "active": "Active",
+              "groupCode": "APPS",
+              "groupName": "APPS"
+          },
+          {
+              "hiddenToken": "141",
+              "active": "Active",
+              "groupCode": "ARS",
+              "groupName": "ARS_TEST"
+          },
+          {
+              "hiddenToken": "159",
+              "active": "Active",
+              "groupCode": "ARS_Admin_IMM",
+              "groupName": "ARS_Admin_IMM"
+          },
+          {
+              "hiddenToken": "152",
+              "active": "Active",
+              "groupCode": "ARS_User",
+              "groupName": "ARS_User"
+          },
+          {
+              "hiddenToken": "172",
+              "active": "Active",
+              "groupCode": "ARS_for_Train",
+              "groupName": "ARS_for_Train"
+          },
+          {
+              "hiddenToken": "147",
+              "active": "Active",
+              "groupCode": "AUTO",
+              "groupName": "AUTOMATE_TEST"
+          },
+          {
+              "hiddenToken": "151",
+              "active": "Active",
+              "groupCode": "Admin",
+              "groupName": "ADMIN"
+          },
+          {
+              "hiddenToken": "45",
+              "active": "Active",
+              "groupCode": "Admin Center",
+              "groupName": "เจ้าหน้าที่ผู้ดูแลระบบ"
+          },
+          {
+              "hiddenToken": "3",
+              "active": "Inactive",
+              "groupCode": "BKK",
+              "groupName": "BKK"
+          },
+          {
+              "hiddenToken": "166",
+              "active": "Active",
+              "groupCode": "BKKkkkkk",
+              "groupName": "BKKK_Management"
+          },
+          {
+              "hiddenToken": "-69",
+              "active": "Inactive",
+              "groupCode": "CCOC Admin",
+              "groupName": "CCOC Admin"
+          },
+          {
+              "hiddenToken": "180",
+              "active": "Active",
+              "groupCode": "CSIT-IMM PNR",
+              "groupName": "CSIT-IMM PNR"
+          },
+          {
+              "hiddenToken": "63",
+              "active": "Active",
+              "groupCode": "CSIT_APPS",
+              "groupName": "CSIT"
+          },
+          {
+              "hiddenToken": "67",
+              "active": "Active",
+              "groupCode": "Contact Center",
+              "groupName": "Contact Center"
+          },
+          {
+              "hiddenToken": "70",
+              "active": "Active",
+              "groupCode": "DOA",
+              "groupName": "กรมการท่าอากาศยาน"
+          },
+          {
+              "hiddenToken": "86",
+              "active": "Active",
+              "groupCode": "DOCUMENT_ONLY",
+              "groupName": "DOCUMENT_ONLY"
+          },
+          {
+              "hiddenToken": "36",
+              "active": "Active",
+              "groupCode": "EMPNOO001",
+              "groupName": "EMPNOO001"
+          },
+          {
+              "hiddenToken": "37",
+              "active": "Active",
+              "groupCode": "EMPNOO002",
+              "groupName": "EMPNOO002"
+          },
+          {
+              "hiddenToken": "94",
+              "active": "Active",
+              "groupCode": "FA_001",
+              "groupName": "Few_Airline"
+          },
+          {
+              "hiddenToken": "116",
+              "active": "Active",
+              "groupCode": "False",
+              "groupName": "False Alarm"
+          },
+          {
+              "hiddenToken": "119",
+              "active": "Active",
+              "groupCode": "False_Alarm_CSIT",
+              "groupName": "False_Alarm"
+          },
+          {
+              "hiddenToken": "143",
+              "active": "Active",
+              "groupCode": "G001",
+              "groupName": "G001"
+          },
+          {
+              "hiddenToken": "144",
+              "active": "Active",
+              "groupCode": "G003",
+              "groupName": "G003%{999+1}"
+          },
+          {
+              "hiddenToken": "145",
+              "active": "Active",
+              "groupCode": "G004",
+              "groupName": "G004"
+          },
+          {
+              "hiddenToken": "148",
+              "active": "Active",
+              "groupCode": "G148",
+              "groupName": "GROUP148"
+          },
+          {
+              "hiddenToken": "149",
+              "active": "Active",
+              "groupCode": "G149",
+              "groupName": "GROUP149"
+          },
+          {
+              "hiddenToken": "187",
+              "active": "Active",
+              "groupCode": "G150",
+              "groupName": "GROUP150"
+          },
+          {
+              "hiddenToken": "188",
+              "active": "Active",
+              "groupCode": "G151",
+              "groupName": "GROUP151"
+          },
+          {
+              "hiddenToken": "189",
+              "active": "Active",
+              "groupCode": "G152",
+              "groupName": "GROUP152"
+          },
+          {
+              "hiddenToken": "190",
+              "active": "Active",
+              "groupCode": "G153",
+              "groupName": "GROUP153"
+          },
+          {
+              "hiddenToken": "191",
+              "active": "Active",
+              "groupCode": "G154",
+              "groupName": "GROUP154"
+          },
+          {
+              "hiddenToken": "192",
+              "active": "Active",
+              "groupCode": "G155",
+              "groupName": "GROUP155"
+          },
+          {
+              "hiddenToken": "193",
+              "active": "Active",
+              "groupCode": "G156",
+              "groupName": "GROUP156"
+          },
+          {
+              "hiddenToken": "194",
+              "active": "Active",
+              "groupCode": "G157",
+              "groupName": "GROUP157"
+          },
+          {
+              "hiddenToken": "195",
+              "active": "Active",
+              "groupCode": "G158",
+              "groupName": "GROUP158"
+          },
+          {
+              "hiddenToken": "196",
+              "active": "Active",
+              "groupCode": "G196",
+              "groupName": "GROUP196"
+          },
+          {
+              "hiddenToken": "197",
+              "active": "Active",
+              "groupCode": "G197",
+              "groupName": "GROUP197"
+          },
+          {
+              "hiddenToken": "198",
+              "active": "Active",
+              "groupCode": "G198",
+              "groupName": "GROUP198"
+          },
+          {
+              "hiddenToken": "201",
+              "active": "Active",
+              "groupCode": "G199",
+              "groupName": "GROUP199"
+          },
+          {
+              "hiddenToken": "202",
+              "active": "Active",
+              "groupCode": "G200",
+              "groupName": "GROUP200"
+          },
+          {
+              "hiddenToken": "112",
+              "active": "Active",
+              "groupCode": "GROUP.ADD",
+              "groupName": "GROUP.NAME.ADD"
+          },
+          {
+              "hiddenToken": "53",
+              "active": "Active",
+              "groupCode": "GroupA1",
+              "groupName": "GroupA1"
+          },
+          {
+              "hiddenToken": "54",
+              "active": "Active",
+              "groupCode": "GroupA2",
+              "groupName": "GroupA2"
+          },
+          {
+              "hiddenToken": "56",
+              "active": "Active",
+              "groupCode": "GroupA3",
+              "groupName": "GroupA3"
+          },
+          {
+              "hiddenToken": "85",
+              "active": "Active",
+              "groupCode": "GroupTest1",
+              "groupName": "GroupTest1"
+          },
+          {
+              "hiddenToken": "162",
+              "active": "Active",
+              "groupCode": "IMM-DMK",
+              "groupName": "IMM-DMK"
+          },
+          {
+              "hiddenToken": "10",
+              "active": "Active",
+              "groupCode": "IMM-SBIA",
+              "groupName": "IMM-SBIA"
+          },
+          {
+              "hiddenToken": "153",
+              "active": "Active",
+              "groupCode": "IMMBKK",
+              "groupName": "User_BKK"
+          },
+          {
+              "hiddenToken": "48",
+              "active": "Active",
+              "groupCode": "IMM_ADMIN",
+              "groupName": "IMM_ADMIN"
+          },
+          {
+              "hiddenToken": "62",
+              "active": "Active",
+              "groupCode": "IMM_ADMIN09",
+              "groupName": "IMM_ADMIN09"
+          },
+          {
+              "hiddenToken": "102",
+              "active": "Active",
+              "groupCode": "IMM_TEMP_WL_DATA",
+              "groupName": "IMM_Temporary_Watchlist_DATA"
+          },
+          {
+              "hiddenToken": "95",
+              "active": "Active",
+              "groupCode": "IMM_TEM_BL_DATA",
+              "groupName": "IMM_Temporary_Blacklist_DATA"
+          },
+          {
+              "hiddenToken": "127",
+              "active": "Active",
+              "groupCode": "Immcsit",
+              "groupName": "Immcsit"
+          },
+          {
+              "hiddenToken": "111",
+              "active": "Active",
+              "groupCode": "JUN_TEST",
+              "groupName": "JUN_TEST"
+          },
+          {
+              "hiddenToken": "173",
+              "active": "Active",
+              "groupCode": "JUN_TEST_CANNTOVERRIDE",
+              "groupName": "JUN_TEST_CANNTOVERRIDE"
+          },
+          {
+              "hiddenToken": "114",
+              "active": "Active",
+              "groupCode": "JUN_TEST_NOT_SUP",
+              "groupName": "JUN_TEST_NOT_SUP"
+          },
+          {
+              "hiddenToken": "155",
+              "active": "Active",
+              "groupCode": "KAM_IMM_PNR",
+              "groupName": "KAM_IMM_PNR"
+          },
+          {
+              "hiddenToken": "146",
+              "active": "Active",
+              "groupCode": "KK",
+              "groupName": "KhawKhaw"
+          },
+          {
+              "hiddenToken": "122",
+              "active": "Active",
+              "groupCode": "LILI",
+              "groupName": "CS_LILI"
+          },
+          {
+              "hiddenToken": "164",
+              "active": "Active",
+              "groupCode": "MANAGE+USER",
+              "groupName": "MANAGE+USER"
+          },
+          {
+              "hiddenToken": "87",
+              "active": "Active",
+              "groupCode": "MM",
+              "groupName": "Test Group"
+          },
+          {
+              "hiddenToken": "163",
+              "active": "Active",
+              "groupCode": "Manage-User",
+              "groupName": "Manage-User"
+          },
+          {
+              "hiddenToken": "165",
+              "active": "Active",
+              "groupCode": "Manage/User",
+              "groupName": "Manage/User"
+          },
+          {
+              "hiddenToken": "130",
+              "active": "Active",
+              "groupCode": "Manage_CNX01",
+              "groupName": "Manage_CNX01"
+          },
+          {
+              "hiddenToken": "134",
+              "active": "Active",
+              "groupCode": "Manage_CNX02",
+              "groupName": "Manage_CNX02"
+          },
+          {
+              "hiddenToken": "131",
+              "active": "Active",
+              "groupCode": "Manage_CNX05",
+              "groupName": "Manage_CNX05"
+          },
+          {
+              "hiddenToken": "135",
+              "active": "Active",
+              "groupCode": "Manage_CNX06",
+              "groupName": "Manage_CNX06"
+          },
+          {
+              "hiddenToken": "133",
+              "active": "Active",
+              "groupCode": "Manage_CNX07",
+              "groupName": "Manage_CNX07"
+          },
+          {
+              "hiddenToken": "132",
+              "active": "Active",
+              "groupCode": "Management_CMX_04",
+              "groupName": "Management_CMX_04"
+          },
+          {
+              "hiddenToken": "175",
+              "active": "Active",
+              "groupCode": "Mobile1",
+              "groupName": "PG Mobile"
+          },
+          {
+              "hiddenToken": "93",
+              "active": "Active",
+              "groupCode": "NA_001",
+              "groupName": "no_airline"
+          },
+          {
+              "hiddenToken": "118",
+              "active": "Active",
+              "groupCode": "NOT FALSE",
+              "groupName": "NOT FALSE"
+          },
+          {
+              "hiddenToken": "31",
+              "active": "Active",
+              "groupCode": "NOT_SUP_IMM",
+              "groupName": "imm_test"
+          },
+          {
+              "hiddenToken": "115",
+              "active": "Active",
+              "groupCode": "NoFalse",
+              "groupName": "No False Alarm"
+          },
+          {
+              "hiddenToken": "101",
+              "active": "Active",
+              "groupCode": "Other airport",
+              "groupName": "Other airport"
+          },
+          {
+              "hiddenToken": "71",
+              "active": "Active",
+              "groupCode": "PG",
+              "groupName": "ฺBangkok airway"
+          },
+          {
+              "hiddenToken": "154",
+              "active": "Active",
+              "groupCode": "PNR TT",
+              "groupName": "PNR Test"
+          },
+          {
+              "hiddenToken": "156",
+              "active": "Active",
+              "groupCode": "PNR_DEW",
+              "groupName": "PNR Profiling DEW"
+          },
+          {
+              "hiddenToken": "161",
+              "active": "Active",
+              "groupCode": "PresentApp",
+              "groupName": "PresentApp"
+          },
+          {
+              "hiddenToken": "66",
+              "active": "Active",
+              "groupCode": "SITTIPOL_GROUP",
+              "groupName": "SITTIPOL_GROUP"
+          },
+          {
+              "hiddenToken": "160",
+              "active": "Active",
+              "groupCode": "SQ_GROUP",
+              "groupName": "SQ_GROUP"
+          },
+          {
+              "hiddenToken": "176",
+              "active": "Active",
+              "groupCode": "STGG01",
+              "groupName": "STGG01"
+          },
+          {
+              "hiddenToken": "9",
+              "active": "Active",
+              "groupCode": "SUP",
+              "groupName": "SUP_OVERRIDE"
+          },
+          {
+              "hiddenToken": "123",
+              "active": "Active",
+              "groupCode": "SUP_IMM",
+              "groupName": "SUP_IMM"
+          },
+          {
+              "hiddenToken": "167",
+              "active": "Active",
+              "groupCode": "Singha",
+              "groupName": "Singha_Only"
+          },
+          {
+              "hiddenToken": "125",
+              "active": "Active",
+              "groupCode": "SiriyaTest",
+              "groupName": "siriya"
+          },
+          {
+              "hiddenToken": "73",
+              "active": "Active",
+              "groupCode": "TAT",
+              "groupName": "TAT"
+          },
+          {
+              "hiddenToken": "106",
+              "active": "Active",
+              "groupCode": "TESTER ONLY",
+              "groupName": "T"
+          },
+          {
+              "hiddenToken": "150",
+              "active": "Active",
+              "groupCode": "TESTS.02",
+              "groupName": "02.TESTS"
+          },
+          {
+              "hiddenToken": "124",
+              "active": "Active",
+              "groupCode": "TEST_001",
+              "groupName": "TEST_001"
+          },
+          {
+              "hiddenToken": "142",
+              "active": "Active",
+              "groupCode": "TEST_CE1",
+              "groupName": "TEST_CE1"
+          },
+          {
+              "hiddenToken": "139",
+              "active": "Active",
+              "groupCode": "TEST_JA_TEST",
+              "groupName": "AOFFFFF"
+          },
+          {
+              "hiddenToken": "68",
+              "active": "Active",
+              "groupCode": "TEST_NA",
+              "groupName": "TEST_NA"
+          },
+          {
+              "hiddenToken": "158",
+              "active": "Active",
+              "groupCode": "TEST_Ton",
+              "groupName": "TEST_Ton"
+          },
+          {
+              "hiddenToken": "117",
+              "active": "Active",
+              "groupCode": "TK",
+              "groupName": "TK_TEST"
+          },
+          {
+              "hiddenToken": "109",
+              "active": "Active",
+              "groupCode": "TK_ADMIN",
+              "groupName": "TK_ADMIN"
+          },
+          {
+              "hiddenToken": "179",
+              "active": "Active",
+              "groupCode": "TOEY",
+              "groupName": "TAN"
+          },
+          {
+              "hiddenToken": "121",
+              "active": "Active",
+              "groupCode": "TON_NO_F",
+              "groupName": "TON_NO_F"
+          },
+          {
+              "hiddenToken": "23",
+              "active": "Active",
+              "groupCode": "Test",
+              "groupName": "Test"
+          },
+          {
+              "hiddenToken": "181",
+              "active": "Active",
+              "groupCode": "Test.",
+              "groupName": "ตม.ภูเก็ต User"
+          },
+          {
+              "hiddenToken": "28",
+              "active": "Active",
+              "groupCode": "Test0",
+              "groupName": "Test0"
+          },
+          {
+              "hiddenToken": "12",
+              "active": "Active",
+              "groupCode": "Test1",
+              "groupName": "Test1"
+          },
+          {
+              "hiddenToken": "16",
+              "active": "Active",
+              "groupCode": "Test2",
+              "groupName": "Test2"
+          },
+          {
+              "hiddenToken": "17",
+              "active": "Active",
+              "groupCode": "Test3",
+              "groupName": "Test3"
+          },
+          {
+              "hiddenToken": "18",
+              "active": "Active",
+              "groupCode": "Test4",
+              "groupName": "Test4"
+          },
+          {
+              "hiddenToken": "20",
+              "active": "Active",
+              "groupCode": "Test5",
+              "groupName": "Test5"
+          },
+          {
+              "hiddenToken": "19",
+              "active": "Active",
+              "groupCode": "Test6",
+              "groupName": "Test6"
+          },
+          {
+              "hiddenToken": "21",
+              "active": "Active",
+              "groupCode": "Test7",
+              "groupName": "Test7"
+          },
+          {
+              "hiddenToken": "25",
+              "active": "Active",
+              "groupCode": "Test8",
+              "groupName": "Test8"
+          },
+          {
+              "hiddenToken": "15",
+              "active": "Active",
+              "groupCode": "Test9",
+              "groupName": "Test9"
+          },
+          {
+              "hiddenToken": "97",
+              "active": "Active",
+              "groupCode": "Tester",
+              "groupName": "tester"
+          },
+          {
+              "hiddenToken": "98",
+              "active": "Active",
+              "groupCode": "TesterTT",
+              "groupName": "testerTT"
+          },
+          {
+              "hiddenToken": "168",
+              "active": "Active",
+              "groupCode": "Trainer01",
+              "groupName": "TrainIMMUser"
+          },
+          {
+              "hiddenToken": "84",
+              "active": "Active",
+              "groupCode": "URT_IMM",
+              "groupName": "URT_IMM"
+          },
+          {
+              "hiddenToken": "120",
+              "active": "Active",
+              "groupCode": "USER_NER",
+              "groupName": "USER_NER"
+          },
+          {
+              "hiddenToken": "72",
+              "active": "Active",
+              "groupCode": "UTP",
+              "groupName": "U-Tapao"
+          },
+          {
+              "hiddenToken": "64",
+              "active": "Active",
+              "groupCode": "VIE W",
+              "groupName": "VIEW"
+          },
+          {
+              "hiddenToken": "76",
+              "active": "Active",
+              "groupCode": "Z001",
+              "groupName": "Z001-Name"
+          },
+          {
+              "hiddenToken": "77",
+              "active": "Active",
+              "groupCode": "Z002",
+              "groupName": "Z002-Name"
+          },
+          {
+              "hiddenToken": "78",
+              "active": "Active",
+              "groupCode": "Z003",
+              "groupName": "Z003-Name"
+          },
+          {
+              "hiddenToken": "79",
+              "active": "Active",
+              "groupCode": "Z004",
+              "groupName": "Z004-Name"
+          },
+          {
+              "hiddenToken": "80",
+              "active": "Active",
+              "groupCode": "Z005",
+              "groupName": "Z005-Name"
+          },
+          {
+              "hiddenToken": "81",
+              "active": "Active",
+              "groupCode": "Z006",
+              "groupName": "Z006-Name"
+          },
+          {
+              "hiddenToken": "82",
+              "active": "Active",
+              "groupCode": "Z007",
+              "groupName": "Z007-Name"
+          },
+          {
+              "hiddenToken": "83",
+              "active": "Active",
+              "groupCode": "Z008",
+              "groupName": "Z008-Name"
+          },
+          {
+              "hiddenToken": "74",
+              "active": "Inactive",
+              "groupCode": "ZZZ",
+              "groupName": "ZZZ-Name"
+          },
+          {
+              "hiddenToken": "55",
+              "active": "Active",
+              "groupCode": "a",
+              "groupName": "a"
+          },
+          {
+              "hiddenToken": "126",
+              "active": "Active",
+              "groupCode": "airport",
+              "groupName": "aiport"
+          },
+          {
+              "hiddenToken": "128",
+              "active": "Active",
+              "groupCode": "automated Not BKK",
+              "groupName": "Not BKK"
+          },
+          {
+              "hiddenToken": "129",
+              "active": "Active",
+              "groupCode": "automated port BKK",
+              "groupName": "port BKK"
+          },
+          {
+              "hiddenToken": "99",
+              "active": "Active",
+              "groupCode": "bang",
+              "groupName": "bang"
+          },
+          {
+              "hiddenToken": "178",
+              "active": "Active",
+              "groupCode": "chay",
+              "groupName": "chay_test"
+          },
+          {
+              "hiddenToken": "65",
+              "active": "Active",
+              "groupCode": "edit",
+              "groupName": "edit"
+          },
+          {
+              "hiddenToken": "103",
+              "active": "Active",
+              "groupCode": "fahtest",
+              "groupName": "fahtest"
+          },
+          {
+              "hiddenToken": "88",
+              "active": "Active",
+              "groupCode": "g1001",
+              "groupName": "g1001"
+          },
+          {
+              "hiddenToken": "89",
+              "active": "Active",
+              "groupCode": "g1002",
+              "groupName": "g1002"
+          },
+          {
+              "hiddenToken": "90",
+              "active": "Active",
+              "groupCode": "g1003",
+              "groupName": "g1003"
+          },
+          {
+              "hiddenToken": "140",
+              "active": "Inactive",
+              "groupCode": "pgbeam",
+              "groupName": "pgbeam"
+          },
+          {
+              "hiddenToken": "113",
+              "active": "Active",
+              "groupCode": "report",
+              "groupName": "report"
+          },
+          {
+              "hiddenToken": "107",
+              "active": "Active",
+              "groupCode": "slbl001",
+              "groupName": "SLBL_STATISTIC"
+          },
+          {
+              "hiddenToken": "104",
+              "active": "Active",
+              "groupCode": "test airport",
+              "groupName": "test airport"
+          },
+          {
+              "hiddenToken": "137",
+              "active": "Active",
+              "groupCode": "tle",
+              "groupName": "tle"
+          },
+          {
+              "hiddenToken": "75",
+              "active": "Active",
+              "groupCode": "zzzz",
+              "groupName": "zzz"
+          },
+          {
+              "hiddenToken": "29",
+              "active": "Active",
+              "groupCode": "ทดสอบ code",
+              "groupName": "ทดสอบ name"
+          },
+          {
+              "hiddenToken": "30",
+              "active": "Active",
+              "groupCode": "ทดสอบ code หนึ่ง",
+              "groupName": "ทดสอบ name หนึ่ง"
+          },
+          {
+              "hiddenToken": "26",
+              "active": "Active",
+              "groupCode": "พวกเราเรามาชุมนุม",
+              "groupName": "ประชุมใจรัก สมัคสมาน"
+          }
+      ]
+  }
+}

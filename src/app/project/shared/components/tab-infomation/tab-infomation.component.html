@@ -1,0 +1,97 @@
+<div class="tab-info-con">
+  <div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          <span>{{ "tab.program" | translate }}</span>
+        </div>&nbsp;
+        <div class="con-value">
+          {{data.program}}
+        </div>
+      </div>
+      <div class="col-lg-6  col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          {{ "tab.task" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+         {{data.task}}
+        </div>
+      </div>
+      <div class="col-xl-4 d-inline-flex">
+        <div class="con-criteria" style="white-space: nowrap;">
+          {{ "tab.status" | translate }}
+        </div>&nbsp;
+        <div class="con-value" style="white-space: nowrap;">
+          {{data.status}}
+        </div>
+        <div *ngIf="this.taskInfo && this.permission.changeTaskStatus">
+          <button mat-stroked-button color="primary" class="ms-2 btn-orange" (click)="this.openChangeTaskDialog()">{{ "tab.btn_change" | translate }}</button>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------row 2------------------------- -->
+    <div class="row " [class]="this.taskInfo ? 'mt-2': 'mt-3'">
+      <div class="col-lg-6 col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          {{ "tab.process" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+          {{data.process}}
+        </div>
+      </div>
+      <div class="col-lg-6 col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          {{ "tab.auditors" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+         {{data.auditors}}
+        </div>
+      </div>
+      <div class="col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          {{ "tab.audit_temp" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+          {{data.audit_temp}}
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------row 3------------------------- -->
+    <div class="row mt-3">
+      <div class="col-lg-6 col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          {{ "tab.audit_start" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+          {{data.audit_start}}
+        </div>
+      </div>
+      <div class="col-lg-6 col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          {{ "tab.location" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+         {{data.location}}
+        </div>
+      </div>
+      <div class="col-xl-4 d-inline-flex">
+        <div class="con-criteria">
+          {{ "tab.contact" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+          {{data.contact}}
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3" *ngIf="this.taskInfo">
+      <div class="col d-inline-flex">
+        <div class="con-criteria fit-content">
+          {{ "tab.other_related" | translate }}
+        </div>&nbsp;
+        <div class="con-value">
+          {{data.other}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

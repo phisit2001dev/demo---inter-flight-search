@@ -1,0 +1,692 @@
+{
+    "messageCode": "X00000",
+    "messageDesc": "Success",
+    "displayStatus": "S",
+    "componentType": "S",
+    "data": {
+        "fullname": "Mr. Jone wick",
+        "changelogRead": "Y",
+        "language": "en",
+        "timeZone": "+10",
+        "listOperator": [
+            {
+                "label": "Core Security",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Center Configuration",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/security/initConfigSystem.action"
+                    },
+                    {
+                        "label": "User",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/security/initUser.action"
+                    },
+                    {
+                        "label": "User Group",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/security/initGroup.action"
+                    },
+                    {
+                        "label": "Audit Log",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/security/initAuditLog.action"
+                    }
+                ]
+            },
+            {
+                "label": "Master Data",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Country and Nationality",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/standard/initCountryNationality.action"
+                    },
+                    {
+                        "label": "Airport",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/standard/initAirport.action"
+                    },
+                    {
+                        "label": "Airline",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/standard/initAirline.action"
+                    },
+                    {
+                        "label": "Prefix",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/standard/initPrefix.action"
+                    },
+                    {
+                        "label": "Site code / System name",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/standard/initSite.action"
+                    },
+                    {
+                        "label": "Continent",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/standard/initContinent.action"
+                    },
+                    {
+                        "label": "Zone ",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/standard/initZone.action"
+                    }
+                ]
+            },
+            {
+                "label": "Travel Information",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Flight Schedule",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/flightschedule/initFlightSchedule.action"
+                    },
+                    {
+                        "label": "Flight Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/immigration/initFlightSearch.action"
+                    },
+                    {
+                        "label": "Flight Display",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/immigration/initFlightDisplay.action"
+                    },
+                    {
+                        "label": "Traveller Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/immigration/initTravelerSearch.action"
+                    },
+                    {
+                        "label": "Flight Tracking",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/immigration/initFlightTracking.action"
+                    },
+                    {
+                        "label": "Traveller Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/customs/initTravellerSearch.action"
+                    },
+                    {
+                        "label": "Flight Search by direction",
+                        "iconName": "insights",
+                        "level": 2
+                    },
+                    {
+                        "label": "Flight Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/aot/initFlightSearch.action"
+                    },
+                    {
+                        "label": "Flight Display",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/aot/initFlightDisplay.action"
+                    },
+                    {
+                        "label": "Traveller Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/aot/initTravelerSearch.action"
+                    },
+                    {
+                        "label": "Flight Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/customs/initFlightSearch.action"
+                    },
+                    {
+                        "label": "Traveller and Baggage Search",
+                        "iconName": "insights",
+                        "level": 2
+                    },
+                    {
+                        "label": "Flight Display",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initFlightDisplay.action"
+                    },
+                    {
+                        "label": "Traveller Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initTravellerSearch.action"
+                    },
+                    {
+                        "label": "Compare flight schedule with APPS data",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initCompareFlightScheduleWithAppsData.action"
+                    }
+                ]
+            },
+            {
+                "label": "Risk Assessment System",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Stoplist System",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "Temporary Stoplist",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initTempStoplist.action"
+                            },
+                            {
+                                "label": "Stoplist Management",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initStoplistManagement.action"
+                            },
+                            {
+                                "label": "Stoplist Alert",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initStoplistAlert.action"
+                            },
+                            {
+                                "label": "Stoplist Hits Search",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initStoplistHit.action"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Blacklist System",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "Temporary Blacklist",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initTempBlacklist.action"
+                            },
+                            {
+                                "label": "Blacklist Management",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initBlacklistManagement.action"
+                            },
+                            {
+                                "label": "Blacklist Alert",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initBlacklistAlert.action"
+                            },
+                            {
+                                "label": "Blacklist Hits Search",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initBlacklistHit.action"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Stoplist Blacklist Process Log System",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "Stoplist Blacklist Process Log",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initStoplistBlacklistProc.action"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "Job Activity Monitoring System",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Monitoring",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oga/initMonitoring.action"
+                    },
+                    {
+                        "label": "Realtime history",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oga/initRealtimeHist.action"
+                    },
+                    {
+                        "label": "Manual Export EMR",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oga/initManualExportEMR.action"
+                    }
+                ]
+            },
+            {
+                "label": "MFA Passport Information",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Passport Information",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/immigration/initPassportSearch.action"
+                    },
+                    {
+                        "label": "MFA Process Service",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/immigration/initLogMFAService.action"
+                    }
+                ]
+            },
+            {
+                "label": "Risk Assessment System",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Watchlist Management",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/customs/initWatchlistManagement.action"
+                    },
+                    {
+                        "label": "Watchlist Alert",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/customs/initWatchlistAlert.action"
+                    },
+                    {
+                        "label": "Watchlist Hits Search",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/customs/initWatchlistHitsSearch.action"
+                    },
+                    {
+                        "label": "Watchlist Alert Configuration",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/customs/initWatchlistAlertConfig.action"
+                    }
+                ]
+            },
+            {
+                "label": "Software as a Service",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "EMR History",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oga/initHistoryEMR.action"
+                    },
+                    {
+                        "label": "Risk Assessment System",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "Watchlist Management",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/oga/initWatchlistManagement.action"
+                            },
+                            {
+                                "label": "Watchlist Alert",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/oga/initWatchlistAlert.action"
+                            },
+                            {
+                                "label": "Watchlist Alert Configuration",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/oga/initWatchlistAlertConfig.action"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "Account Receivable",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Reprocess Data MIS",
+                        "iconName": "insights",
+                        "level": 2
+                    },
+                    {
+                        "label": "Send Data AR Interface MIS",
+                        "iconName": "insights",
+                        "level": 2
+                    },
+                    {
+                        "label": "รายงานเอกสารแนบการชำระเงิน",
+                        "iconName": "insights",
+                        "level": 2
+                    }
+                ]
+            },
+            {
+                "label": "Passenger Name Record System",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Manage Airline Engagement Process",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initEngagementProcess.action"
+                    },
+                    {
+                        "label": "PNR Message Process Log",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initMsgProcessLog.action"
+                    },
+                    {
+                        "label": "PNR Airline Certification Progress Report",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initAirlineCerProReport.action"
+                    },
+                    {
+                        "label": "Extract PNR Message Process Log",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/customs/initPNRMsgProcessLog.action"
+                    }
+                ]
+            },
+            {
+                "label": "Distribute Public Master Data System",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "Distribute Process Logs",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initDistributeProcessLog.action"
+                    }
+                ]
+            },
+            {
+                "label": "Report",
+                "iconName": "insights",
+                "level": 1,
+                "children": [
+                    {
+                        "label": "รายงานจำนวนผู้โดยสารแยกตามสัญชาติ",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "รายงานจำนวนผู้โดยสารแยกตามสัญชาติรายวัน",
+                                "iconName": "insights",
+                                "level": 3
+                            },
+                            {
+                                "label": "รายงานจำนวนผู้โดยสารแยกตามสัญชาติรายเดือน",
+                                "iconName": "insights",
+                                "level": 3
+                            },
+                            {
+                                "label": "รายงานจำนวนผู้โดยสารสิบอันดับแยกตามสัญชาติ",
+                                "iconName": "insights",
+                                "level": 3
+                            },
+                            {
+                                "label": "รายงานจำนวนผู้โดยสารแยกตามสัญชาติรายวัน (Realtime)",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/aot/initPassengerDayRealtime.action"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "รายงาน Transaction ผู้โดยสาร Check-in เข้าระบบ APPS",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initTransactionCheckinGGDown.action"
+                    },
+                    {
+                        "label": "รายงานข้อมูลเที่ยวบิน",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "รายงานสายการบินที่ไม่ส่งข้อมูลลูกเรือ",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/immigration/initAirlineNotSendCrew.action"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Inbound Passenger Summary Report",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport001.action"
+                    },
+                    {
+                        "label": "Inbound Passenger Comparison Report",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport002.action"
+                    },
+                    {
+                        "label": "Outbound Passenger Summary Report",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport003.action"
+                    },
+                    {
+                        "label": "Outbound Passenger Comparison Report",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport004.action"
+                    },
+                    {
+                        "label": "Transit / Tranfer Passenger Summary Report",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport005.action"
+                    },
+                    {
+                        "label": "Transit / Tranfer Passenger Comparison Report",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport006.action"
+                    },
+                    {
+                        "label": "รายงานสรุปจำนวนผู้โดยสาร-จำนวนเงิน แยกตามสายการบินของแต่ละวัน",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport007.action"
+                    },
+                    {
+                        "label": "รายงานสรุปจำนวนผู้โดยสาร/จำนวนเงิน จำแนกตามสายการบิน แยกประเภทการเก็บเงินจากสายการบินและการจ่ายเงินสำหรับสายการบินและผู้รับจ้าง",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport008.action"
+                    },
+                    {
+                        "label": "รายงานสรุปจำนวนผู้โดยสารของระบบ APPS ประจำเดือน",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport009.action"
+                    },
+                    {
+                        "label": "รายงานส่งงานท่าอากาศยาน",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "Summary Report สัญชาติแยกตามสายการบิน",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initSumNatByAirline.action"
+                            },
+                            {
+                                "label": "รายงานสรุปอายุ, เพศ, สัญชาติ แยกตามสายการบิน",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initAgeSummaryPassenger.action "
+                            },
+                            {
+                                "label": "รายงานจำนวนผู้โดยสารแยกตามสัญชาติ, เพศ และสายการบิน",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initSumByNatGenderAirline.action"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "รายงานสรุปจำนวนผู้โดยสารของระบบ APPS ประจำเดือนและสะสมปีงบประมาณ",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReport010.action"
+                    },
+                    {
+                        "label": "รายงานเก็บเงิน",
+                        "iconName": "insights",
+                        "level": 2,
+                        "children": [
+                            {
+                                "label": "รายงานรายชื่อสายการบินที่ไม่มีการส่งข้อมูลผ่านระบบAPPS",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initReport01101.action"
+                            },
+                            {
+                                "label": "รายงานเปรียบเทียบสายการบินที่ไม่มีการส่งข้อมูลผ่านระบบAPPS",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initReport01102.action"
+                            },
+                            {
+                                "label": "รายงานรายชื่อสายการบินที่ส่งข้อมูลผ่านระบบAPPSไม่ครบทุกท่าอากาศยาน",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initReport01103.action"
+                            },
+                            {
+                                "label": "รายงานสรุปจำนวนผู้โดยสาร-จำนวนเงินแยกตามสายการบินและเที่ยวบินรายวัน",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initReport01104.action"
+                            },
+                            {
+                                "label": "ExportOracleToAccess",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initExportOraRep011.action"
+                            },
+                            {
+                                "label": "ImportAccessToOracle",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initImportAccess.action"
+                            },
+                            {
+                                "label": "บันทึกข้อมูลระบบสายการบินใช้ส่งข้อมูลผู้โดยสารของ SITA",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initSitaAirline.action"
+                            },
+                            {
+                                "label": "รายงานการวิเคราะห์ข้อมูลประจำเดือน",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initReport01105.action"
+                            },
+                            {
+                                "label": "รายงานรายละเอียดสายการบินที่ไม่มีการส่งข้อมูลผ่านระบบ APPS",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initReport01106.action"
+                            },
+                            {
+                                "label": "นำเข้าข้อมูลหมายเหตุจาก  Airline Certification เข้า Oracle",
+                                "iconName": "insights",
+                                "level": 3,
+                                "path": "jsp/report/initImportRemark.action"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "รายงานแสดงความแตกต่างระหว่างข้อมูล AOT และ APPS",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initComparePassenger.action"
+                    },
+                    {
+                        "label": "ประกาศ DAY 0",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initReportDay0.action"
+                    },
+                    {
+                        "label": "รายงานค่าเฉลี่ยผลการตอบกลับรายนาที",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initAverageMinute.action"
+                    },
+                    {
+                        "label": "รายงานปริมาณผู้โดยสาร APPS แยกตามท่าอากาศยาน",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/report/initPassengerVolume.action"
+                    },
+                    {
+                        "label": "AOT Manifest Data Entry",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initAOTManifestData.action"
+                    },
+                    {
+                        "label": "IMM Manifest Data Entry",
+                        "iconName": "insights",
+                        "level": 2,
+                        "path": "jsp/oc/initIMMManifestData.action"
+                    }
+                ]
+            }
+        ]
+    }
+}

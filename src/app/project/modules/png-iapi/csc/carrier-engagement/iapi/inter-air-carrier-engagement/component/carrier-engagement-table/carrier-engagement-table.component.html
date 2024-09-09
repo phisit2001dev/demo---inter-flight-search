@@ -1,0 +1,164 @@
+<mat-card class="mt-3" [ngClass]="{'d-none': !dataSource?.totalResult }" [formGroup]="this.form">
+    <div class="row">
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+          <div class="d-flex align-items-center">
+            <span class="table_title_search">{{
+              "table_title_search"
+                | translate : { value: this.dataSource?.totalResult }
+            }}</span>
+          </div>
+          <!-- Paginator -->
+          <div class="d-flex align-items-center">
+            <span class="me-3">{{ "gotoPage" | translate}}</span>
+            <mat-form-field [appearance]="'outline'">
+            <input
+              matInput
+              [value]="displayPageIndex"
+              inputPaginator
+              (valueChange)="pageChange($event)" />
+            </mat-form-field>
+            <mat-paginator #paginatorHearder
+              (page)="pageChange($event)"
+              [pageSize]="pageSize"
+              [length]="dataLength"
+              [pageIndex]="pageIndex">
+            </mat-paginator>
+        </div>
+        </div>
+      </div>
+      <div class="overflow-auto">
+          <table
+            mat-table
+            [dataSource]="dataSource?.listResult"
+            class="mat-elevation-z sit-table w-100"
+            style="min-width: 2000px"
+            matSort
+            (matSortChange)="sortChange.emit($event)"
+            [matSortActive]="headerSorts | initMatsort: 'columnName'"
+            [matSortDirection]="headerSorts | initMatsort: 'order'"
+          >
+          <!-- Position Column -->
+          <ng-container matColumnDef="no">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;">{{ 'no' | translate }}</th>
+            <td mat-cell *matCellDef="let element;let index = index" style="text-align: center;" class="col-no">
+              {{ index | generateRowNo : pageSize : pageIndex }}
+            </td>
+          </ng-container>
+            
+            <!-- Edit -->
+            <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef class="text-center">{{'edit' | translate}}</th>
+                <td mat-cell *matCellDef="let element;" class="text-center col-icon">
+                <app-sit-button-icon
+                    [type]="'EDIT'"
+                    [permission]="this.permission.edit"
+                    [tooltip]="'edit' | translate"
+                    (btnClick)="this.btnEdit.emit(element)"
+                ></app-sit-button-icon>
+                </td>
+            </ng-container>
+
+            <!-- View -->
+            <ng-container matColumnDef="view">
+                <th mat-header-cell *matHeaderCellDef class="text-center">{{'view' | translate}}</th>
+                <td mat-cell *matCellDef="let element;" class="text-center col-icon">
+                <app-sit-button-icon
+                    [type]="'VIEW'"
+                    [permission]="this.permission.view"
+                    [tooltip]="'view' | translate"
+                    (btnClick)="this.btnView.emit(element)"
+                ></app-sit-button-icon>
+                </td>
+            </ng-container>
+
+          <!-- CarrierCode (IATA) Column -->
+          <ng-container matColumnDef="carrierCodeIATA">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="0"> {{'ces.carrierCodeIATA' | translate}} </th>
+              <td mat-cell *matCellDef="let element"> {{element.carrierCodeIATA}} </td>
+          </ng-container>
+          
+          <!-- carrierCode (ICAO) Column -->
+          <ng-container matColumnDef="carrierCodeICAO">
+              <th mat-header-cell *matHeaderCellDef> {{'ces.carrierCodeICAO' | translate}} </th>
+              <td mat-cell *matCellDef="let element"> {{element.carrierCodeICAO}} </td>
+          </ng-container>
+  
+          <!-- Carrier Name Column -->
+          <ng-container matColumnDef="carrierName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="1"> {{'ces.carrierName' | translate}} </th>
+              <td mat-cell *matCellDef="let element"> {{element.carrierName}} </td>
+          </ng-container>
+  
+          <!--Certification Type Column -->
+          <ng-container matColumnDef="certificationType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="2"> {{'ces.certificationType' | translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.certificationType}} </td>
+          </ng-container>
+  
+          <!-- DCS Host Column -->
+          <ng-container matColumnDef="dcsHost">
+            <th mat-header-cell *matHeaderCellDef> {{'ces.dcsHost' | translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.dcsHost}} </td>
+          </ng-container>
+  
+          <!-- Version Column -->
+          <ng-container matColumnDef="version">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> {{'ces.version' | translate}} </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.version}} </td>
+          </ng-container>
+  
+          <!-- Certification Start Date Column -->
+          <ng-container matColumnDef="certificationStartDate">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;">{{'ces.certificationStartDate' | translate}} </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.certificationStartDate}} </td>
+          </ng-container>
+  
+          <!-- Update Date Column -->
+          <ng-container matColumnDef="updateDate">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> {{'update_date' | translate}} </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.updateDate}} </td>
+          </ng-container>
+  
+          <!-- Status Column -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="3" style="text-align: center;"> {{'status' | translate}} </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.status}} </td>
+          </ng-container>
+          
+          <!-- Cutover Date Column -->
+          <ng-container matColumnDef="cutoverDate">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header="4" style="text-align: center;"> {{ 'ces.cutoverDate' | translate }} </th>
+              <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.cutoverDate}} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div class="row">
+      <div class="d-flex justify-content-between flex-column flex-lg-row">
+        <div class="col checkin-button">
+          
+        </div>
+        <!-- Paginator -->
+        <div class="d-flex align-items-center">
+          <span class="me-3">{{ "gotoPage" | translate}}</span>
+          <mat-form-field
+          [appearance]="'outline'">
+          <input
+            matInput
+            [value]="displayPageIndex"
+            inputPaginator
+            (valueChange)="pageChange($event)"
+          />
+          </mat-form-field>
+          <mat-paginator #paginatorHearder
+          (page)="pageChange($event)"
+          [pageSize]="pageSize"
+          [length]="dataLength"
+          [pageIndex]="pageIndex">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </mat-card>

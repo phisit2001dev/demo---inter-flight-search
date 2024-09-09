@@ -1,0 +1,10 @@
+.custom-link {
+    color: #007bff; /* สีฟ้าสำหรับลิงก์ */
+    text-decoration: underline; /* ขีดเส้นใต้ */
+    cursor: pointer; /* เปลี่ยน cursor เมื่อ hover */
+  }
+  
+  .custom-link:hover {
+    color: #0056b3; /* สีที่เข้มขึ้นเมื่อ hover */
+    text-decoration: none; /* ยกเลิกการขีดเส้นใต้เมื่อ hover */
+  }

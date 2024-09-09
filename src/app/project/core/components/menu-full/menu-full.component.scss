@@ -1,0 +1,101 @@
+::ng-deep .menu-width {
+  max-width: none !important;
+  width: 90vw !important;
+  height: calc(100vh - 120px);
+  min-height: 500px;
+}
+
+.menu-full-tree ul,
+.menu-full-tree li {
+    // margin-top: 0;
+    // margin-bottom: 0;
+    // list-style-type: none;
+}
+
+/*
+   * This padding sets alignment of the nested nodes.
+   */
+.menu-full-tree .mat-nested-tree-node div[role="group"] {
+    padding-left: 40px;
+    // background-color: #AE2519;
+}
+
+/*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+.menu-full-tree div[role="group"] > .mat-tree-node {
+    padding-left: 40px;
+}
+
+.link-active{
+    border-radius: 10px;
+  .link-label,at-icon{
+      color: #3f51b5;
+      font-weight: bold;
+  }
+}
+
+.btn-nest-child.link-active {
+  .mat-icon{
+    background: #3f51b5 !important;
+    color: #3f51b5 !important;
+    border-radius: 100%;
+  }
+}
+
+::ng-deep #mainMenuNav button.mat-mdc-menu-item{
+  &.link-active:hover{
+    border-radius: 10px;
+    // background: rgb(255,209,0);
+    // background: linear-gradient(104deg, rgba(255,209,0,1) 13%, rgba(255,214,26,0.9472163865546218) 31%, rgba(255,218,51,0.8519782913165266) 57%, rgba(255,223,77,0.6418942577030813) 78%);
+  }
+  &:hover{
+    border-radius: 10px;
+  }
+}
+
+.head-tree-node.menuHeader{
+  .head-tree-cont{
+    margin-left: 40px;
+  }
+  .menuHeadBorder{
+    border-bottom: 1px solid #a7a7a7;
+    margin-left: 40px;
+  }
+}
+.head-tree-node.subMenuHeader{
+  .menuHeadBorder{
+    border-bottom: none;
+    margin-left: 40px;
+  }
+}
+
+.mat-tree-node{
+  min-height: 35px;
+  button {
+    min-height: 35px;
+  }
+}
+
+.btn-nest-child {
+  .mat-icon{
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    color: cadetblue;
+  }
+}
+
+
+::ng-deep.menu-width .mdc-list-item__primary-text{
+  width: 100%;
+}
+
+#close-btn-menu{
+  position: absolute;
+  top: 0px;
+  --mdc-fab-container-color: #f44336
+}
+

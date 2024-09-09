@@ -1,0 +1,11 @@
+{
+	"ex.no": "No.",
+	"ex.iata": "Airport code (IATA)",
+	"ex.icao": "Airport code (ICAO)",
+	"ex.airname": "Airport name (english)",
+	"ex.locat": "Location (english)",
+	"ex.time": "Time zone",
+	"ex.utc": "UTC",
+	"ex.countryname": "Country name (english)",
+	"ex.airportsta": "Airport status"
+}

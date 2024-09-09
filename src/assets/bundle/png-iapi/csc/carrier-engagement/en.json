@@ -1,0 +1,15 @@
+{
+    "ces.stage" : "Stage",
+    "ces.carrierCodeIATA": "Carrier code (IATA)",
+    "ces.dcsHost" : "DCS host",
+    "ces.certificationType" : "Certification type",
+    "ces.lpp" : "Records per page",
+    "ces.carrierCodeICAO" : "Carrier code (ICAO)",
+    "ces.carrierName" : "Carrier name",
+    "ces.version" : "Version",
+    "ces.certificationStartDate" : "Certification start date",
+    "ces.cutoverDate" : "Cutover date",
+    "ces.seriveForm" : "Serive Form",
+    "ces.add_remark" : "Add Remank",
+    "ces.file_support": "Support only .xls, .xlsx, .csv and .txt"
+}

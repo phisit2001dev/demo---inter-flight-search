@@ -1,0 +1,348 @@
+<div [formGroup]="this.form">
+    <div class="row" >
+      <div class="col-xl-9" selector=".atLeastOne-require" sit-validate-input="atLeastOne">
+        <fieldset class="atLeastOne-require">
+          <legend><sit-label [require]="true"><span>{{ "tra.atLeastOne" | translate }}</span></sit-label></legend>
+  <!--Row1--><div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-5" sit-validate-input="departureDateFrom">
+              <sit-label>
+                <span>{{ "tra.departureDatefrom" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input 
+                matInput
+                [datePicker]="departureDateFrom"
+                [matDatepicker]="departureDateFrom" 
+                formControlName ="departureDateFrom"
+                date-from-to-spinner
+                [dateFromControl]="this.form.get('departureDateFrom')"
+                [dateToControl]="this.form.get('departureDateTo')"
+                [spinner]="this.form.get('spinnerDep')"
+                [maxDays]="31"
+                [setFromTo]="true"
+                [setFromToWithMaxDays]="true"
+                (dateChange)="checkChangeDeparture()"
+                />
+                <mat-datepicker-toggle matSuffix [for]="departureDateFrom">
+                </mat-datepicker-toggle>
+                <mat-datepicker #departureDateFrom></mat-datepicker>
+              </mat-form-field>
+              <sit-helper 
+                hint="{{ 'dateFormatHint' | translate}}"
+                [control]="this.form.get('departureDateFrom')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-7" sit-validate-input="depTimeFrom">
+              <sit-label>
+                <span>&nbsp;</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input matInput time24-hours formControlName="depTimeFrom" />
+              </mat-form-field>
+              <sit-helper 
+                hint="{{ 'timeFormatHint' | translate }}"
+                [control]="this.form.get('depTimeFrom')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-5" sit-validate-input="spinnerDep">
+              <sit-label>
+                <span> {{ "tra.days" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input matInput
+                number-only-spiner
+                type="number"
+                min="0"
+                max = "99"
+                maxLength="2"
+                formControlName="spinnerDep"
+                />
+              </mat-form-field>
+              <sit-helper
+                  [control]="this.form.get('spinnerDep')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-5" sit-validate-input="departureDateTo">
+              <sit-label>
+                <span>{{ "tra.departureDateTo" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input
+                  matInput
+                  [datePicker]="departureDateTo"
+                  [matDatepicker]="departureDateTo"
+                  formControlName="departureDateTo"
+                />
+                <mat-datepicker-toggle matSuffix [for]="departureDateTo">
+                </mat-datepicker-toggle>
+                <mat-datepicker #departureDateTo></mat-datepicker>
+              </mat-form-field>
+              <sit-helper 
+                hint="{{ 'dateFormatHint' | translate }}"
+                [control]="this.form.get('departureDateTo')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-7" sit-validate-input="depTimeTo">
+              <sit-label>
+                <span>&nbsp;</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input matInput  time24-hours formControlName="depTimeTo"/>
+              </mat-form-field>
+              <sit-helper 
+                hint="{{ 'timeFormatHint' | translate }}"
+                [control]="this.form.get('depTimeTo')"
+              ></sit-helper>
+            </div>
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-5">
+              <sit-label>
+                <span>&nbsp;</span>
+              </sit-label>
+              <mat-icon class="information-tooltip-icon" #tooltip="matTooltip" matTooltip=" {{'10036' | translate}} ">help</mat-icon>
+            </div>
+          </div>
+ <!--Row2-->         
+          <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-5" sit-validate-input="arrivalDateFrom">
+              <sit-label>
+                <span>{{ "tra.arrivalDatefrom" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input
+                  matInput
+                  [datePicker]="arrivalDateFrom"
+                  [matDatepicker]="arrivalDateFrom"
+                  date-from-to-spinner
+                  [dateFromControl]="this.form.get('arrivalDateFrom')"
+                  [dateToControl]="this.form.get('arrivalDateTo')"
+                  [spinner]="this.form.get('spinnerArr')"
+                  [setFromTo]="true"
+                  [setFromToWithMaxDays]="true"
+                  [maxDays]="31"
+                  formControlName="arrivalDateFrom"
+                  (dateChange)="checkChangearrival()"
+                />
+                <mat-datepicker-toggle matSuffix [for]="arrivalDateFrom">
+                </mat-datepicker-toggle>
+                <mat-datepicker #arrivalDateFrom></mat-datepicker>
+              </mat-form-field>
+              <sit-helper 
+                hint="{{ 'dateFormatHint' | translate}}"
+                [control]="this.form.get('arrivalDateFrom')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-7" sit-validate-input="arrTimeFrom">
+              <sit-label>
+                <span>&nbsp;</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input matInput time24-hours formControlName="arrTimeFrom"/>
+              </mat-form-field>
+              <sit-helper 
+                hint="{{ 'timeFormatHint' | translate }}"
+                [control]="this.form.get('arrTimeFrom')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-5" sit-validate-input="spinnerArr">
+              <sit-label>
+                <span> {{ "tra.days" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input matInput
+                number-only-spiner
+                type="number"
+                min="0"
+                max="99"
+                maxlength="2"
+                formControlName="spinnerArr"
+                />
+              </mat-form-field>
+              <sit-helper
+                  [control]="this.form.get('spinnerArr')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-5" sit-validate-input="arrivalDateTo">
+              <sit-label>
+                <span>{{ "tra.arrivalDateto" | translate }}</span>
+              </sit-label>
+              <mat-form-field class="w-100" appearance="outline">
+                <input
+                  matInput
+                  [datePicker]="arrivalDateTo"
+                  [matDatepicker]="arrivalDateTo"
+                  formControlName="arrivalDateTo"
+                />
+                <mat-datepicker-toggle  matSuffix [for]="arrivalDateTo">
+                </mat-datepicker-toggle>
+                <mat-datepicker #arrivalDateTo></mat-datepicker>
+              </mat-form-field>
+              <sit-helper 
+                hint="{{ 'dateFormatHint' | translate }}"  
+                [control]="this.form.get('arrivalDateTo')"
+              ></sit-helper>
+            </div>
+  
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-7" sit-validate-input="arrTimeTo">
+              <sit-label>
+                <span>&nbsp;</span>
+              </sit-label>
+                <mat-form-field class="w-100" appearance="outline">
+                  <input matInput time24-hours formControlName="arrTimeTo"/>
+                </mat-form-field>
+                <sit-helper 
+                  hint="{{ 'timeFormatHint' | translate }}"
+                  [control]="this.form.get('arrTimeTo')"
+                ></sit-helper>
+            </div>
+  
+            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-5">
+              <sit-label>
+                <span>&nbsp;</span>
+              </sit-label>
+              <mat-icon class="information-tooltip-icon" #tooltip="matTooltip" matTooltip=" {{'10036' | translate}} ">help</mat-icon>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="col-xl-3">
+        <fieldset>
+          <div class="row">
+            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6" sit-validate-input="departurePortKey">
+              <sit-label>
+                <span>{{ "tra.departurePort" | translate }}</span>
+              </sit-label>
+              <sit-autocomplete
+                type="A"
+                [controlKey]="this.form.get('departurePortKey')"
+                [controlValue]="this.form.get('departurePortVal')"
+                [listResult]="this.departurePortList"
+                [valueChange]="departurePortAutocomplete$"
+                (selectValue)="departureselectValue($event)"
+              >
+              </sit-autocomplete>
+              <sit-helper
+                [control]="this.form.get('departurePortKey')"
+              ></sit-helper>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6" sit-validate-input="arrivalPortKey">
+              <sit-label>
+                <span>{{ "tra.arrivalPort" | translate }}</span>
+              </sit-label>
+              <sit-autocomplete
+                type="A"
+                [controlKey]="this.form.get('arrivalPortKey')"
+                [controlValue]="this.form.get('arrivalPortVal')"
+                [listResult]="this.arrivalPortList"
+                [valueChange]="arrivalPortAutocomplete$"
+                (selectValue)="arrivalselectValue($event)">                          
+              </sit-autocomplete>
+              <sit-helper
+                [control]="this.form.get('arrivalPortKey')"
+              ></sit-helper>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6" sit-validate-input="carrierNameKey">
+        <sit-label>
+          <span>{{ "tra.carrierCode" | translate }}</span>
+        </sit-label>
+        <sit-autocomplete
+          type="A"
+          [controlKey]="this.form.get('carrierNameKey')"
+          [controlValue]="this.form.get('carrierNameVal')"
+          [listResult]="this.carrierCodeList"
+          [valueChange]="carrierCodeAutocomplete$"
+          (selectValue)="carrierselectValue($event)"
+        >
+        </sit-autocomplete>
+        <sit-helper
+          [control]="this.form.get('carrierNameKey')"
+        ></sit-helper>
+      </div>
+  
+
+      <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6" sit-validate-input="flightKey">
+        <sit-label>
+          <span>{{ "tra.serviceNumber" | translate }}</span>
+        </sit-label>
+        <sit-autocomplete
+          type="A"
+          [controlKey]="this.form.get('flightKey')" 
+          [controlValue]="this.form.get('flightVal')"
+          [listResult]="flightList"
+          [valueChange]="flightAutocomplete$"
+          (selectValue)="flightselectValue($event)"
+        >
+        </sit-autocomplete>
+        <sit-helper
+          [control]="this.form.get('flightKey')"
+        ></sit-helper>
+      </div>
+  
+    
+      <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6" sit-validate-input="flightDirection">
+        <sit-label>
+          <span>{{ "tra.direction" | translate }}</span>
+        </sit-label>
+        <mat-form-field class="w-100" [appearance]="'outline'">
+          <mat-select placeholder="{{'all' | translate}}"  formControlName="flightDirection">
+            <mat-option>{{'all' | translate}}</mat-option>
+            <mat-option *ngFor="let type of this.initialData.directionSelectItem" [value]="type.key">{{type.value}}</mat-option>
+          </mat-select> 
+        </mat-form-field>
+        <sit-helper
+            [control]="this.form.get('flightDirection')"
+        ></sit-helper>
+      </div>
+  
+
+      <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6" sit-validate-input="scheduleType">
+        <sit-label>
+          <span>{{ "tra.scheduleType" | translate }}</span>
+        </sit-label>
+        <mat-form-field class="w-100" [appearance]="'outline'">
+          <mat-select placeholder="{{'all' | translate}}" formControlName="scheduleType">
+            <mat-option>{{'all' | translate}}</mat-option>
+            <mat-option  *ngFor="let type of this.initialData.scheduleTypeSelectItem" [value]="type.key">{{type.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <sit-helper
+            [control]="this.form.get('scheduleType')"
+        ></sit-helper>
+      </div>
+  
+  
+      <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6" sit-validate-input="linePerPage">
+        <sit-label>
+            <span>{{"rec_per_page" | translate}}</span>
+        </sit-label>
+        <mat-form-field
+          class="w-100"
+          [appearance]="'outline'">
+            <mat-select
+              formControlName="linePerPage"
+              >
+              <mat-option *ngFor="let item of this.initialData.listLinePerPage" [value]="item">
+                {{ item }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <sit-helper
+          [control]="this.form.get('linePerPage')"
+        ></sit-helper>
+
+  </div>
+  

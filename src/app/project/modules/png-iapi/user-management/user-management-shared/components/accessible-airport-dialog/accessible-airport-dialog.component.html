@@ -1,0 +1,148 @@
+<mat-card (enterSearch)="search()">
+    <div class="row">
+        <sit-title>
+            <span>{{this.dialogData.label.title}}</span>
+        </sit-title>
+    </div>
+    <div [formGroup]="this.form" class="mt-3">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4" sit-validate-input="airportCode">
+                <sit-label>
+                    <span>{{this.dialogData.label.airport_code}}</span>
+                </sit-label>
+                <mat-form-field
+                class="w-100"
+                [appearance]="'outline'">
+                <input
+                    matInput
+                    formControlName="airportCode"
+                    maxlength="100"
+                />
+                </mat-form-field>
+                <sit-helper
+                    [control]="this.form.get('airportCode')"
+                ></sit-helper>
+            </div>
+            <div class="col-4" sit-validate-input="airportName">
+                <sit-label>
+                    <span>{{this.dialogData.label.airport_name}}</span>
+                </sit-label>
+                <mat-form-field
+                class="w-100"
+                [appearance]="'outline'">
+                <input
+                    matInput
+                    formControlName="airportName"
+                    maxlength="100"
+                />
+                </mat-form-field>
+                <sit-helper
+                    [control]="this.form.get('airportName')"
+                ></sit-helper>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4" sit-validate-input="active">
+                <sit-label>
+                    <span>{{this.dialogData.label.activation_status}}</span>
+                </sit-label>
+                <mat-form-field
+                class="w-100"
+                [appearance]="'outline'">
+                    <mat-select
+                    placeholder="{{'all' | translate}}"
+                    formControlName="active"
+                    >
+                        <mat-option [value]="">{{ "all" | translate }}</mat-option>
+                        <mat-option *ngFor="let item of this.dialogData.data.listActiveStatus" [value]="item.key">
+                        {{ item.value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <sit-helper
+                [control]="this.form.get('active')"
+                ></sit-helper>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col sit-btn-con d-flex justify-content-end">
+            <button type="button" color="primary" mat-raised-button (click)="search()">{{ "search" | translate }}</button>
+            <button type="button" class="ms-3" mat-raised-button (click)="clear()">{{ "clear" | translate }}</button>
+            <button type="button" class="ms-3" mat-raised-button (click)="close()">{{ "close" | translate }}</button>    
+        </div>
+    </div>
+</mat-card>
+<mat-card class="mt-3" *ngIf="this.dataSource?.data.length">
+    <div class="row">
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+            <div class="d-flex align-items-center">
+                <span class="table_title_search">{{ "table_title_search" | translate: { value: this.totalResult | number} }}</span>
+                <span>&nbsp;</span>
+            </div>
+            <div class="d-flex align-items-center">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <div class="overflow-auto scroll-table" style="min-height: 232px; max-height: 232px;">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z sit-table w-100" style="min-width: 600px;">
+        
+            <ng-container matColumnDef="no">
+                <th mat-header-cell *matHeaderCellDef class="col-no text-center">{{ 'no' | translate }}</th>
+                <td mat-cell *matCellDef="let i = index" class="col-no text-center"> {{i+1}} </td>
+            </ng-container>
+
+            <!-- checkbox Column -->
+            <ng-container matColumnDef="checkbox">
+                <th mat-header-cell *matHeaderCellDef class="col-checkbox text-center">
+                    <mat-checkbox
+                        (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let element;" class="col-checkbox text-center">
+                    <mat-checkbox
+                        (click)="$event.stopPropagation()"
+                        (change)="$event ? childToggle(element) : null"
+                        [checked]="selection.isSelected(element)"
+                        [disabled]="element.active=='Inactive'"
+                        >
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="active">
+                <th mat-header-cell *matHeaderCellDef class="col-active-status text-center">{{ this.dialogData.label.activation_status }}</th>
+                <td mat-cell *matCellDef="let element;" class="col-active-status text-center">
+                  <div [class]="element.active | activeStatusPipe">{{element.active}}</div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="airportCode">
+                <th mat-header-cell *matHeaderCellDef class="airport-code">{{ this.dialogData.label.airport_code }}&nbsp;{{ this.dialogData.label.iata }}</th>
+                <td mat-cell *matCellDef="let element" class="airport-code"> {{element.airportCode}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="airportName">
+                <th mat-header-cell *matHeaderCellDef class="airport-name">{{ this.dialogData.label.airport_name }}</th>
+                <td mat-cell *matCellDef="let element" class="airport-name"> {{element.airportName}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </div>
+    <div class="row mt-3">
+        <div class="col sit-btn-con d-flex justify-content-end">
+            <button type="button" color="primary" mat-raised-button (click)="choose()">{{ "ok" | translate }}</button>
+        </div>
+    </div>
+</mat-card>

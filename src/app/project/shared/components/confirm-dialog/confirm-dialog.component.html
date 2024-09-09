@@ -1,0 +1,27 @@
+<div class="confirmDialog">
+  <h6 mat-dialog-title>{{ option.description }}</h6>
+  <mat-divider></mat-divider>
+  <div style="width: 100%;">
+    <div class="row mt-3">
+      <div class="col">
+        <button
+          mat-raised-button
+          [mat-dialog-close]="true"
+          color="primary"
+          class="dialog-action w-100"
+        >
+          {{ option.confirmText }}
+        </button>
+      </div>
+      <div class="col">
+        <button
+          mat-raised-button
+          [mat-dialog-close]="false"
+          class="dialog-action w-100"
+        >
+          {{ option.cancelText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<mat-card>
+    <div [formGroup]="form">
+        <div class="row">
+            <div class="col-md-12 col-lg-2 " sit-validate-input="carrierCodeIata">
+                <sit-label [require]="true"><span>{{'std.ac_carrier_code_iata'|translate}}</span></sit-label>
+                <mat-form-field class="w-100" [appearance]="'outline'">
+                    <input matInput input-english formControlName="carrierCodeIata" maxlength="" >
+                </mat-form-field >
+                <sit-helper
+                [hint]="'std.ac_two_letters'|translate"
+                [control]="this.form.get('carrierCodeIata')">
+                </sit-helper>
+            </div>
+            <div class="col-md-12 col-lg-2 offset-lg-1" sit-validate-input="carrierCodeIcao">
+                <sit-label>
+                    <span>{{"std.ac_carrier_code_icao"|translate}}</span>
+                </sit-label>
+                <mat-form-field class="w-100" [appearance]="'outline'">
+                    <input matInput input-english formControlName="carrierCodeIcao" maxlength="3" >
+                </mat-form-field>
+                <sit-helper [hint]="'std.ac_three_letters'|translate"></sit-helper>
+            </div>
+            <div class="col-md-12 col-lg-3 offset-lg-1" sit-validate-input="carrierName" maxlength="100">
+                <sit-label [require]="true">
+                    <span>{{"std.ac_carrier_name"|translate}}</span>
+                </sit-label>
+                <mat-form-field class="w-100" [appearance]="'outline'">
+                    <input matInput formControlName="carrierName">
+                </mat-form-field>
+                <sit-helper
+                [control]="this.form.get('carrierName')"
+                ></sit-helper>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-3" sit-validate-input="countryName">
+                <sit-label [require]="true">
+                    <span>{{"std.ac_country_name"|translate}}</span>
+                </sit-label>
+                <sit-autocomplete
+                type='A'
+                [controlValue]="this.form.get('countryName')"
+                [controlKey]="this.form.get('countryCode')"
+                [listResult]="countryNameList"
+                [valueChange]="countryNameAutocomplete$"
+                ></sit-autocomplete>
+                <sit-helper
+                [control]="this.form.get('countryName')"
+                ></sit-helper>
+            </div>
+            <div class="col-md-12 col-lg-3" sit-validate-input="carrierType">
+                <sit-label>
+                    <span>{{'std.ac_carrier_type'|translate}}</span>
+                </sit-label>
+                <div class="section-border w-100">
+                    <mat-radio-group formControlName="carrierType" class="d-flex justify-content-around">
+                        <mat-radio-button *ngFor="let radio of this.listCarrierTypeRadio" [value] ="radio.key">{{radio.value}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <sit-helper></sit-helper>
+            </div>
+            <div class="col-md-12 col-lg-1" sit-validate-input="activeStatus">
+                <sit-label>
+                  <span>&nbsp;</span>
+                </sit-label>
+                <mat-checkbox formControlName="activeStatus">{{"active" | translate}}</mat-checkbox>
+                <sit-helper></sit-helper>
+              </div>
+        </div>
+        <div class="row" *ngIf="page=='edit'">
+            <div class="col-md-12 col-lg-3" sit-validate-input="remark">
+                <sit-label [require]="true"><span>{{'std.ac_reason'| translate}}</span></sit-label>
+                <mat-form-field class="input-text-area w-100" appearance="outline" floatLabel="always">
+                    <textarea matInput formControlName="remark" maxlength="1024"></textarea>
+                </mat-form-field>
+            <sit-helper
+            [control]="this.form.get('remark')"
+            ></sit-helper>
+            </div>
+        </div>
+        <div class="row">
+            <app-sit-button class="col-icon" *ngIf="page=='add'"
+            [page]="'A'" 
+            [permission]="this.permission"
+            (btnSave)="save()"
+            (btnCancel)="cancel()"
+            ></app-sit-button>
+            <app-sit-button class="col-icon" *ngIf="page=='edit'"
+            [page]= "'E'"
+            [permission]="this.permission"
+            (btnEdit)="edit()"
+            (btnCancel)="cancel()"
+            ></app-sit-button>
+        </div>
+    </div>
+    <div class="row" *ngIf="page=='edit'">
+    <app-sit-transaction [transaction]="initialData.airCarrier.transaction"></app-sit-transaction>  
+    </div>
+    </mat-card>

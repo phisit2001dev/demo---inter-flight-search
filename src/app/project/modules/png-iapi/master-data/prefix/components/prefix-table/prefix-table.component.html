@@ -1,0 +1,159 @@
+<mat-card class="mt-3" [ngClass]="{'d-none': !dataSource?.totalResult }">
+  <!-- ################# Panel top table ################# -->
+  <div class="row">
+    <div class="d-flex justify-content-between flex-column flex-lg-row">
+      <!-- ------------------ Left ------------------ -->
+      <div class="d-flex align-items-center">
+        <!-- Total results -->
+        <span class="table_title_search">{{ "table_title_search" | translate: { value: dataSource?.totalResult | number } }}</span>
+
+        <!-- Button export -->
+        <button mat-button class="button-icon-action" (click)="btnExport()" [disabled]="!permission.export">
+          <mat-icon color="primary">output</mat-icon>
+          <span>{{ 'export' | translate }}</span>
+        </button>
+      </div>
+
+      <!-- ------------------ Right ------------------ -->
+      <div class="d-flex align-items-center">
+        <span class="me-3">{{ "gotoPage" | translate}}</span>
+
+        <mat-form-field [appearance]="'outline'">
+          <input
+            matInput
+            [value]="displayPageIndex"
+            inputPaginator
+            (valueChange)="pageChange($event)" />
+        </mat-form-field>
+
+        <mat-paginator #paginatorHearder
+          (page)="pageChange($event)"
+          [pageSize]="pageSize"
+          [length]="dataLength"
+          [pageIndex]="pageIndex">
+        </mat-paginator>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ################# Table result ################# -->
+  <div class="overflow-auto">
+    <table mat-table [dataSource]="dataSource?.listResult" class="mat-elevation-z sit-table w-100" style="min-width: 1000px;"
+      matSort
+      (matSortChange)="sortChange.emit($event)"
+      [sitSortActive]="headerSorts"
+    >
+
+      <!-- No. -->
+      <ng-container matColumnDef="no">
+        <th mat-header-cell *matHeaderCellDef class="col-no text-center">{{ 'order_no' | translate }}</th>
+        <td mat-cell *matCellDef="let element;let index = index" class="col-no text-center">
+          {{ index | generateRowNo : pageSize : pageIndex }}
+        </td>
+      </ng-container>
+
+      <!-- checkbox Column -->
+      <ng-container matColumnDef="checkbox">
+        <th mat-header-cell *matHeaderCellDef class="col-checkbox text-center">
+          <mat-checkbox
+            (change)="$event ? masterToggle() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let element" class="col-checkbox text-center">
+          <mat-checkbox
+            (click)="$event.stopPropagation()"
+            (change)="$event ? childToggle(element) : null"
+            [checked]="selection.isSelected(element)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Edit -->
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef class="col-icon text-center"> {{ 'edit' | translate }} </th>
+        <td mat-cell *matCellDef="let element" class="col-icon text-center">
+          <app-sit-button-icon
+            [type]="'EDIT'"
+            [tooltip]="'edit' | translate"
+            [permission]="this.permission.edit"
+            (btnClick)="btnGotoEdit(element)"
+          ></app-sit-button-icon>
+        </td>
+      </ng-container>
+
+      <!-- Active status -->
+      <ng-container matColumnDef="active">
+        <th mat-header-cell *matHeaderCellDef class="col-active-status text-center"> {{ 'status' | translate }} </th>
+        <td mat-cell *matCellDef="let element" class="col-active-status text-center">
+          <div [class]="element.activeStatus | activeStatusPipe">{{element.activeStatus}}</div>
+        </td>
+      </ng-container>
+
+      <!-- Prefix type -->
+      <ng-container matColumnDef="prefixType">
+        <th mat-header-cell *matHeaderCellDef class="prefix-type" mat-sort-header="0">{{ 'std.p_prefix_type' | translate }}</th>
+        <td mat-cell *matCellDef="let element" class="prefix-type"> {{element.prefixType}} </td>
+      </ng-container>
+
+      <!-- Prefix name -->
+      <ng-container matColumnDef="prefixName">
+        <th mat-header-cell *matHeaderCellDef class="prefix-name" mat-sort-header="1">{{ 'std.p_prefix_name' | translate }}</th>
+        <td mat-cell *matCellDef="let element" class="prefix-name"> {{element.prefixName}} </td>
+      </ng-container>
+
+      <!-- Abbreviation -->
+      <ng-container matColumnDef="abbreviation">
+        <th mat-header-cell *matHeaderCellDef class="abb" mat-sort-header="2">{{ 'std.p_abbreviation' | translate }}</th>
+        <td mat-cell *matCellDef="let element" class="abb"> {{element.abbreviation}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </div>
+
+  <!-- ################# Footer ################# -->
+  <div class="row">
+    <div class="d-flex align-items-center">
+
+      <!-- ------------------ Left ------------------ -->
+      <div class="d-flex align-items-center">
+        <!-- Button active -->
+        <button mat-stroked-button class="button-active" (click)="btnActive()" [disabled]="!permission.edit">
+          <span>{{ 'active' | translate }}</span>
+        </button>
+
+        <!-- Button inactive -->
+        <button mat-stroked-button class="ms-3 button-inactive" (click)="btnInactive()" [disabled]="!permission.edit">
+          <span>{{ 'inactive' | translate }}</span>
+        </button>
+      </div>
+
+      <span style="flex: 1 1 auto;"></span>
+      <!-- ------------------ Right ------------------ -->
+      <div class="d-flex align-items-center">
+        <span class="me-3">{{ "gotoPage" | translate}}</span>
+
+        <mat-form-field [appearance]="'outline'">
+          <input
+            matInput
+            [value]="displayPageIndex"
+            inputPaginator
+            (valueChange)="pageChange($event)" />
+        </mat-form-field>
+
+        <mat-paginator #paginatorHearder
+          (page)="pageChange($event)"
+          [pageSize]="pageSize"
+          [length]="dataLength"
+          [pageIndex]="pageIndex">
+        </mat-paginator>
+      </div>
+
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,79 @@
+<mat-card>
+    <app-user-group-info
+        [form]="this.form" 
+        [initData]="initData"
+        [view]="this.view"
+    ></app-user-group-info>
+    <div class="row mt-3">
+        <mat-tab-group [selectedIndex]="isActiveTab" (selectedIndexChange)="changeTab($event)">
+            <mat-tab [label]="'sec.tab_permission_information' | translate">
+                <mat-card class="mt-3">
+                    <app-permission-info-table
+                        [permission]="this.initData.permission" 
+                        [dataSource]="this.dataSourceProgram"
+                        [permissionType]="'P'"
+                        [systemType]="'usergroup'"
+                        [view]="this.view"
+                        [selection]="this.selectionProgram"
+                    ></app-permission-info-table>
+                </mat-card>
+                <mat-card class="mt-3">
+                    <app-permission-info-table
+                        [permission]="this.initData.permission" 
+                        [dataSource]="this.dataSourceReport"
+                        [permissionType]="'R'"
+                        [systemType]="'usergroup'"
+                        [view]="this.view"
+                        [selection]="this.selectionReport"
+                    ></app-permission-info-table>
+                </mat-card>
+            </mat-tab>
+            <mat-tab [label]="'sec.accessible_airport' | translate">
+                <mat-card class="mt-3">
+                    <app-accessible-airport-table
+                        [permission]="this.initData.permission" 
+                        [dataSource]="this.dataSourceAirport"
+                        [view]="this.view"
+                        [selection]="this.selectionAirport"
+                    ></app-accessible-airport-table>
+                </mat-card>
+            </mat-tab>
+            <mat-tab [label]="'sec.users' | translate">
+                <mat-card class="mt-3">
+                    <app-permission-user-table
+                        [permission]="this.initData.permission" 
+                        [dataSource]="this.dataSourceUser"
+                        [view]="this.view"
+                        [selection]="this.selectionUser"
+                    ></app-permission-user-table>
+                </mat-card>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="row mt-3">
+        <div class="col align-middle">&nbsp;</div>
+        <div class="col">
+            <app-sit-button *ngIf="this.pageType === 'A'"
+                [permission]="this.initData.permission"
+                [page]="this.pageType"
+                (btnSave)="add()"
+                (btnCancel)="cancelAdd()"
+            ></app-sit-button>
+            <app-sit-button *ngIf="this.pageType === 'E'"
+                [permission]="this.initData.permission"
+                [page]="this.pageType"
+                (btnEdit)="edit()"
+                (btnCancel)="cancelEdit()"
+            ></app-sit-button>
+            <app-sit-button *ngIf="this.pageType === 'V'"
+                [permission]="this.initData.permission"
+                [page]="this.pageType"
+                (btnClose)="gotoSearchPage()"
+            ></app-sit-button>
+        </div>
+    </div>
+    <div class="row mt-3" *ngIf="this.pageType !== 'A'">
+        <app-sit-transaction [transaction]="this.initData?.userGroup?.transaction">
+        </app-sit-transaction>
+    </div>
+</mat-card>

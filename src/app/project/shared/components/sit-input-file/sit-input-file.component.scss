@@ -1,0 +1,37 @@
+.hidden-input {
+  display: none;
+}
+.browseBtn{
+  height: 40px;
+}
+.matFormField{
+  height: 40px;
+  background: #e7e6e6 !important;
+  pointer-events: default !important;
+  cursor: context-menu !important;
+}
+.default {cursor: default;}
+
+.input-file{
+  .mat-progress-bar{
+  position: absolute !important;
+  z-index: 1!important;
+  top: 0 !important;
+  }
+}
+
+.fileNameColor{
+color: #0057a3;
+}
+.progressbar{
+  position: absolute;
+  width: calc(100% - 2px);
+  right: 1px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+// input-file.
+.browseBtn{
+  margin-left: 10px;
+}

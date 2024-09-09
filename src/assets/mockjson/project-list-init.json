@@ -1,0 +1,30 @@
+{
+  "messageCode": "X00000",
+  "messageDesc": "Success",
+  "displayStatus": "S",
+  "componentType": "S",
+  "data": {
+    "lstProjectlist": [
+      {
+        "hiddenToken": "1",
+        "projectName": "ISO 27001 ISMS Internal Audit"
+      },
+      {
+        "hiddenToken": "2",
+        "projectName": "ISO 27701 PIMS Internal Audit"
+      },
+      {
+        "hiddenToken": "3",
+        "projectName": "ISO 27701 PIMS Internal Audit"
+      },
+      {
+        "hiddenToken": "4",
+        "projectName": "ISO 27701 PIMS Internal Audit"
+      },
+      {
+        "hiddenToken": "5",
+        "projectName": "ISO 27701 PIMS Internal Audit"
+      }
+    ]
+  }
+}

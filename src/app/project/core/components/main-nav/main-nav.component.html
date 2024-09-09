@@ -1,0 +1,146 @@
+<div class="sit-main-page" *ngIf="isLogin">
+  <mat-toolbar color="primary" class="mat-elevation-z7">
+    <app-menu-full></app-menu-full>
+    <span class="me-2"><img src="assets/styles/font/icon/main-logo.png" id="logo"></span>
+    <span class="currentSys">{{ navService.currentSys$ | async }}</span>
+    <span style="flex: 1 1 auto;"></span>
+    <button
+      *ngIf="isLogin"
+      mat-icon-button
+      class="btn-pro"
+      [matMenuTriggerFor]="menu"
+    >
+      <!-- icon toolbar account -->
+      <div class="account_circle">
+        <div>
+          <span class="acc-txt">
+            {{showChar}}
+          </span>
+        </div>
+      </div>
+    </button>
+
+  </mat-toolbar>
+  <mat-menu
+    #menu="matMenu"
+    [yPosition]="'below'"
+    [overlapTrigger]="false"
+    class="menuinfo mat-elevation-z15"
+  >
+    <div class="d-flex align-items-end flex-column profile" (click)="$event.stopPropagation()">
+      <div class="w-100 d-flex justify-content-center">
+        <div class="info-avatar">
+          <div class="container-avatar">
+            <span>
+              {{showChar}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="w-100">
+        <div class="d-flex justify-content-center my-2">
+          <span style="font-size: 25px">{{ profile?.username }}</span>
+        </div>
+        <div class="d-flex flex-column">
+          <mat-divider class="mb-3"></mat-divider>
+          <button mat-button class="justify-content-start info-button" (click)="gotoChangePassword()">
+            <span class="d-flex">
+              {{ "core.profile_setting" | translate }}
+            </span>
+            <mat-icon>lock_reset</mat-icon>
+          </button>
+          <button mat-button class="justify-content-start info-button" (click)="gotoManual()">
+            <span class="d-flex">
+              {{ "core.help" | translate }}
+            </span>
+            <mat-icon>contact_support</mat-icon>
+          </button>
+          <button mat-button class="justify-content-start info-button" (click)="gotoHistory()">
+            <span class="d-flex">
+              {{ "core.app_update" | translate }}
+            </span>
+            <mat-icon>manage_search</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="w-100 mb-2 mt-3" style="font-size: 14px;">
+        <mat-divider ></mat-divider>
+        <div class="d-flex flex-row">
+          <mat-icon class="mat-18 me-2" style="font-size: 20px;color: #7b7a7a;">
+            person
+          </mat-icon>
+          <span>{{profile?.contactUs?.name ? profile.contactUs.name : '-'}}</span>
+        </div>
+        <div class="d-flex flex-row">
+          <mat-icon class="mat-18 me-2"style="font-size: 20px;color: #7b7a7a;">
+            phone
+          </mat-icon>
+          <span>{{profile?.contactUs?.phone ? profile.contactUs.phone : '-'}}</span>
+        </div>
+        <div class="d-flex flex-row">
+          <mat-icon class="mat-18 me-2"style="font-size: 20px;color: #7b7a7a;">
+            email
+          </mat-icon>
+          <span>{{profile?.contactUs?.email ? profile.contactUs.email : '-'}}</span>
+        </div>
+        <mat-divider ></mat-divider>
+      </div>
+      <div class="w-100 mt-auto">
+        <button mat-raised-button class="btn-logout" (click)="logout()">
+          <mat-icon class="sign-out">logout</mat-icon>
+          <div>{{ "core.logout" | translate }}</div>
+        </button>
+      </div>
+      <span class="mt-2" style="font-size: 14px; color: gray;"><i>{{profile?.contactUs?.version}}</i></span>
+    </div>
+</mat-menu>
+
+  <!-- <div style="position: relative; height: calc(100vh-50px);">
+    <mat-drawer-container fxLayout="column" class="sidenav-container">
+      <mat-drawer
+        #drawer
+        class="sidenav"
+        fixedInViewport="false"
+        [attr.role]="'navigation'"
+        mode="side"
+        disableClose="true"
+        opened="true"
+        [ngClass]="{
+          isEpanded: navService.isOpened$ | async,
+          'not-expand': !(navService.isOpened$ | async),
+          'login-main': !(this.isLogin)
+        }"
+      >
+      <div fxLayout="column" style="height: 99%;">
+      <div
+        style="cursor: pointer !important;"
+        (click)="navService.toggle()"
+        *ngIf="this.isLogin"
+        [ngClass]="{
+          'btn-not-expand': !(navService.isOpened$ | async),
+          'btn-expand': (navService.isOpened$ | async)
+        }">
+        <div class="icon-expand">
+          <mat-icon>double_arrow</mat-icon>
+          <span style="margin-left: 2px;color: white;">Collapse sidebar</span>
+        </div>
+      </div>
+        <side-menu fxFlex class="w-100"></side-menu>
+        <div class="version-container" fxLayout="row" fxLayoutAlign="end end" *ngIf="navService.isOpened$ | async">
+          <h5 class="version-text">{{ version }}</h5>
+        </div>
+      </div>
+      </mat-drawer>
+      <mat-drawer-content
+        [ngClass]="{
+          'mat-drawer-content-expand': navService.isOpened$ | async,
+          'mat-drawer-content-not-expand': !(navService.isOpened$ | async),
+          'login-main-box': !(this.isLogin)
+        }"
+      >
+        <ng-content></ng-content>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div> -->
+  <!-- <ng-content></ng-content> -->
+</div>

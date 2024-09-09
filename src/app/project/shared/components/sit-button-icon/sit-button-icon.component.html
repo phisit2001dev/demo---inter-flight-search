@@ -1,0 +1,14 @@
+<button
+  mat-icon-button
+  [disabled]="!this.permission"
+  [matTooltip]="this.tooltip"
+  [ngStyle]="this.btnStyle"
+  [ngClass]="this.btnClass"
+  (click)="this.click()"
+>
+  <mat-icon
+    [class]="type| buttonIcon : 'STYLE'"
+    [ngStyle]="this.iconStyle"
+    [ngClass]="this.iconClass"
+  >{{ type | buttonIcon : 'ICON' }}</mat-icon>
+</button>

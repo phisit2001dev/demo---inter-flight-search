@@ -1,0 +1,72 @@
+{
+  "messageCode":"10004",
+  "messageDesc":"Invalid Data, Please check again.",
+  "displayStatus":"W",
+  "componentType":"S",
+  "error":{
+     "errorCode":"SIT-10507-220407021258816",
+     "errorDesc":"Invalid Data, Please check again."
+  },
+  "invalid":[
+     {
+        "element":"textbox",
+        "msg":"validate api message"
+     },
+     {
+        "element":"combobox",
+        "msg":"validate api message"
+     },
+     {
+        "element":"textbox",
+        "msg":"validate api message"
+     },
+     {
+        "element":"datepicker",
+        "msg":"validate api message"
+     },
+     {
+        "element":"autocomplete",
+        "msg":"validate api message"
+     },
+     {
+        "element":"time",
+        "msg":"validate api message"
+     },
+     {
+        "element":"radioForm",
+        "msg":"validate api message"
+     },
+     {
+        "element":"group-checkbox",
+        "msg":"validate api message"
+     },
+     {
+        "element":"checkBorderless",
+        "msg":"validate api message"
+     },
+     {
+        "element":"fieldsetDate",
+        "msg":"validate api message"
+     }
+     ,
+     {
+        "element":"radioBorderless",
+        "msg":"validate api message"
+     }
+     ,
+     {
+        "element":"checkBorderless",
+        "msg":"validate api message"
+     }
+     ,
+     {
+        "element":"titleValidate",
+        "msg":"validate api message"
+     }
+     ,
+     {
+        "element":"upload-1",
+        "msg":"validate api message"
+     }
+  ]
+}

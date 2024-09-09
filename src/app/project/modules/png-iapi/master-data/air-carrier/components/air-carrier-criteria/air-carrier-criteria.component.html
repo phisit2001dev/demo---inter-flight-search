@@ -1,0 +1,86 @@
+<div [formGroup]="this.form">
+        <div class="row">
+            <div class="col-md-12 col-lg-2" sit-validate-input="carrierCodeIata">
+                <sit-label>
+                    <span>{{"std.ac_carrier_code_iata"|translate}}</span>
+                </sit-label>
+                <mat-form-field class="w-100" [appearance]="'outline'">
+                    <input matInput  formControlName="carrierCodeIata" maxlength="2" >
+                </mat-form-field>
+                <sit-helper [hint]="'std.ac_two_letters' | translate"
+                ></sit-helper>
+            </div>
+            <div class="col-md-12 col-lg-2 offset-lg-1" sit-validate-input="carrierCodeIcao">
+                <sit-label>
+                    <span>{{"std.ac_carrier_code_icao"|translate}}</span>
+                </sit-label>
+                <mat-form-field class="w-100" [appearance]="'outline'">
+                    <input matInput formControlName="carrierCodeIcao" maxlength="3" >
+                </mat-form-field>
+                <sit-helper [hint]="'std.ac_three_letters'|translate"></sit-helper>
+            </div>
+            <div class="col-md-12 col-lg-3 offset-lg-1" sit-validate-input="carrierName">
+                <sit-label>
+                    <span>{{"std.ac_carrier_name"|translate}}</span>
+                </sit-label>
+                <mat-form-field class="w-100" [appearance]="'outline'">
+                    <input matInput  formControlName="carrierName" maxlength="100">
+                </mat-form-field>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-3" sit-validate-input="countryName">
+            <sit-label>
+                <span>{{"std.ac_country_name"|translate}}</span>
+            </sit-label>
+            <sit-autocomplete
+            type='A'
+            [controlValue]="this.form.get('countryName')"
+            [controlKey]="this.form.get('countryCode')"
+            [listResult]="countryNameList"
+            [valueChange]="countryNameAutocomplete$"
+            ></sit-autocomplete>
+            <sit-helper></sit-helper>
+        </div>
+
+        <div class="col-md-12 col-lg-2 col-lg-1" sit-validate-input="carrierType">
+            <sit-label>
+                <span>{{"std.ac_carrier_type"|translate}}</span>
+            </sit-label>
+            <mat-form-field class="w-100" [appearance]="'outline'">
+                <mat-select placeholder="{{'all'|translate}}" formControlName="carrierType">
+                    <mat-option>{{ "all" | translate }}</mat-option>
+                    <mat-option *ngFor="let item of this.carrierTypeSelectItem" [value]="item.key">{{ item.value }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper></sit-helper>
+        </div>
+
+        <div class="col-md-12 col-lg-2 offset-lg-1" sit-validate-input="activeStatus">
+            <sit-label>
+                <span>{{"std.ac_activation_status"|translate}}</span>
+            </sit-label>
+            <mat-form-field class="w-100" [appearance]="'outline'">
+                <mat-select placeholder="{{'all'|translate}}" formControlName="activeStatus">
+                    <mat-option [value]="">{{ "all" | translate }}</mat-option>
+                    <mat-option *ngFor="let item of this.activationSelectItem" [value]="item.key">{{ item.value }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <sit-helper></sit-helper>
+        </div>
+
+        <div class="col-md-12 col-lg-2 offset-lg-1" sit-validate-input="linePerPage">
+            <sit-label>
+                <span>{{"rec_per_page"|translate}}</span>
+            </sit-label>
+            <mat-form-field class="w-100" [appearance]="'outline'">
+                <mat-select  formControlName="linePerPage">
+                  <mat-option *ngFor="let item of this.llp" [value]= item >{{item}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            <sit-helper></sit-helper>
+        </div>
+    </div>
+
+
+</div>

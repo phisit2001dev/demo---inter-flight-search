@@ -1,0 +1,31 @@
+<mat-card>
+<app-air-carrier-criteria
+[initialData]="this.initialData"
+[form]="this.form"
+></app-air-carrier-criteria>
+<app-sit-button
+[page]="'S'"
+[permission]="this.permission"
+(btnSearch)="search()"
+(btnClear)="clear()"
+>
+<button type="button" color="primary"mat-raised-button (click)="gotoAdd()" [disabled]="!this.permission.add" >
+    <mat-icon class="button-icon-size">add_circle</mat-icon>
+    <span>{{ 'add' | translate }}</span>
+  </button>
+</app-sit-button>
+</mat-card>
+<app-air-carrier-table
+(gotoEdit)="gotoEdit($event)"
+[dataSource$]="this.dataSource$"
+[selection]="selection"
+[permission]="this.permission"
+[headerSorts]="this.form.get('headerSorts').value"
+[pageIndex]="this.form.get('pageIndex').value"
+[linePerPage]="this.criteria?.linePerPage"
+(sortChange)="sortChange($event)"
+(pageEvent)="pageEvent($event)"
+(export)="export()"
+(active)="active($event)"
+(inactive)="inactive($event)"
+></app-air-carrier-table>

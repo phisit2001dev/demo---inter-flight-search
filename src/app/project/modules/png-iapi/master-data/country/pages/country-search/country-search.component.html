@@ -1,0 +1,40 @@
+<!-- Criteria -->
+<mat-card>
+  <!-- Form criteria -->
+  <app-country-criteria
+    (enterSearch)="search()"
+    [form]="this.form"
+    [initialData]="this.initialData">
+  </app-country-criteria>
+
+  <!-- Button -->
+  <app-sit-button
+      [permission]="this.permission"
+      [page]="'S'"
+      (btnSearch)="search()"
+      (btnClear)="clear()">
+      <button type="button" color="primary" mat-raised-button (click)="gotoAdd()" [disabled]="!this.permission.add">
+        <mat-icon class="button-icon-size">add_circle</mat-icon>
+        <span>{{ 'add' | translate }}</span>
+      </button>
+  </app-sit-button>
+</mat-card>
+
+<!-- Table -->
+<app-country-table
+  (export)="export()"
+  (active)="active($event)"
+  (inactive)="inactive($event)"
+  (gotoEdit)="gotoEdit($event)"
+  [selection]="selection"
+  [permission]="this.permission"
+
+  [dataSource$]="dataSource$"
+  [headerSorts]="this.form.get('headerSorts').value"
+  [pageIndex]="this.form.get('pageIndex').value"
+  [linePerPage]="this.criteria?.linePerPage"
+
+  (sortChange)="sortChange($event)"
+  (pageEvent)="pageEvent($event)"
+>
+</app-country-table>

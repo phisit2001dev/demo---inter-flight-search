@@ -1,0 +1,26 @@
+<mat-card>
+    <app-audit-log-criteria 
+        [initialData]="this.initialData" 
+        [form]="this.form"
+        [timezone]="this.timeZone"
+        (evenChang)="selectChange($event)"
+        [funSelecter]="funSelecter"
+        >
+      
+    </app-audit-log-criteria>
+    <app-sit-button 
+        [page]="'S'" [permission]="permission" 
+        (btnSearch)="search()" 
+        (btnClear)="clear()">
+    </app-sit-button>
+</mat-card>
+<app-audit-log-table 
+    [timezone]="this.timeZone" 
+    [dataSource$]="this.dataSource$" 
+    [permission]="this.permission"
+    [headerSorts]="this.form.get('headerSorts').value" 
+    [pageIndex]="this.form.get('pageIndex').value"
+    [linePerPage]="this.criteria?.linePerPage" 
+    (sortChange)="sortChange($event)" 
+    (pageEvent)="pageEvent($event)">
+</app-audit-log-table>

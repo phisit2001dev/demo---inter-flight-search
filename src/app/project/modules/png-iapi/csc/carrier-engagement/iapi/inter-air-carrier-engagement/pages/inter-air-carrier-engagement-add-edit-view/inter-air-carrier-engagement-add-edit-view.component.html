@@ -1,0 +1,24 @@
+<mat-card [formGroup]="form">
+    <app-carrier-engagement-add-edit-view-criteria
+        [form]="form"
+        [payload]="payload"
+        [permission]="permission"
+        [disabledPage]="disabledPage"
+        [page]="page"
+    ></app-carrier-engagement-add-edit-view-criteria>
+
+    <app-update-remark-table
+        [permission]="permission"
+        [dataSource]="dataSource"
+        [disabledPage]="disabledPage"
+    ></app-update-remark-table>
+
+    <app-sit-button
+        [page]="page"
+        [permission]="this.permission"
+        (btnSave)="this.save()"
+        (btnCancel)="this.cancel()"
+        (btnClose)="this.close()"
+    >
+    </app-sit-button>
+</mat-card>

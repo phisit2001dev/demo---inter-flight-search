@@ -1,0 +1,149 @@
+<div [formGroup]="this.form">
+  <div class="row">
+    <div class="col-lg-6 col-xxl-3">
+      <div class="row">
+        <div class="col-6" sit-validate-input="iata">
+          <sit-label require="true">
+            <span>{{"Airport code (IATA)" | translate}}</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+            <input
+              matInput
+              formControlName="iata"
+            />
+          </mat-form-field>
+          <sit-helper
+            hint="3 letters"
+            [control]="this.form.get('iata')"
+          ></sit-helper>
+        </div>
+        <div class="col-6" sit-validate-input="icao">
+          <sit-label require="true">
+            <span>{{"Airport code (ICAO)" | translate}}</span>
+          </sit-label>
+          <mat-form-field
+            class="w-100"
+            [appearance]="'outline'">
+            <input
+              matInput
+              formControlName="icao"
+            />
+          </mat-form-field>
+          <sit-helper
+            hint="4 letters"
+            [control]="this.form.get('icao')"
+          ></sit-helper>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-xxl-3" sit-validate-input="airportName">
+      <sit-label require="true">
+        <span>{{"Airport name (english)" | translate}}</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="airportName"
+        />
+      </mat-form-field>
+      <sit-helper
+        [control]="this.form.get('airportName')"
+      ></sit-helper>
+    </div>
+    <div class="col-lg-6 col-xxl-3" sit-validate-input="airportNameTh">
+      <sit-label>
+        <span>{{"Airport name (thai)" | translate}}</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="airportNameTh"
+        />
+      </mat-form-field>
+      <sit-helper></sit-helper>
+    </div>
+    <div class="col-lg-6 col-xxl-3" sit-validate-input="local">
+      <sit-label require="true">
+        <span>{{"Location (english)" | translate}}</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="local"
+        />
+      </mat-form-field>
+      <sit-helper
+        [control]="this.form.get('local')"
+      ></sit-helper>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3" sit-validate-input="localTh">
+      <sit-label>
+        <span>{{"Location (thai)" | translate}}</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="localTh"
+        />
+      </mat-form-field>
+      <sit-helper></sit-helper>
+    </div>
+    <div class="col-lg-3" sit-validate-input="countryNameVal">
+      <sit-label require="true">
+        <span>{{"Country name (english)" | translate}}</span>
+      </sit-label>
+      <sit-autocomplete
+        type = 'A'
+          [controlValue]="this.form.get('countryNameVal')"
+          [controlKey]="this.form.get('countryNameKey')"
+          [listResult]="this.countryList"
+          [valueChange]="countryAutocomplete$"
+          (selectValue)="selectValue($event)"
+          >
+      </sit-autocomplete>
+      <sit-helper
+        [control]="this.form.get('countryNameVal')"
+      ></sit-helper>
+    </div>
+    <div class="col-lg-3" sit-validate-input="lat">
+      <sit-label>
+        <span>{{"Latitude" | translate}}</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="lat"
+        />
+      </mat-form-field>
+      <sit-helper></sit-helper>
+    </div>
+    <div class="col-lg-3" sit-validate-input="long">
+      <sit-label>
+        <span>{{"Longtitude" | translate}}</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'">
+        <input
+          matInput
+          formControlName="long"
+        />
+      </mat-form-field>
+      <sit-helper></sit-helper>
+    </div>
+  </div>
+</div>

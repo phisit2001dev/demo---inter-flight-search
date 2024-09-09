@@ -1,0 +1,105 @@
+@import "../material-custom/mat-form-field.scss";
+@import "../color/theme-color.scss";
+
+
+mat-form-field.sit-in-valid{
+  @include setColorMFF($theme-error);
+  input {
+    caret-color: $theme-error !important;
+  }
+}
+
+// sit-chip-autocomplete.sit-in-valid mat-form-field{
+//   @include setColorMFF($theme-error);
+//   input {
+//     caret-color: $theme-error !important;
+//   }
+// }
+
+// radio
+.sit-in-valid .mdc-radio .mdc-radio__outer-circle{
+  background-color: #ff000017 !important;
+  border-color: $theme-error !important;
+}
+
+//checkbox
+.sit-in-valid > mat-checkbox:not(.mat-mdc-checkbox-checked):not(.mdc-checkbox--disabled) .mdc-checkbox__background {
+  background-color: #ff000017 !important;
+  border-color: $theme-error !important;
+  // color: $theme-error !important;
+  svg {
+    color: $theme-error !important;
+  }
+}
+
+// :not(.matChipGrid)
+
+
+// mat-checkbox.ng-invalid .mdc-checkbox__background{
+//   background-color: #ff000017 !important;
+//   border-color: $theme-error !important;
+//   svg {
+//     color: $theme-error !important;
+//   }
+// }
+
+div[sit-validate-input] .sit-in-valid:has(.mat-mdc-form-field-error){
+  &.section-border{
+    border: 1px solid $theme-error;
+  }
+}
+
+// single checkbox borderless
+div[sit-validate-input]:has(mat-error) {
+  mat-checkbox:not(.mdc-checkbox--disabled){
+    .mdc-checkbox__background{
+      background-color: #ff000017 !important;
+      border-color: $theme-error !important;
+      svg {
+        color: $theme-error !important;
+      }
+    }
+  }
+}
+
+// div[sit-validate-input]:has(mat-error) {
+//   sit-input-files .mat-mdc-form-field{
+//     @include setColorMFF($theme-error);
+//     input {
+//       caret-color: $theme-error !important;
+//     }
+//   }
+// }
+
+
+
+//  radio
+div[sit-validate-input]:has(.mat-mdc-form-field-error){
+  .section-border{
+    border: 1px solid $theme-error;
+  }
+  .mdc-radio__outer-circle{
+    background-color: #ff000017 !important;
+    border-color: $theme-error !important;
+  }
+
+  &:has(.mat-mdc-checkbox-checked){
+    .mdc-checkbox__checkmark{
+      color: #3f51b5 !important;
+    }
+  }
+}
+
+.section-border {
+  &:has(.sit-in-valid ){
+    border: 2px solid $theme-error;
+    // border-color: $theme-error;
+  }
+}
+
+.sit-in-valid{
+  &.sit-custom-invalid{
+    border: 2px solid $theme-error;
+    border-radius: 5px;
+  }
+}

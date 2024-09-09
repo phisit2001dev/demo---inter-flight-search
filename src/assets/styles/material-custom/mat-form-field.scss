@@ -1,0 +1,205 @@
+@import "../color/theme-color.scss";
+
+// set theme color border
+@mixin setColorMFF($color) {
+  .mdc-notched-outline__leading, .mdc-notched-outline__trailing {
+    border-color: $color !important;
+    border-width: 2px
+  }
+}
+// set theme background color
+@mixin setBgMFF($color) {
+  background: $color !important;
+}
+// set theme color border
+@mixin setDisableMFF() {
+  // background: #dddcdc !important;
+  background: #e7e6e6 !important;
+  // pointer-events: none !important; ปิดใช้งานเนื่องจากทำให้ scroll ไม่ได้ใน text-area และ input (ในกรณีข้อความยาวมากๆ)
+  &:not(.ng-invalid) .mdc-notched-outline__leading,&:not(.ng-invalid) .mdc-notched-outline__trailing {
+    border-color: #d3d3d3 !important;
+  }
+  .mdc-notched-outline__notch {
+    border-left: 1px solid transparent;
+  }
+
+}
+
+// set border-color start
+mat-form-field:not(.readonly-con):not(.sit-in-valid):not(.ng-invalid.ng-touched):not(.mat-focused):not(.mat-form-field-disabled) {
+  .mdc-notched-outline__leading, .mdc-notched-outline__trailing {
+    border-color: #d3d3d3 !important;
+  }
+  .mat-mdc-form-field-flex:hover {
+    @include setColorMFF(#8f8c8b);
+  }
+}
+
+mat-form-field {
+  // case invalid
+  .mdc-text-field--invalid {
+    .mdc-notched-outline__leading, .mdc-notched-outline__trailing {
+      border-width: 2px;
+    }
+  }
+  .mat-mdc-text-field-wrapper {
+    padding-bottom: 0px;
+
+    // set height
+    .mat-mdc-form-field-flex {
+      height: 40px;
+      // height: 35px;
+    }
+    .mat-mdc-form-field-infix {
+      padding-top: 10px !important;
+      // padding-top: 7px !important;
+    }
+  }
+  // add space hleper
+  .mat-mdc-form-field-subscript-wrapper{
+    display: none;
+  }
+
+  // disable mat-form-field form,class
+  &.readonly-con,&.mat-form-field-disabled {
+    @include setDisableMFF();
+    mat-icon {
+      position: relative;
+      z-index: 1;
+    }
+    .mdc-text-field--disabled .mdc-text-field__input {
+      color: unset;
+    }
+    .mat-mdc-select-disabled .mat-mdc-select-value,.mat-mdc-select-placeholder{
+      color: unset;
+    }
+  }
+
+  mat-datepicker-toggle {
+    .mat-mdc-icon-button.mat-mdc-button-base {
+      width: 40px;
+      height: 40px;
+      padding: 9px;
+    }
+  }
+
+  .mat-mdc-form-field-icon-suffix:has(.full){
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    padding: 1px;
+    button.full {
+      height: 100%;
+      border-color: transparent;
+      &:hover {
+        cursor: pointer;
+        // cursor: not-allowed;
+      }
+
+    }
+  }
+}
+
+// chipfield
+mat-form-field[chipfield] {
+  .mat-mdc-form-field-flex:not(mat-chip-grid mat-chip-row){
+    height: 40px !important;
+    min-height: 40px !important;
+  }
+  // Overriding
+  .mat-mdc-form-field-flex:has(.matChipGrid) {
+    height: fit-content !important;
+    min-height: none !important;
+  }
+
+  mat-chip-grid .mdc-evolution-chip-set__chips > mat-chip-row {
+    height: 30px;
+    top: -6px;
+  }
+
+  .mat-mdc-form-field-infix{
+    display: flex;
+    padding-bottom: 24px;
+    input {
+      margin-bottom: 9px;
+    }
+  }
+
+  mat-chip-grid:not(.matChipGrid) {
+    mat-chip-row.mdc-evolution-chip {
+      margin-top: 1px !important;
+    }
+    // .mat-mdc-chip-input {
+    //   height: 25px !important;
+    // }
+  }
+
+  // control custom
+  // .mat-mdc-form-field-infix:has(.matChipGrid) {
+  //   padding-bottom: 0px;
+  // }
+
+  // .mat-mdc-form-field-infix:not(mat-chip-grid.matChipGrid) {
+  //   padding-bottom: 16px !important;
+  // }
+
+  button[matchipremove]{
+    mat-icon{
+      color:  red;
+    }
+  }
+
+
+
+
+  &.readonly-con {
+    @include setBgMFF(#dddcdc5c);
+    .mdc-text-field--focused{
+      @include setColorMFF(unset);
+    }
+
+    mat-chip-row {
+      background-color: #aaaaaa !important;
+      .mdc-evolution-chip__text-label{
+        color: #000000 !important;
+      }
+    }
+  }
+}
+
+mat-form-field.input-text-area.mat-form-field-appearance-outline{
+  .mat-mdc-text-field-wrapper {
+    .mat-mdc-form-field-flex {
+      min-height: 40px !important;
+      height: fit-content !important;
+      .mat-mdc-form-field-infix {
+        textarea {
+          // min-height: unset !important;
+          // min-height: 60px !important;
+          resize: none;
+        }
+      }
+    }
+    // .mat-mdc-form-field-flex:has(textarea[row="1"]) {
+    //   height: 40px !important;
+    //   min-height: 40px !important;
+    // }
+
+  }
+}
+
+mat-form-field.input-text-area.readonly-con{
+  .mdc-text-field--outlined .mdc-notched-outline{
+    z-index: 0;
+  }
+}
+
+
+// Paginator
+mat-form-field.mat-input-paginator {
+  width: 75px;
+}
+input.input-Paginator{
+  text-align: center;
+}
+

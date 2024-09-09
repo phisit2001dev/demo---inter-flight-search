@@ -1,0 +1,17 @@
+
+.styleIconDisable {
+  position: relative;
+  z-index: 1;
+}
+
+::ng-deep sit-chip-autocomplete .mat-mdc-form-field-icon-suffix {
+  display: flex;
+  align-self: stretch;
+  div {
+    padding: 1px;
+  }
+  button {
+    height: 100%;
+    border: 0px;
+  }
+}

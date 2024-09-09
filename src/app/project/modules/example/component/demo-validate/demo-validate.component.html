@@ -1,0 +1,146 @@
+<div  [formGroup]="this.form">
+  <div class="row">
+    <div class="col-3" sit-validate-input="textbox">
+      <sit-label require="true">
+        <span>textbox</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'"
+        [ngClass]="{'readonly-con': disable}"
+        >
+        <input
+          matInput
+          formControlName="textbox"
+          [readonly]="disable"
+        />
+      </mat-form-field>
+      <sit-helper
+        [control]="this.form.get('textbox')"
+      ></sit-helper>
+    </div>
+    <div class="col-3" sit-validate-input="combobox">
+      <sit-label require="true">
+        <span>combobox</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        [appearance]="'outline'"
+        [ngClass]="{'readonly-con': disable}"
+        >
+        <mat-select
+        placeholder="All"
+        formControlName="combobox"
+        >
+          <mat-option value="">All</mat-option>
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <sit-helper
+        [control]="this.form.get('combobox')"
+      ></sit-helper>
+    </div>
+    <div class="col-2" sit-validate-input="datepicker">
+      <sit-label require="true">
+        <span>datepicker</span>
+      </sit-label>
+      <mat-form-field appearance="outline" class="w-100" [ngClass]="{'readonly-con': disable}">
+        <input
+          matInput
+          [matDatepicker]="dateFrom"
+          [datePicker]="dateFrom"
+          formControlName="datepicker"
+          [readonly]="disable"
+        >
+        <mat-datepicker-toggle matSuffix [for]="dateFrom" [disabled]="this.disable || this.form.get('datepicker').disabled">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dateFrom></mat-datepicker>
+      </mat-form-field>
+      <sit-helper
+        [control]="this.form.get('datepicker')"
+        hint="DD/MM/YYYY"
+      ></sit-helper>
+    </div>
+    <div class="col-1" sit-validate-input="time">
+      <sit-label>
+        <span>&nbsp;</span>
+      </sit-label>
+      <mat-form-field
+        class="w-100"
+        style="min-width: 70px;"
+        [appearance]="'outline'"
+        [ngClass]="{'readonly-con': disable}"
+      >
+        <input matInput #time time24-hours formControlName="time" [readonly]="disable" />
+      </mat-form-field>
+      <sit-helper [control]="this.form.get('time')" hint="hh:mm"></sit-helper>
+    </div>
+    <div class="col-3" sit-validate-input="autocomplete">
+      <sit-label require="true">
+        <span>autocomplete</span>
+      </sit-label>
+      <sit-autocomplete
+          type = 'A'
+          [controlValue]="this.form.get('autocompleteVal')"
+          [controlKey]="this.form.get('autocompleteKey')"
+          [listResult]="this.autocomplete"
+          [valueChange]="autocomplete$"
+          (selectValue)="selectValue($event)"
+          [readonly]="disable"
+          >
+      </sit-autocomplete>
+      <sit-helper
+        [control]="this.form.get('autocompleteVal')"
+      ></sit-helper>
+    </div>
+
+    <div class="row">
+      <div class="col-3" sit-validate-input="radioForm" selector=".section-border">
+        <sit-label require="true">
+          <span>.section-border</span>
+        </sit-label>
+          <div class="section-border">
+            <mat-radio-group formControlName="radioForm">
+              <mat-radio-button value="vanilla">Vanilla</mat-radio-button>
+              <mat-radio-button value="strawberry">Strawberry</mat-radio-button>
+              <mat-radio-button value="chocolate">Chocolate</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <sit-helper
+          ></sit-helper>
+      </div>
+
+      <div class="col-3" sit-validate-input="group-checkbox" selector=".section-border">
+        <sit-label require="true">
+          <span>.section-border</span>
+        </sit-label>
+          <div class="section-border">
+            <mat-checkbox class="example-margin"  formControlName="checkbox1">Vanilla</mat-checkbox>
+            <mat-checkbox class="example-margin" formControlName="checkbox2">Strawberry</mat-checkbox>
+            <mat-checkbox class="example-margin" formControlName="checkbox3">Chocolate</mat-checkbox>
+          </div>
+          <sit-helper></sit-helper>
+      </div>
+      <div class="col" sit-validate-input="checkBorderless">
+        <sit-label>
+          <span>single checkbox borderless</span>
+        </sit-label>
+        <mat-checkbox formControlName="checkBorderless1">Chocolate</mat-checkbox>
+        <mat-checkbox formControlName="checkBorderless2">Strawberry</mat-checkbox>
+        <sit-helper></sit-helper>
+      </div>
+      <div class="col" sit-validate-input="radioBorderless">
+        <sit-label>
+          <span>checkbox borderless</span>
+        </sit-label>
+        <mat-radio-group formControlName="radioForm">
+          <mat-radio-button value="vanilla">Vanilla</mat-radio-button>
+          <mat-radio-button value="strawberry">Strawberry</mat-radio-button>
+        </mat-radio-group>
+        <sit-helper></sit-helper>
+      </div>
+    </div>
+  </div>
+</div>

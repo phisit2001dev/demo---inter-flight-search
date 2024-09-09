@@ -1,0 +1,136 @@
+.fieldInput {
+  ::ng-deep .mat-form-field-prefix {
+    top: 0px;
+  }
+}
+
+.chip {
+  .mat-icon {
+  }
+  .mat-search {
+    margin-left: 3px;
+    font-size: 150%;
+  }
+}
+// .divchip{
+//   ::ng-deep.mat-form-field.sit-cus-1 {
+//     width: 100%;
+//     .mat-form-field-infix {
+//         border: 0px;
+//     }
+//     .mat-chip-list-wrapper {
+//         .mat-chip {
+//         }
+//     }
+//     .mat-form-field-flex {
+//         height: unset !important;
+//         min-height: 40px;
+//     }
+//     .mat-chip-list-wrapper {
+//       padding-top: 8px;
+//       padding-bottom: 4px;
+//       max-height: 600px;
+//         input {
+//             flex: unset;
+//             width: unset;
+//             width: 60px;
+//         }
+//     }
+//   }
+// }
+
+// .divchip{
+//   ::ng-deep.mat-form-field {
+//     width: 100%;
+//     .mat-form-field-infix {
+//         border: 0px;
+//         padding-top: 6px !important;
+//     }
+//     .mat-chip-list-wrapper {
+//       margin: unset !important;
+//       margin-top: 3px !important;
+//     }
+//     .mat-form-field-flex {
+//         height: unset !important;
+//         min-height: 47px;
+//     }
+//     .mat-chip-list-wrapper {
+//       // padding-top: 16px;
+//       // padding-bottom: 4px;
+//       max-height: 600px;
+//         input {
+//             flex: unset;
+//             width: unset;
+//             width: 60px;
+//         }
+//     }
+//   }
+
+//   .mat-standard-chip {
+//     min-height: 25px !important;
+//     margin: 4px 4px !important;
+//   }
+// }
+
+
+#ca1{
+
+    // background-color: aqua !important;
+    ::ng-deep.mat-standard-chip {
+      min-height: 25px !important;
+      margin: 4px;
+    }
+    ::ng-deep.mat-form-field-flex {
+      height: unset !important;
+      min-height: 40px !important;
+    }
+
+    // show ship
+    .divchip {
+      ::ng-deep.mat-form-field {
+        width: 100%;
+        .mat-form-field-infix {
+          padding-top: 6px !important;
+        }
+        .mat-chip-list-wrapper {
+          margin: unset !important;
+          padding-top: unset !important;
+        }
+        .mat-chip-list-wrapper {
+          padding-top: 16px;
+          padding-bottom: 4px;
+          max-height: 600px;
+          input {
+            flex: unset;
+            width: unset;
+            width: 60px;
+          }
+        }
+      }
+  }
+}
+
+.divchip {
+  .mat-chip-remove.mat-chip-trailing-icon {
+    color: red;
+    opacity: 0.65;
+  }
+}
+
+mat-form-field {
+  &.readonly-con {
+    mat-chip {
+      background-color: #bbb1b1;
+    }
+  }
+}
+
+
+::ng-deep.mat-form-field-suffix:has(.testauto){
+  top: 7px;
+  // top: 1px;
+}
+
+.mat-mdc-form-field{
+  width: 100%;
+}

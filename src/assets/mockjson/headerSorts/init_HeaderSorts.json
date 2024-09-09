@@ -1,0 +1,40 @@
+{
+  "messageCode": "X00000",
+  "messageDesc": "Success",
+  "displayStatus": "S",
+  "componentType": "S",
+  "data": {
+      "permission": {
+          "search": true,
+          "add": true,
+          "edit": true,
+          "view": true,
+          "active": true,
+          "export": true
+      },
+      "criteria": {
+          "headerSorts": [
+              {
+                "columnName": "0",
+                "order": "DESC"
+              }
+          ],
+          "linePerPage": 10,
+          "pageIndex": 0,
+          "checkMaxExceed": true
+      },
+      "listLinePerPage": [
+          10,20,30
+      ],
+      "listActiveStatus": [
+          {
+              "key": "Y",
+              "value": "Active"
+          },
+          {
+              "key": "N",
+              "value": "Inactive"
+          }
+      ]
+  }
+}

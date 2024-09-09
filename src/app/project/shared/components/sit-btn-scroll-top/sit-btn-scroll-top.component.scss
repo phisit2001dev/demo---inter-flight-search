@@ -1,0 +1,21 @@
+// @import "../../../../../../../assets/color/theam-color.scss";
+// @import "~@angular/material/theming";
+
+
+.sit-scroll-to-top {
+  position: fixed;
+  bottom: 55px;
+  right: 2px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  button{
+    // color: mat-color($tg-orange, 5);
+  }
+}
+.sit-show-scrolltop {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.sit-set-top {
+  z-index: 100;
+}

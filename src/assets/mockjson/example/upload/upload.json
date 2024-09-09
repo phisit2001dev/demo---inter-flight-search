@@ -1,0 +1,9 @@
+{
+  "messageCode":"X00000",
+  "messageDesc":"Success",
+  "displayStatus":"S",
+  "componentType":"S",
+  "data":{
+     "rep":"101010"
+  }
+}

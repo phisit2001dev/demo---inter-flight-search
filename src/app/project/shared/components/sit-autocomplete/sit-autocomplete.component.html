@@ -1,0 +1,229 @@
+<!-- ############################ autocomplete ########################-->
+<div *ngIf="type === 'A'">
+  <div [formGroup]="form_A" fxLayout="column" id="sitauto_a">
+    <mat-form-field
+      style="width: 100%;"
+      [appearance]="'outline'"
+      [ngClass]="{ 'readonly-con': readonly,'sit-cus-1': !appearance }"
+      [floatLabel]="appearance === 'outline'? 'always': ''"
+      class="fieldInput"
+    >
+      <mat-label *ngIf="outlineLabel">
+        {{outlineLabel}}
+      </mat-label>
+      <mat-icon matPrefix >search</mat-icon>
+      <input
+        [autocomplete]="'off'"
+        matInput
+        #directiveInput
+        [placeholder]="getPlaceholder()"
+        (blur)="autoCompleteOnblur($event)"
+        (focus)="autoCompleteOnfocus($event)"
+        type="text"
+        value="sitAuto.value"
+        autocompleteClear
+        [visibleControl]="controlValue"
+        [hiddenControl]="controlKey"
+        [formControl]="controlValue"
+        [matAutocomplete]="sitAuto"
+        [readonly]="readonly"
+        [maxlength]="maxLength ? maxLength : null"
+      />
+      <input #key type="hidden" formControlName="key"/>
+      <mat-autocomplete
+        #sitAuto="matAutocomplete"
+        (optionSelected)="autoCompleteSelect($event)"
+      >
+        <mat-option *ngFor="let item of listResult" [value]="item">
+          <span
+            AutocompleteHighlight
+            [termInput]="term"
+            [textOption]="display(item)"
+          ></span>
+        </mat-option>
+      </mat-autocomplete>
+        <!-- <span class="mat-select-arrow testauto" matSuffix></span> -->
+        <!-- <mat-icon class="mat-18 testauto" matSuffix>close</mat-icon> -->
+    </mat-form-field>
+  </div>
+</div>
+<!-- ############################ suggestions ########################-->
+<div *ngIf="type === 'S'">
+  <div [formGroup]="form_S" fxLayout="column" id="sitauto_s">
+    <mat-form-field
+      style="width: 100%;"
+      [appearance]="'outline'"
+      [ngClass]="{ 'readonly-con': readonly,'sit-cus-1': !appearance }"
+      class="fieldInput"
+      [floatLabel]="appearance === 'outline'? 'always': ''"
+    >
+      <mat-label *ngIf="outlineLabel">
+        {{outlineLabel}}
+      </mat-label>
+      <mat-icon matPrefix class="icon-search">search</mat-icon>
+      <input
+        [autocomplete]="'off'"
+        matInput
+        #directiveInput
+        [placeholder]="getPlaceholder()"
+        type="text"
+        value="sitAuto.value"
+        [formControl]="controlValue"
+        (blur)="suggestionsOnblur($event)"
+        (focus)="suggestionsOnfocus($event)"
+        sitSugggestion
+        [matAutocomplete]="sitAuto"
+        [visibleControl]="controlValue"
+        [hiddenControl]="controlKey"
+        [readonly]="readonly"
+        [maxlength]="maxLength ? maxLength : null"
+      />
+      <input #key type="hidden" formControlName="key" />
+      <mat-autocomplete
+        #sitAuto="matAutocomplete"
+        (optionSelected)="suggestionsSelect($event)"
+      >
+        <mat-option *ngFor="let item of listResult" [value]="item">
+          <!-- {{ item.value }} -->
+          <span
+          AutocompleteHighlight
+          [termInput]="controlValue"
+          [textOption]="display(item)"
+        ></span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+</div>
+<!-- ############################ chips autocomplete ########################-->
+<!-- <div *ngIf="type === 'CA'">
+  <div
+    [formGroup]="formChips"
+    fxLayout="column"
+    [ngClass]="{ divchip: Checkinit('class') }"
+    class="chip"
+    id="sitauto_ca"
+  >
+    <mat-form-field
+      #fieldChips
+      (click)="focusInput()"
+      [appearance]="'outline'"
+      [ngClass]="{ fieldInput: Checkinit('class'),'readonly-con': readonly,'sit-cus-1': !appearance }"
+      [floatLabel]="appearance === 'outline'? 'always': ''"
+    >
+      <mat-label *ngIf="outlineLabel">
+        {{outlineLabel}}
+      </mat-label>
+      <mat-chip-grid #chipList [formControl]="initChipsList">
+        <mat-chip
+          *ngFor="let list of initChipsList.value; let index = index"
+          [selectable]="selectable"
+          [removable]="canDeleteChip()"
+          (removed)="removeChips(list, index)"
+        >
+          {{ this.displayChips ? list[displayChips] : list.value }}
+          <mat-icon matChipRemove *ngIf="removable && !readonly">cancel</mat-icon>
+        </mat-chip>
+        <mat-icon matPrefix *ngIf="Checkinit('icon')" class="mat-search"
+          >search</mat-icon
+        >
+        <input
+          #chipsInput
+          #directiveInput
+          fxFlex
+          [placeholder]="getPlaceholder()"
+          (blur)="clearTxtInput($event)"
+          [matChipInputFor]="chipList"
+          [autocomplete]="'off'"
+          [formControl]="controlChips"
+          autocompleteClear
+          [matAutocomplete]="autoChips"
+          [visibleControl]="formChips.get('value')"
+          [hiddenControl]="formChips.get('key')"
+          [readonly]="readonly"
+          [maxlength]="maxLength ? maxLength : null"
+        />
+      </mat-chip-grid>
+      <input #key type="hidden" formControlName="key" />
+      <mat-autocomplete
+        #autoChips="matAutocomplete"
+        (optionSelected)="selectChips($event)"
+      >
+        <mat-option *ngFor="let item of listResult" [value]="item">
+          <span
+          AutocompleteHighlight
+          [termInput]="controlChips"
+          [textOption]="display(item)"
+        ></span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+</div> -->
+<!-- ############################ chips suggestions ########################-->
+<!-- <div *ngIf="type === 'CS'">
+  <div
+    [formGroup]="formChips"
+    fxLayout="column"
+    [ngClass]="{ divchip: Checkinit('class') }"
+    class="chip"
+    id="sitauto_cs"
+  >
+    <mat-form-field
+      #fieldChips
+      (click)="focusInput()"
+      [appearance]="'outline'"
+      [ngClass]="{ fieldInput: Checkinit('class'),'readonly-con': readonly,'sit-cus-1': !appearance }"
+      [floatLabel]="appearance === 'outline'? 'always': ''"
+    >
+      <mat-label *ngIf="outlineLabel">
+        {{outlineLabel}}
+      </mat-label>
+      <mat-chip-grid #chipList [formControl]="initChipsList">
+        <mat-chip
+          *ngFor="let list of initChipsList.value; let index = index"
+          [selectable]="selectable"
+          [removable]="canDeleteChip()"
+          (removed)="removeChips(list, index)"
+        >
+          {{ this.displayChips ? list[displayChips] : list.value }}
+          <mat-icon matChipRemove *ngIf="removable && !readonly">cancel</mat-icon>
+        </mat-chip>
+        <mat-icon matPrefix *ngIf="Checkinit('icon')" class="mat-search"
+          >search</mat-icon
+        >
+        <input
+          #chipsInput
+          #directiveInput
+          fxFlex
+          [placeholder]="getPlaceholder()"
+          (blur)="blurChipSugggestion($event)"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="addChips($event)"
+          [autocomplete]="'off'"
+          [formControl]="controlChips"
+          sitSugggestion
+          [matAutocomplete]="autoChips"
+          [visibleControl]="formChips.get('value')"
+          [hiddenControl]="formChips.get('key')"
+          [readonly]="readonly"
+          [maxlength]="maxLength ? maxLength : null"
+        />
+      </mat-chip-grid>
+      <input #key type="hidden" formControlName="key" />
+      <mat-autocomplete
+        #autoChips="matAutocomplete"
+        (optionSelected)="selectChips($event)"
+      >
+        <mat-option *ngFor="let item of listResult" [value]="item">
+          <span
+          AutocompleteHighlight
+          [termInput]="controlChips"
+          [textOption]="display(item)"
+        ></span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+</div> -->
