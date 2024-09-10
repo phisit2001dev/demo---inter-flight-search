@@ -95,7 +95,7 @@ export class AuditLogTableComponent  extends AbstractComponent implements OnInit
         this.dataView = res.data.logDisplay
         const dialogRef = this.dialog.open(DialogViewComponent,{
               width:'50%',
-              height:'55%',
+              height:'50%',
               data: this.dataView
             })
             dialogRef.afterClosed().pipe(takeUntil(this.destroy$)).subscribe(result => {
