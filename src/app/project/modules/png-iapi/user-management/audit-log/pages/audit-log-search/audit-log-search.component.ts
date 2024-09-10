@@ -42,7 +42,7 @@ export class AuditLogSearchComponent extends AbstractSearchComponent implements 
   permission:Permission
   dataSource$ = new Subject<any>()
   timeZone = null
-  funSelecter:[]
+  funSelecter=[]
   constructor(private spinner:SpinnerService,
     private formBuilder: FormBuilder, 
     protected dialog: MatDialog,
@@ -71,8 +71,10 @@ ngOnInit(): void {
   if(!this.funSelecter){
     this.form.get('function').disable()
   }
-  // this.selectChang({value:this.initialData?.listSystem[0].key})
-  // this.form.get('system').setValue(this.initialData?.listSystem[0].key)
+
+  this.form.get('system').setValue(this.initialData?.listSystem[0].key)
+  this.selectChange({value:this.initialData?.listSystem[0].key})
+   
 
 }
 
@@ -145,12 +147,10 @@ search(){
   
   this.form.get('pageIndex').setValue(this.defaultFormValue.pageIndex)
   this.form.get('headerSorts').setValue(this.defaultFormValue.headerSorts)
-
-  this.criteria = this.form.value
   
-  //ใช้ในการลบ property ที่มีอยู่ใน object.
-  // delete this.criteria.dayRange;
-
+  this.criteria = {...this.form.value}
+  delete this.criteria.dayRange
+ 
   this.criteria.dateStart = this.dateService.toString(this.form.get('dateStart').value)
   this.criteria.dateEnd = this.dateService.toString(this.form.get('dateEnd').value)
   this.processSearch(this.criteria)
@@ -214,9 +214,14 @@ selectChange(event:any){
         this.funSelecter = res.data
       }
       this.spinner.hide()
-      // if(this.funSelecter[0].value === 'Search User'){
-      //   this.form.get('function').setValue(this.funSelecter[0].key)
-      // }
+
+      if(this.funSelecter){
+        for(let i=0 ;i < this.funSelecter.length; i++){
+          if (this.funSelecter[i].value === 'Login') {
+            this.form.get('function').setValue(this.funSelecter[i].key);
+          }
+        }
+      }        
     })
   }
   else {

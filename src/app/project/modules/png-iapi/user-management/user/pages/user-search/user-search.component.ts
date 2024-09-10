@@ -63,12 +63,12 @@ export class UserSearchComponent
     this.initData = this.route.snapshot.data.init.payload;
     this.defaultFormValue = this.initData.criteria;
     this.userName = this.route.snapshot.data.init.userName 
-    this.initialCriteria(this.initData);
+    // let ff = this.route.snapshot.data.init.idid
+    this.initialCriteria(this.initData);  
     this.initForm();
       
   }
   ngAfterViewInit() {
-    
     if (this.getCriteriaTemp()) {
       this.processSearch(this.criteria);
     }

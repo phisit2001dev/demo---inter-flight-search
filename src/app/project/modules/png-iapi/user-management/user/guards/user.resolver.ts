@@ -29,19 +29,21 @@ export class UserResolver
     ): Observable<any> | Observable<Observable<any>> | Promise<Observable<any>> {
       let criteria: any = this.getCriteria(this.router, route, state);
       const userName = route.queryParamMap.get('element'); // ดึงค่าจาก URL
-
+      const code = route.queryParamMap.get('code')
+      // const productId = route.params['id'];
       return this.service.initSearchPage().pipe(
         take(1),
         map((payload) => {
           if (payload && !payload.error) {
-            console.log(payload.data)
             if (criteria) {
               payload.data.criteriaTemp = criteria;
               payload.data.hasCriteriaKey = true;
             }
             if (userName) {//check  username 
-              payload.data.criteriaTemp = payload.data.criteria //สร้าง criteriaTemp
-              payload.data.criteriaTemp.username = userName; 
+              payload.data.criteriaTemp = {...payload.data.criteria} //สร้าง criteriaTemp
+              payload.data.criteriaTemp.username = userName;
+              payload.data.criteriaTemp.employeeCode = code;
+              payload.data.hasCriteriaKey = true;
             }
 
             this.navService.currentSys = payload.data.currentSys;
@@ -50,7 +52,8 @@ export class UserResolver
               payload: payload.data,
               acToken: payload.actionToken,
               first: !criteria,
-              userName: userName
+              userName: userName,
+              // idid:productId
             };
           } else {
             this.router.navigate(['home']); // ไปที่หน้า Home

@@ -12,7 +12,7 @@ export class DialogViewComponent {
 
   constructor(public dialogRef: MatDialogRef<DialogViewComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ){
+  ){ // ปิด dialog โดยกดนอกจาก dialog
 
   }
   closeDialog(): void {

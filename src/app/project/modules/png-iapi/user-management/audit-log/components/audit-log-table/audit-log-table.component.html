@@ -61,7 +61,7 @@ matSort
       {{ 'sec.username' | translate }}
     </th>
     <td mat-cell *matCellDef="let element" class="text-left">
-      <a class="custom-link" (click)="goToUser(element.username)">
+      <a class="custom-link" (click)="goToUser(element)">
         {{ element.username }}
       </a>
     </td>

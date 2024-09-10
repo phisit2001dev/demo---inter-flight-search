@@ -94,8 +94,9 @@ export class AuditLogTableComponent  extends AbstractComponent implements OnInit
       if(res && !res.error){
         this.dataView = res.data.logDisplay
         const dialogRef = this.dialog.open(DialogViewComponent,{
-              width:'50%',
-              height:'50%',
+              width:'30%',
+              height:'70%',
+              disableClose: false, // ปิด dialog เมื่อคลิกภายนอก
               data: this.dataView
             })
             dialogRef.afterClosed().pipe(takeUntil(this.destroy$)).subscribe(result => {
@@ -110,10 +111,9 @@ export class AuditLogTableComponent  extends AbstractComponent implements OnInit
     
   }
 
-  goToUser(element:string) {
-
+  goToUser(element:any) {
     this.router.navigate(['/iapi/user-management/user/search'],
-    { queryParams:{element:element}, relativeTo: this.route })
+    { queryParams:{element:element.username,code:element.employeeCode}, relativeTo: this.route })
    
   }
 
